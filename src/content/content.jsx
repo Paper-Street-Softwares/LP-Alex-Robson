@@ -64,14 +64,14 @@ import imgNews1Mobile from "../assets/imgs/news/imgNews1Mobile.webp";
 const currentYear = new Date().getFullYear();
 
 export const infos = {
-  name: "A_Definir",
+  name: "Dr. Alex Robson",
   email: "contato", // Email desejado pelo cliente
   emailSecundario: "A_Definir", // Email desejado pelo cliente
-  domain: "A_Definir", // Sem "www"
+  domain: "arsadvocaciatrabalhista.com.br", // Sem "www"
   phone: {
-    ddd: "A_Definir",
-    firstPart: "A_Definir", // Apenas os 5 primeiros números (incluindo o 9)
-    secondPart: "A_Definir", // Apenas os 4 últimos números
+    ddd: "27",
+    firstPart: "99689", // Apenas os 5 primeiros números (incluindo o 9)
+    secondPart: "9386", // Apenas os 4 últimos números
   },
   phoneSecundario: {
     ddd: "A_Definir",
@@ -107,11 +107,12 @@ export const infos = {
     </div>
   ),
   obs: <span className="italic">A Definir</span>,
-  instagramProfile: "", // Sem o @
-  facebookProfile: "",
-  linkeDinProfile: "",
+  instagramProfile: "alexreis.adv", // Sem o @
+  facebookProfile: "alex.reis.113598",
+  linkeDinProfile:
+    "alex-reis-1b4362218?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   x: "",
-  tiktokProfile: "",
+  tiktokProfile: "dr.alexreis", // Sem o @
 
   whatsappDefaultMessage:
     "Olá! Vim através do site de vocês e gostaria de tirar umas dúvidas.",
