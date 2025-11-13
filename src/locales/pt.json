@@ -2,7 +2,7 @@
   "infos": {
     "adress": "A_Definir <br/> A_Definir",
     "adressSecundario": "A_Definir",
-    "expediente": "Segunda a sexta-feira: <br/> 8h às 18h",
+    "expediente": "Segunda a sexta-feira: <br/> A_Definir",
     "expedienteSecundario": "A_Definir",
     "obs": "A_Definir"
   },
@@ -11,49 +11,48 @@
       "home": "Início",
       "service": "Serviços",
       "about": "Sobre Nós",
-      "blog": "Blog",
       "faq": "Perguntas Frequentes"
     },
     "ctaButtonText": "Contato",
     "ctaButtonTextResponsive": "Contato"
   },
   "hero": {
-    "miniTag": "DIREITO DOS AUTISTAS E PCDs",
-    "title": "Direito de ser <span class=\"text-primary font-bold\">respeitado</span> sempre",
-    "subtitle": "Defendemos pessoas com deficiência e autistas para que tenham seus direitos garantidos, na prática.",
-    "ctaButtonText": "Falar com o advogado",
+    "miniTag": "A_Definir",
+    "title": "A_Definir <span class=\"text-primary font-bold\">A_Definir</span>",
+    "subtitle": "A_Definir",
+    "ctaButtonText": "A_Definir",
     "obsHero": {
-      "text": "Atendimento exclusivamente online para todo Brasil."
+      "text": "A_Definir"
     }
   },
   "features": {
     "miniTag": "Áreas de Atuação",
-    "title": "Defendendo quem mais precisa de voz",
-    "subtitle": "Atuamos com propósito em causas que garantem direitos, respeito e dignidade às pessoas com deficiência e autistas.",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
     "card1": {
-      "title": "Isenção de Impostos para Autistas e PcDs",
-      "subtitle": "Garanta seus direitos e reduza gastos com IPVA e IR.",
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
       "description": "A_Definir",
       "buttonLabelModal": "A_Definir",
       "buttonLabel": "A_Definir"
     },
     "card2": {
-      "title": "Revisão de Cobranças em Planos de Saúde",
-      "subtitle": "Ações para corrigir abusos e cobranças indevidas.",
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
       "description": "A_Definir",
       "buttonLabelModal": "A_Definir",
       "buttonLabel": "A_Definir"
     },
     "card3": {
-      "title": "Acesso a Tratamentos e Medicamentos Negados",
-      "subtitle": "Conquiste o direito ao tratamento que você precisa.",
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
       "description": "A_Definir",
       "buttonLabelModal": "A_Definir",
       "buttonLabel": "A_Definir"
     },
     "card4": {
-      "title": "Redução de Jornada para Pais de Autistas",
-      "subtitle": "Mais tempo com seu filho, sem perder seus direitos.",
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
       "description": "A_Definir",
       "buttonLabelModal": "A_Definir",
       "buttonLabel": "A_Definir",
@@ -84,25 +83,23 @@
     "imagem": {
       "alt": "imagem about"
     },
-    "miniTag": "QUEM É O DR. ANDREY COLETTA",
-    "title": "Minha trajetória",
-    "subtitle": "Mais de 40 anos de tradição familiar dedicada à defesa de direitos e inclusão.",
+    "miniTag": "A_Definir",
+    "title": "Nossa trajetória",
+    "subtitle": "A_Definir",
     "buttonModalLabelAbout": "Continuar lendo",
-    "paragraph": "A advocacia sempre fez parte da minha vida. Cresci acompanhando o trabalho do meu pai, que há mais de quatro décadas atua com dedicação na área cível, e desde cedo entendi o poder do Direito em transformar realidades.",
-    "modal": "A advocacia sempre fez parte da minha vida. Cresci acompanhando o trabalho do meu pai, que há mais de quatro décadas atua com dedicação na área cível, e desde cedo entendi o poder do Direito em transformar realidades. <br/><br/> Com o tempo, encontrei meu propósito em um campo que vai além das leis: a defesa dos direitos de pessoas com deficiência e autistas. Busquei especializações e pós-graduações voltadas a esse público, aprimorando meu conhecimento para oferecer um atendimento sensível e técnico. <br/><br/> Hoje, dedico minha atuação a causas que exigem empatia, compreensão e comprometimento. Atendo autistas, PcDs e suas famílias, lutando diariamente para que cada um tenha acesso aos direitos e à dignidade que merece. <br/><br/>",
+    "paragraph": "A_Definir",
+    "modal": "A_Definir <br/><br/> A_Definir <br/><br/> A_Definir <br/><br/>",
     "ctaButtonAriaLabel": " Quer saber mais sobre nós? Clique abaixo 👇",
     "ctaButtonText": "Entre em contato",
     "aboutSocial": {
-      "miniTag": "ASSESSORIA JURÍDICA NACIONAL",
-      "title": "Atendimento on-line em todo Brasil",
-      "paragraph": "Com um atendimento especializado e sem fronteiras, nossa equipe de advogados não mede esforços para atender nossos clientes em qualquer lugar do Brasil. Onde você estiver, estamos prontos para oferecer suporte jurídico eficiente e personalizado, garantindo que seus direitos sejam protegidos.",
+      "miniTag": "REDES SOCIAIS",
+      "title": "Conecte-se agora mesmo",
+      "paragraph": "Aproveite nossas redes sociais para mantermos contato e ficar por dentro de atualizações importantes no mundo do direito.",
       "labelInstagram": "Siga-me no Instagram",
       "labelFacebook": "Siga-me no Facebook",
       "labelLinkedin": "Siga-me no Linkedin",
       "labelX": "Siga-me no X",
-      "labelTikTok": "Siga-me no TikTok",
-      "labelYoutube": "Siga-me no YouTube",
-      "labelWhatsApp": "Entre em contato agora"
+      "labelTikTok": "Siga-me no TikTok"
     }
   },
   "news": {
@@ -145,9 +142,9 @@
     }
   },
   "blog": {
-    "miniTag": "BLOG",
-    "title": "Informação jurídica ao seu alcance",
-    "subtitle": "Acompanhe conteúdos exclusivos para manter-se sempre informado.",
+    "miniTag": "A_Definir",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
     "labelCards": "A_Definir",
     "label": "Clique aqui para ver todas as matérias",
     "blogLink": "A_Definir"
