@@ -17,12 +17,12 @@
     "ctaButtonTextResponsive": "Contato"
   },
   "hero": {
-    "miniTag": "A_Definir",
-    "title": "A_Definir <span class=\"text-primary font-bold\">A_Definir</span>",
-    "subtitle": "A_Definir",
-    "ctaButtonText": "A_Definir",
+    "miniTag": "ADVOCACIA ESPECIALIZADA",
+    "title": "Seu <span class=\"text-primary font-bold\">direito</span>, nossa <span class=\"text-primary font-bold\">missão</span>!",
+    "subtitle": "Defendemos causas com propósito e coragem — porque cada cliente merece ser ouvido, não apenas atendido.",
+    "ctaButtonText": "Converse com a gente",
     "obsHero": {
-      "text": "A_Definir"
+      "text": "Atendimento online para todo Brasil"
     }
   },
   "features": {
