@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+/* inicio da shapeDiv */
+.custom-shape-divider-bottom-1720203688 {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1720203688 svg {
+  position: relative;
+  display: block;
+  width: calc(134% + 1.3px);
+  height: 78px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1720203688 .shape-fill {
+  fill: #fff;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1720203688 svg {
+    width: calc(145% + 1.3px);
+    height: 41px;
+  }
+}
+/* fim da shapeDiv */
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/src/assets/fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/src/assets/fonts/Poppins-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/src/assets/fonts/Poppins-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+.unfix-ios-bg {
+  @supports (-webkit-touch-callout: none) {
+    background-attachment: initial !important;
+  }
+}
+
+@font-face {
+  font-family: "Keep Calm";
+  src: url("./fonts/KeepCalm-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+  }
+}
+
+.animate-fade-in {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animate-fade-out {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeOut 1s ease-in-out;
+}
+
+/* WhatsChat - componente externo */
+/* Estilo padrão da tooltip para outras telas */
+._tooltip_181xn_903 {
+  position: absolute; /* Mantém o posicionamento */
+  bottom: 30px !important; /* Posição inicial */
+  max-width: 65% !important; /* Largura máxima */
+  white-space: normal; /* Permite quebra de linha */
+  overflow: visible; /* Permite que o conteúdo extra apareça */
+  transform-origin: center bottom; /* Define o ponto de crescimento no centro e na base */
+}
+
+/* Estilos para telas de 320px a 374px */
+@media (min-width: 320px) and (max-width: 374px) {
+  ._chatHeader_181xn_163 {
+    gap: 0px !important;
+    padding: 9px !important;
+  }
+
+  ._chatHeader_181xn_163 ._avatar_181xn_181 {
+    width: 60px;
+  }
+
+  ._avatar_181xn_181 img {
+    width: 60px;
+  }
+
+  ._status_181xn_229 {
+    width: 90%;
+    margin-left: 5px;
+    font-size: 12px !important;
+  }
+
+  div._message_181xn_435 {
+    max-width: 175px !important;
+  }
+
+  ._messageBody_181xn_471 {
+    width: 100%;
+  }
+
+  ._tooltip_181xn_903 {
+    max-width: 195px !important;
+    align-items: center !important;
+    top: auto !important; /* Ajuste de posição para a tooltip */
+  }
+}
+
+@media (min-width: 320px) and (max-width: 402px) {
+  /* Seta da tooltip */
+  ._tooltipArrow_181xn_935 {
+    top: -60% !important;
+    color: #000 !important;
+  }
+}
+
+/* Estilos para telas de 375px a 402px */
+@media (min-width: 375px) and (max-width: 402px) {
+  ._tooltip_181xn_903 {
+    bottom: 30px !important; /* Ajuste de posição para a tooltip */
+  }
+}
+
+/* Estilos para telas de 403px a 639px */
+@media (min-width: 403px) and (max-width: 639px) {
+  ._tooltip_181xn_903 {
+    bottom: 37px !important; /* Ajuste de posição para a tooltip */
+  }
+  /* Seta da tooltip */
+  ._tooltipArrow_181xn_935 {
+    top: -40% !important;
+  }
+}
+
+/* Estilos para telas de 639px a 724px */
+@media (min-width: 639px) and (max-width: 724px) {
+  ._tooltip_181xn_903 {
+    bottom: 38px !important; /* Ajuste de posição para a tooltip */
+  }
+  /* Seta da tooltip */
+  ._tooltipArrow_181xn_935 {
+    top: 0% !important;
+  }
+}
+
+/* Estilos para telas de 725px a 768px */
+@media (min-width: 725px) {
+  ._tooltip_181xn_903 {
+    bottom: 45px !important; /* Ajuste de posição para a tooltip */
+  }
+}
+
+/* chat ou redirecionamento */
+.floating-chat {
+  position: relative;
+  display: inline-block;
+}
+
+/* Quando isChatEnabled é false, o botão age como um link */
+.whatsapp-redirect {
+  text-decoration: none;
+  pointer-events: all;
+}
+
+/* Oculta qualquer chatbox ou conteúdo adicional */
+.whatsapp-redirect .floating-chatbox {
+  display: none !important;
+}
+
+/* Seta da tooltip */
+
+.custom-whatsapp-button {
+  position: fixed;
+}
+
+._tooltip_181xn_903,
+.floating-whatsapp-button {
+  margin: 0 !important; /* Remova margens conflitantes */
+}
+
+._floatingWhatsapp_181xn_1 {
+  display: flex !important; /* Ativa Flexbox */
+  align-items: center !important; /* Alinha os itens no centro verticalmente */
+  justify-content: flex-start !important; /* Alinha os itens no início horizontalmente */
+  gap: 10px !important; /* Espaçamento horizontal entre os itens */
+  position: fixed !important;
+  bottom: 80px !important; /* Ajuste conforme necessário */
+  right: 20px !important;
+}
+
+.floating-whatsapp-button {
+  width: 50px !important; /* Tamanho fixo do botão */
+  height: 50px !important;
+  flex-shrink: 0 !important; /* Impede que o botão diminua se o tooltip aumentar */
+}

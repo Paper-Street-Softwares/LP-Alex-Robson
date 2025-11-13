@@ -1,0 +1,216 @@
+{
+  "infos": {
+    "name": "A_Definir",
+    "email": "A_Definir",
+    "emailSecundario": "A_Definir",
+    "emailThree": "A_Definir",
+    "emailFour": "A_Definir",
+    "emailFive": "A_Definir",
+    "domain": "A_Definir",
+    "phone": {
+      "ddd": "A_Definir",
+      "firstPart": "A_Definir",
+      "secondPart": "A_Definir"
+    },
+    "phoneSecundario": {
+      "ddd": "A_Definir",
+      "firstPart": "A_Definir",
+      "secondPart": "A_Definir"
+    },
+    "phoneTerciario": {
+      "ddd": "A_Definir",
+      "firstPart": "A_Definir",
+      "secondPart": "A_Definir"
+    },
+    "adress": "A_Definir",
+    "adressSecundario": "A_Definir",
+    "expediente": "A_Definir",
+    "expedienteSecundario": "A_Definir",
+    "obs": "A_Definir",
+    "instagramProfile": "A_Definir",
+    "facebookProfile": "A_Definir",
+    "linkeDinProfile": "A_Definir",
+    "x": "A_Definir",
+    "whatsappDefaultMessage": "A_Definir",
+    "whatsChatDefaultMessage": "A_Definir",
+    "slogan": "A_Definir"
+  },
+  "navbar": {
+    "menuItems": {
+      "home": "Inicio",
+      "service": "Servicios",
+      "about": "Sobre Nosotros",
+      "faq": "Preguntas Frecuentes"
+    },
+    "ctaButtonText": "Contacto",
+    "ctaButtonTextResponsive": "Contacto"
+  },
+  "hero": {
+    "miniTag": "A_Definir",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "ctaButtonText": "A_Definir",
+    "obsHero": {
+      "text": "A_Definir"
+    }
+  },
+  "features": {
+    "miniTag": "A_Definir",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "card1": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    },
+    "card2": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    },
+    "card3": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    },
+    "card4": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir",
+      "servicesButton": "A_Definir"
+    },
+    "card5": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    },
+    "card6": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    }
+  },
+  "maps": {
+    "minitag": "A_Definir",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "embedsrc": "A_Definir"
+  },
+  "about": {
+    "imagem": {
+      "alt": "A_Definir"
+    },
+    "miniTag": "A_Definir",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "labelInstagram": "A_Definir",
+    "labelFacebook": "A_Definir",
+    "labelLinkedin": "A_Definir",
+    "labelX": "A_Definir",
+    "paragraph": "A_Definir",
+    "buttonModalLabelAbout": "A_Definir",
+    "modal": "A_Definir",
+    "ctaButtonAriaLabel": "A_Definir",
+    "ctaButtonText": "A_Definir",
+    "aboutSocial": {
+      "miniTag": "A_Definir",
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "labelInstagram": "A_Definir",
+      "labelFacebook": "A_Definir",
+      "labelLinkedin": "A_Definir",
+      "labelX": "A_Definir"
+    }
+  },
+  "cta": {
+    "miniTag": "A_Definir",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "ctaButtonText": "A_Definir"
+  },
+  "ctaSecondary": {
+    "title": "A_Definir",
+    "subtitleDireita": "A_Definir",
+    "titleDireita": "A_Definir",
+    "ctaButtonText": "A_Definir"
+  },
+  "steps": {
+    "miniTag": "A_Definir",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "cards": {
+      "card1": {
+        "stepNumber": 1,
+        "cardTitle": "A_Definir",
+        "cardDescription": "A_Definir"
+      },
+      "card2": {
+        "stepNumber": 2,
+        "cardTitle": "A_Definir",
+        "cardDescription": "A_Definir"
+      },
+      "card3": {
+        "stepNumber": 3,
+        "cardTitle": "A_Definir",
+        "cardDescription": "A_Definir"
+      },
+      "card4": {
+        "stepNumber": 4,
+        "cardTitle": "A_Definir",
+        "cardDescription": "A_Definir"
+      }
+    }
+  },
+  "blog": {
+    "miniTag": "A_Definir",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "labelCards": "A_Definir",
+    "label": "A_Definir",
+    "blogLink": "A_Definir"
+  },
+  "faq": {
+    "miniTag": "A_Definir",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "questions": {
+      "question1": {
+        "question": "A_Definir",
+        "answer": "A_Definir"
+      },
+      "question2": {
+        "question": "A_Definir",
+        "answer": "A_Definir"
+      },
+      "question3": {
+        "question": "A_Definir",
+        "answer": "A_Definir"
+      },
+      "question4": {
+        "question": "A_Definir",
+        "answer": "A_Definir"
+      }
+    },
+    "paragraph": "A_Definir"
+  },
+  "footer": {
+    "copyrightLine": "A_Definir",
+    "footerDivulgacaoText": "A_Definir",
+    "midSectionName": "A_Definir",
+    "footerText": "A_Definir",
+    "footerSocialText": "A_Definir",
+    "footerNavegacaoText": "A_Definir"
+  }
+}

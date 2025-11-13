@@ -1,0 +1,297 @@
+{
+  "infos": {
+    "name": "To_Be_Defined",
+    "email": "contact",
+    "emailSecundario": "To_Be_Defined",
+    "emailThree": "To_Be_Defined",
+    "emailFour": "To_Be_Defined",
+    "emailFive": "To_Be_Defined",
+    "domain": "To_Be_Defined",
+    "phone": {
+      "ddd": "00",
+      "firstPart": "00000",
+      "secondPart": "0000"
+    },
+    "phoneSecundario": {
+      "ddd": "00",
+      "firstPart": "00000",
+      "secondPart": "0000"
+    },
+    "phoneTerciario": {
+      "ddd": "To_Be_Defined",
+      "firstPart": "To_Be_Defined",
+      "secondPart": "To_Be_Defined"
+    },
+    "adress": "Address: To_Be_De To_Be_De To_Be_De",
+    "adressSecundario": "Address: To_Be_De To_Be_De To_Be_De",
+
+    "expediente": "To_Be_Defined",
+    "expedienteSecundario": "To_Be_Defined",
+
+    "obs": "To_Be_Defined",
+    "instagramProfile": "To_Be_Defined",
+    "facebookProfile": "To_Be_Defined",
+    "linkeDinProfile": "To_Be_Defined",
+    "x": "To_Be_Defined",
+    "whatsappDefaultMessage": "To_Be_Defined",
+    "whatsChatDefaultMessage": "WouTo_Be_Defined",
+    "slogan": ""
+  },
+  "navbar": {
+    "menuItems": {
+      "home": "Home",
+      "service": "Services",
+      "about": "About Us",
+      "faq": "FAQ"
+    },
+    "ctaButtonText": "Contact",
+    "ctaButtonTextResponsive": "Contact"
+  },
+  "hero": {
+    "miniTag": "To_Be_Defined",
+    "title": "To_Be_Defined",
+    "subtitle": "To_Be_Defined",
+    "ctaButtonText": "To_Be_Defined",
+    "obsHero": {
+      "text": "To_Be_Defined"
+    }
+  },
+  "features": {
+    "miniTag": "To_Be_Defined",
+    "title": "To_Be_Defined",
+    "subtitle": "To_Be_Defined",
+    "card1": {
+      "title": "To_Be_Defined",
+      "subtitle": "To_Be_Defined",
+      "description": "To_Be_Defined",
+      "buttonLabelModal": "To_Be_Defined",
+      "buttonLabel": "To_Be_Defined"
+    },
+    "card2": {
+      "title": "To_Be_Defined",
+      "subtitle": "To_Be_Defined",
+      "description": "To_Be_Defined",
+      "buttonLabelModal": "To_Be_Defined",
+      "buttonLabel": "To_Be_Defined"
+    },
+    "card3": {
+      "title": "To_Be_Defined",
+      "subtitle": "To_Be_Defined",
+      "description": "To_Be_Defined",
+      "buttonLabelModal": "To_Be_Defined",
+      "buttonLabel": "To_Be_Defined"
+    },
+    "card4": {
+      "title": "To_Be_Defined",
+      "subtitle": "To_Be_Defined",
+      "description": "To_Be_Defined",
+      "buttonLabelModal": "To_Be_Defined",
+      "buttonLabel": "To_Be_Defined"
+    },
+    "card5": {
+      "title": "To_Be_Defined",
+      "subtitle": "To_Be_Defined",
+      "description": "To_Be_Defined",
+      "buttonLabelModal": "To_Be_Defined",
+      "buttonLabel": "To_Be_Defined"
+    },
+    "card6": {
+      "title": "To_Be_Defined",
+      "subtitle": "To_Be_Defined",
+      "description": "To_Be_Defined",
+      "buttonLabelModal": "To_Be_Defined",
+      "buttonLabel": "To_Be_Defined"
+    }
+  },
+  "maps": {
+    "minitag": "To_Be_Defined",
+    "title": "To_Be_Defined",
+    "subtitle": "To_Be_Defined",
+    "embedsrc": "To_Be_Defined"
+  },
+  "about": {
+    "imagem": {
+      "alt": "Professional office/lawyer image"
+    },
+    "minitag": "To_Be_Defined",
+    "title": "To_Be_Defined",
+    "subtitle": "To_Be_Defined",
+    "labelInstagram": "To_Be_Defined",
+    "labelFacebook": "To_Be_Defined",
+    "labelLinkedin": "To_Be_Defined",
+    "labelX": "To_Be_Defined",
+    "paragraph": "To_Be_Defined",
+    "buttonModalLabelAbout": "Continue reading",
+    "modal": "To_Be_Defined",
+    "ctaButtonAriaLabel": "To_Be_Defined",
+    "ctaButtonText": "To_Be_Defined",
+    "aboutSocial": {
+      "miniTag": "To_Be_Defined",
+      "title": "To_Be_Defined",
+      "subtitle": "To_Be_Defined",
+      "labelInstagram": "To_Be_Defined",
+      "labelFacebook": "To_Be_Defined",
+      "labelLinkedin": "To_Be_Defined",
+      "labelX": "To_Be_Defined"
+    }
+  },
+  "cta": {
+    "miniTag": "To_Be_Defined",
+    "title": "To_Be_Defined",
+    "subtitle": "To_Be_Defined",
+    "ctaButtonText": "To_Be_Defined"
+  },
+  "ctaSecondary": {
+    "title": "To_Be_Defined",
+    "subtitleDireita": "To_Be_Defined",
+    "titleDireita": "To_Be_Defined",
+    "ctaButtonText": "To_Be_Defined"
+  },
+  "steps": {
+    "miniTag": "To_Be_Defined",
+    "title": "To_Be_Defined",
+    "subtitle": "",
+    "cards": {
+      "card1": {
+        "stepNumber": 1,
+        "cardTitle": "To_Be_Defined",
+        "cardDescription": "To_Be_Defined"
+      },
+      "card2": {
+        "stepNumber": 2,
+        "cardTitle": "To_Be_Defined",
+        "cardDescription": "To_Be_Defined"
+      },
+      "card3": {
+        "stepNumber": 3,
+        "cardTitle": "To_Be_Defined",
+        "cardDescription": "To_Be_Defined"
+      },
+      "card4": {
+        "stepNumber": 4,
+        "cardTitle": "To_Be_Defined",
+        "cardDescription": "To_Be_Defined"
+      }
+    }
+  },
+  "blog": {
+    "miniTag": "BLOG",
+    "title": "To_Be_Defined",
+    "subtitle": "",
+    "labelCards": "To_Be_Defined",
+    "label": "To_Be_Defined",
+    "blogLink": "To_Be_Defined"
+  },
+  "faq": {
+    "miniTag": "To_Be_Defined",
+    "title": "To_Be_Defined",
+    "subtitle": "To_Be_Defined",
+    "questions": {
+      "question1": {
+        "question": "To_Be_Defined",
+        "answer": "To_Be_Defined"
+      },
+      "question2": {
+        "question": "To_Be_Defined",
+        "answer": "To_Be_Defined"
+      },
+      "question3": {
+        "question": "To_Be_Defined",
+        "answer": "To_Be_Defined"
+      },
+      "question4": {
+        "question": "To_Be_Defined",
+        "answer": "To_Be_Defined"
+      }
+    },
+    "paragraph": "To_Be_Defined"
+  },
+  "footer": {
+    "copyrightLine": "2025 - Company Name - All rights reserved",
+    "footerDivulgacaoText": "To_Be_Defined",
+    "midSectionName": "To_Be_Defined",
+    "footerText": "To_Be_Defined",
+    "footerSocialText": "FolTo_Be_Defined",
+    "footerNavegacaoText": "To_Be_Defined"
+  },
+  "testimonials": {
+    "miniTag": "To_Be_Defined",
+    "title": "To_Be_Defined",
+    "subtitle": "To_Be_Defined",
+    "images": [
+      { "img": "imgTestimonial1", "alt": "Feedback image" },
+      { "img": "imgTestimonial2", "alt": "Feedback image" },
+      { "img": "imgTestimonial3", "alt": "Feedback image" },
+      { "img": "imgTestimonial4", "alt": "Feedback image" }
+    ]
+  },
+  "trustedBy": {
+    "title": "To_Be_Defined",
+    "subtitle": "To_Be_Defined",
+    "trustedMore": { "title": "To_Be_Defined", "subtitle": "To_Be_Defined" },
+    "images": [
+      { "img": "trustedByImg1", "alt": "Rennova brand" },
+      { "img": "trustedByImg2", "alt": "Colgate brand" },
+      { "img": "trustedByImg3", "alt": "Dental Cremer brand" }
+    ]
+  },
+  "numbers": {
+    "backgroundImg": "numbersImgBg",
+    "number1": 7,
+    "number1Description": "To_Be_Defined",
+    "number2": 500,
+    "number2Description": "To_Be_Defined",
+    "number3": 1000,
+    "number3Description": "To_Be_Defined"
+  },
+  "team": {
+    "title": "To_Be_Defined",
+    "subtitle": "To_Be_Defined",
+    "members": [
+      {
+        "name": "To_Be_Defined",
+        "role": "To_Be_Defined",
+        "img": "To_Be_Defined",
+        "alt": "To_Be_Defined",
+        "socialMedia": {
+          "linkedin": "To_Be_Defined",
+          "github": "To_Be_Defined",
+          "website": "To_Be_Defined"
+        }
+      },
+      {
+        "name": "To_Be_Defined",
+        "role": "To_Be_Defined",
+        "img": "To_Be_Defined",
+        "alt": "To_Be_Defined",
+        "socialMedia": {
+          "linkedin": "To_Be_Defined",
+          "github": "To_Be_Defined",
+          "website": "To_Be_Defined"
+        }
+      },
+      {
+        "name": "To_Be_Defined",
+        "role": "To_Be_Defined",
+        "img": "To_Be_Defined",
+        "alt": "To_Be_Defined",
+        "socialMedia": {
+          "linkedin": "To_Be_Defined",
+          "github": "To_Be_Defined",
+          "website": "To_Be_Defined"
+        }
+      },
+      {
+        "name": "To_Be_Defined",
+        "role": "To_Be_Defined",
+        "img": "To_Be_Defined",
+        "alt": "To_Be_Defined",
+        "socialMedia": {
+          "linkedin": "To_Be_Defined",
+          "github": "To_Be_Defined",
+          "website": "To_Be_Defined"
+        }
+      }
+    ]
+  }
+}

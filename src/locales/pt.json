@@ -1,0 +1,187 @@
+{
+  "infos": {
+    "adress": "A_Definir <br/> A_Definir",
+    "adressSecundario": "A_Definir",
+    "expediente": "Segunda a sexta-feira: <br/> 8h às 18h",
+    "expedienteSecundario": "A_Definir",
+    "obs": "A_Definir"
+  },
+  "navbar": {
+    "menuItems": {
+      "home": "Início",
+      "service": "Serviços",
+      "about": "Sobre Nós",
+      "blog": "Blog",
+      "faq": "Perguntas Frequentes"
+    },
+    "ctaButtonText": "Contato",
+    "ctaButtonTextResponsive": "Contato"
+  },
+  "hero": {
+    "miniTag": "DIREITO DOS AUTISTAS E PCDs",
+    "title": "Direito de ser <span class=\"text-primary font-bold\">respeitado</span> sempre",
+    "subtitle": "Defendemos pessoas com deficiência e autistas para que tenham seus direitos garantidos, na prática.",
+    "ctaButtonText": "Falar com o advogado",
+    "obsHero": {
+      "text": "Atendimento exclusivamente online para todo Brasil."
+    }
+  },
+  "features": {
+    "miniTag": "Áreas de Atuação",
+    "title": "Defendendo quem mais precisa de voz",
+    "subtitle": "Atuamos com propósito em causas que garantem direitos, respeito e dignidade às pessoas com deficiência e autistas.",
+    "card1": {
+      "title": "Isenção de Impostos para Autistas e PcDs",
+      "subtitle": "Garanta seus direitos e reduza gastos com IPVA e IR.",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    },
+    "card2": {
+      "title": "Revisão de Cobranças em Planos de Saúde",
+      "subtitle": "Ações para corrigir abusos e cobranças indevidas.",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    },
+    "card3": {
+      "title": "Acesso a Tratamentos e Medicamentos Negados",
+      "subtitle": "Conquiste o direito ao tratamento que você precisa.",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    },
+    "card4": {
+      "title": "Redução de Jornada para Pais de Autistas",
+      "subtitle": "Mais tempo com seu filho, sem perder seus direitos.",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir",
+      "servicesButton": "A_Definir"
+    },
+    "card5": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    },
+    "card6": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    }
+  },
+  "maps": {
+    "minitag": "LOCALIZAÇÃO",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "embedsrc": "A_Definir"
+  },
+  "about": {
+    "imagem": {
+      "alt": "imagem about"
+    },
+    "miniTag": "QUEM É O DR. ANDREY COLETTA",
+    "title": "Minha trajetória",
+    "subtitle": "Mais de 40 anos de tradição familiar dedicada à defesa de direitos e inclusão.",
+    "buttonModalLabelAbout": "Continuar lendo",
+    "paragraph": "A advocacia sempre fez parte da minha vida. Cresci acompanhando o trabalho do meu pai, que há mais de quatro décadas atua com dedicação na área cível, e desde cedo entendi o poder do Direito em transformar realidades.",
+    "modal": "A advocacia sempre fez parte da minha vida. Cresci acompanhando o trabalho do meu pai, que há mais de quatro décadas atua com dedicação na área cível, e desde cedo entendi o poder do Direito em transformar realidades. <br/><br/> Com o tempo, encontrei meu propósito em um campo que vai além das leis: a defesa dos direitos de pessoas com deficiência e autistas. Busquei especializações e pós-graduações voltadas a esse público, aprimorando meu conhecimento para oferecer um atendimento sensível e técnico. <br/><br/> Hoje, dedico minha atuação a causas que exigem empatia, compreensão e comprometimento. Atendo autistas, PcDs e suas famílias, lutando diariamente para que cada um tenha acesso aos direitos e à dignidade que merece. <br/><br/>",
+    "ctaButtonAriaLabel": " Quer saber mais sobre nós? Clique abaixo 👇",
+    "ctaButtonText": "Entre em contato",
+    "aboutSocial": {
+      "miniTag": "ASSESSORIA JURÍDICA NACIONAL",
+      "title": "Atendimento on-line em todo Brasil",
+      "paragraph": "Com um atendimento especializado e sem fronteiras, nossa equipe de advogados não mede esforços para atender nossos clientes em qualquer lugar do Brasil. Onde você estiver, estamos prontos para oferecer suporte jurídico eficiente e personalizado, garantindo que seus direitos sejam protegidos.",
+      "labelInstagram": "Siga-me no Instagram",
+      "labelFacebook": "Siga-me no Facebook",
+      "labelLinkedin": "Siga-me no Linkedin",
+      "labelX": "Siga-me no X",
+      "labelTikTok": "Siga-me no TikTok",
+      "labelYoutube": "Siga-me no YouTube",
+      "labelWhatsApp": "Entre em contato agora"
+    }
+  },
+  "news": {
+    "miniTag": "A_Definir",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "description": "A_Definir"
+  },
+  "ctaSecondary": {
+    "title": "<span class=\"text-primary font-bold\">Dúvidas?</span> Entre em contato conosco para podermos lhe ajudar, <span class=\"text-primary font-bold\">estamos te esperando.</span>",
+    "subtitleDireitaPartes": ["E N T R E", "E M", "C O N T A T O", "V I A"],
+    "titleDireita": "WhatsApp",
+    "ctaButtonText": "Entre em Contato"
+  },
+  "steps": {
+    "miniTag": "PASSO A PASSO",
+    "title": "Como funciona nosso atendimento?",
+    "subtitle": "",
+    "cards": {
+      "card1": {
+        "stepNumber": 1,
+        "cardTitle": "Consulta inicial",
+        "cardDescription": "Realizamos uma reunião para entender seu caso e identificar suas necessidades jurídicas."
+      },
+      "card2": {
+        "stepNumber": 2,
+        "cardTitle": "Análise detalhada",
+        "cardDescription": "Examinamos todos os aspectos do seu caso, revisando documentos e evidências para obter uma visão completa."
+      },
+      "card3": {
+        "stepNumber": 3,
+        "cardTitle": "Elaboração da estratégia",
+        "cardDescription": "Criamos uma estratégia jurídica personalizada para proteger seus interesses de maneira eficaz."
+      },
+      "card4": {
+        "stepNumber": 4,
+        "cardTitle": "Ação legal",
+        "cardDescription": "Iniciamos e conduzimos as ações judiciais ou o serviço contratado, buscando justiça e soluções personalizadas conforme a necessidade do seu caso."
+      }
+    }
+  },
+  "blog": {
+    "miniTag": "BLOG",
+    "title": "Informação jurídica ao seu alcance",
+    "subtitle": "Acompanhe conteúdos exclusivos para manter-se sempre informado.",
+    "labelCards": "A_Definir",
+    "label": "Clique aqui para ver todas as matérias",
+    "blogLink": "A_Definir"
+  },
+  "faq": {
+    "miniTag": "TIRE SUAS DÚVIDAS",
+    "title": "Perguntas Frequentes",
+    "subtitle": "Confira as perguntas abaixo para esclarecer suas dúvidas.",
+    "questions": {
+      "question1": {
+        "question": "Como posso contratar seus serviços?",
+        "answer": "Agende sua consulta conosco via WhatsApp e conversaremos sobre suas necessidades e avaliaremos os custos."
+      },
+      "question2": {
+        "question": "Qual é o prazo médio para resolução de um caso?",
+        "answer": "O prazo médio varia conforme a complexidade, mas discutiremos uma estimativa durante a consulta inicial."
+      },
+      "question3": {
+        "question": "Quais documentos devo levar para a consulta?",
+        "answer": "Traga os documentos relevantes ao seu caso, como contratos, correspondências e registros, além de documentos pessoais e comprovante de residência."
+      },
+      "question4": {
+        "question": "Vocês oferecem serviços de consultoria preventiva?",
+        "answer": "Sim, oferecemos consultoria preventiva para evitar problemas futuros e garantir conformidade legal."
+      }
+    },
+    "paragraph": "Clique aqui caso tenha mais dúvidas"
+  },
+  "footer": {
+    "copyrightLine": "{{year}} - {{name}} - Todos os direitos reservados",
+    "footerDivulgacaoText": "Gostaria de ter um site como este? Clique aqui",
+    "midSectionName": "Até mais",
+    "footerText": "Agradecemos sua visita! Esperamos que em breve você se torne nosso cliente e desfrute de todos os benefícios que oferecemos.",
+    "footerSocialText": "A_Definir",
+    "footerNavegacaoText": "NAVEGAÇÃO"
+  }
+}

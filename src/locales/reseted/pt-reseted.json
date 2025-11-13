@@ -1,0 +1,184 @@
+{
+  "infos": {
+    "adress": "A_Definir <br/> A_Definir",
+    "adressSecundario": "A_Definir",
+    "expediente": "Segunda a sexta-feira: <br/> A_Definir",
+    "expedienteSecundario": "A_Definir",
+    "obs": "A_Definir"
+  },
+  "navbar": {
+    "menuItems": {
+      "home": "Início",
+      "service": "Serviços",
+      "about": "Sobre Nós",
+      "faq": "Perguntas Frequentes"
+    },
+    "ctaButtonText": "Contato",
+    "ctaButtonTextResponsive": "Contato"
+  },
+  "hero": {
+    "miniTag": "A_Definir",
+    "title": "A_Definir <span class=\"text-primary font-bold\">A_Definir</span>",
+    "subtitle": "A_Definir",
+    "ctaButtonText": "A_Definir",
+    "obsHero": {
+      "text": "A_Definir"
+    }
+  },
+  "features": {
+    "miniTag": "Áreas de Atuação",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "card1": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    },
+    "card2": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    },
+    "card3": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    },
+    "card4": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir",
+      "servicesButton": "A_Definir"
+    },
+    "card5": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    },
+    "card6": {
+      "title": "A_Definir",
+      "subtitle": "A_Definir",
+      "description": "A_Definir",
+      "buttonLabelModal": "A_Definir",
+      "buttonLabel": "A_Definir"
+    }
+  },
+  "maps": {
+    "minitag": "LOCALIZAÇÃO",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "embedsrc": "A_Definir"
+  },
+  "about": {
+    "imagem": {
+      "alt": "imagem about"
+    },
+    "miniTag": "A_Definir",
+    "title": "Nossa trajetória",
+    "subtitle": "A_Definir",
+    "buttonModalLabelAbout": "Continuar lendo",
+    "paragraph": "A_Definir",
+    "modal": "A_Definir <br/><br/> A_Definir <br/><br/> A_Definir <br/><br/>",
+    "ctaButtonAriaLabel": " Quer saber mais sobre nós? Clique abaixo 👇",
+    "ctaButtonText": "Entre em contato",
+    "aboutSocial": {
+      "miniTag": "REDES SOCIAIS",
+      "title": "Conecte-se agora mesmo",
+      "paragraph": "Aproveite nossas redes sociais para mantermos contato e ficar por dentro de atualizações importantes no mundo do direito.",
+      "labelInstagram": "Siga-me no Instagram",
+      "labelFacebook": "Siga-me no Facebook",
+      "labelLinkedin": "Siga-me no Linkedin",
+      "labelX": "Siga-me no X",
+      "labelTikTok": "Siga-me no TikTok"
+    }
+  },
+  "news": {
+    "miniTag": "A_Definir",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "description": "A_Definir"
+  },
+  "ctaSecondary": {
+    "title": "<span class=\"text-primary font-bold\">Dúvidas?</span> Entre em contato conosco para podermos lhe ajudar, <span class=\"text-primary font-bold\">estamos te esperando.</span>",
+    "subtitleDireitaPartes": ["E N T R E", "E M", "C O N T A T O", "V I A"],
+    "titleDireita": "WhatsApp",
+    "ctaButtonText": "Entre em Contato"
+  },
+  "steps": {
+    "miniTag": "PASSO A PASSO",
+    "title": "Como funciona nosso atendimento?",
+    "subtitle": "",
+    "cards": {
+      "card1": {
+        "stepNumber": 1,
+        "cardTitle": "Consulta inicial",
+        "cardDescription": "Realizamos uma reunião para entender seu caso e identificar suas necessidades jurídicas."
+      },
+      "card2": {
+        "stepNumber": 2,
+        "cardTitle": "Análise detalhada",
+        "cardDescription": "Examinamos todos os aspectos do seu caso, revisando documentos e evidências para obter uma visão completa."
+      },
+      "card3": {
+        "stepNumber": 3,
+        "cardTitle": "Elaboração da estratégia",
+        "cardDescription": "Criamos uma estratégia jurídica personalizada para proteger seus interesses de maneira eficaz."
+      },
+      "card4": {
+        "stepNumber": 4,
+        "cardTitle": "Ação legal",
+        "cardDescription": "Iniciamos e conduzimos as ações judiciais ou o serviço contratado, buscando justiça e soluções personalizadas conforme a necessidade do seu caso."
+      }
+    }
+  },
+  "blog": {
+    "miniTag": "A_Definir",
+    "title": "A_Definir",
+    "subtitle": "A_Definir",
+    "labelCards": "A_Definir",
+    "label": "Clique aqui para ver todas as matérias",
+    "blogLink": "A_Definir"
+  },
+  "faq": {
+    "miniTag": "TIRE SUAS DÚVIDAS",
+    "title": "Perguntas Frequentes",
+    "subtitle": "Confira as perguntas abaixo para esclarecer suas dúvidas.",
+    "questions": {
+      "question1": {
+        "question": "Como posso contratar seus serviços?",
+        "answer": "Agende sua consulta conosco via WhatsApp e conversaremos sobre suas necessidades e avaliaremos os custos."
+      },
+      "question2": {
+        "question": "Qual é o prazo médio para resolução de um caso?",
+        "answer": "O prazo médio varia conforme a complexidade, mas discutiremos uma estimativa durante a consulta inicial."
+      },
+      "question3": {
+        "question": "Quais documentos devo levar para a consulta?",
+        "answer": "Traga os documentos relevantes ao seu caso, como contratos, correspondências e registros, além de documentos pessoais e comprovante de residência."
+      },
+      "question4": {
+        "question": "Vocês oferecem serviços de consultoria preventiva?",
+        "answer": "Sim, oferecemos consultoria preventiva para evitar problemas futuros e garantir conformidade legal."
+      }
+    },
+    "paragraph": "Clique aqui caso tenha mais dúvidas"
+  },
+  "footer": {
+    "copyrightLine": "{{year}} - {{name}} - Todos os direitos reservados",
+    "footerDivulgacaoText": "Gostaria de ter um site como este? Clique aqui",
+    "midSectionName": "Até mais",
+    "footerText": "Agradecemos sua visita! Esperamos que em breve você se torne nosso cliente e desfrute de todos os benefícios que oferecemos.",
+    "footerSocialText": "A_Definir",
+    "footerNavegacaoText": "NAVEGAÇÃO"
+  }
+}
