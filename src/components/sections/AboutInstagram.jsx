@@ -29,7 +29,7 @@ export default function AboutInstagram({ socialPrint, colorMode }) {
 
   return (
     <SectionArea id="about" className={`${bgClass}`} paddingtop={false}>
-      <SectionWrapper className="flex flex-col desktop1:flex-row-reverse gap-[40px] desktop1:gap-x-[40px] desktop1:justify-between">
+      <SectionWrapper className="flex flex-col desktop1:flex-row gap-[40px] desktop1:gap-x-[40px] desktop1:justify-between">
         {socialPrint ? (
           <SocialPrint colorMode={colorMode} />
         ) : (
@@ -49,15 +49,15 @@ export default function AboutInstagram({ socialPrint, colorMode }) {
           </MotionDivDownToUp>
           <ParagraphsAboutSocial colorMode={colorMode} />
           <div>
-            {/* <RedesSociais
+            <RedesSociais
               tiktok={true}
               instagram={true}
               facebook={true}
               linkedin={true}
               x={true}
               youtube={true}
-            /> */}
-            <Button
+            />
+            {/* <Button
               aria-label={t("hero.ctaButtonAriaLabel")}
               icon={
                 <svg
@@ -71,7 +71,7 @@ export default function AboutInstagram({ socialPrint, colorMode }) {
                 </svg>
               }
               label={t("about.aboutSocial.labelWhatsApp")}
-            />
+            /> */}
           </div>
         </div>
       </SectionWrapper>
