@@ -14,6 +14,7 @@ import img3 from "../assets/imgs/about/imgGaleria3.webp";
 import img4 from "../assets/imgs/about/imgGaleria4.webp";
 import aboutSocialImg from "../assets/imgs/about/aboutSocial.webp";
 import aboutInstagram from "../assets/imgs/about/imgAboutInstagram.webp";
+import aboutimg from "../assets/imgs/about/AlexRobson.webp";
 
 import imgSteps from "../assets/imgs/steps/imgSteps.webp";
 
@@ -447,6 +448,7 @@ const content = {
       imagem: {
         img: aboutImg,
         alt: "Imagem ilustrativa da Seção Sobre",
+        fotoAdv: aboutimg,
         imagemMobile: aboutImgMobile,
       },
       miniTag: "A_Definir",
@@ -558,6 +560,9 @@ const content = {
       ),
       ctaButtonText: "Falar agora",
     },
+    calc: {
+      linkButton: "/calc",
+    },
     steps: {
       miniTag: "PASSO A PASSO",
       title: "Como funciona nosso atendimento?",
@@ -599,7 +604,7 @@ const content = {
       img: imgSteps,
       labelCards: "Ver mais",
       label: "Clique aqui para ver todas as matérias",
-      blogLink: "A_Definir", //sem "https://"
+      blogLink: "arsadvocaciatrabalhista.wordpress.com", //sem "https://"
     },
     faq: {
       miniTag: "TIRE SUAS DÚVIDAS",

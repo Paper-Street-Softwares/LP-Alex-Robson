@@ -14,6 +14,7 @@ import { useTranslation } from "react-i18next";
 import "./../i18n";
 import UnderConstruction from "../components/interactives/UnderConstruction";
 import { useColorMode } from "../assets/context/ColorModeContext";
+import CalcRescisao from "../components/sections/CalcRescisao";
 
 export default function Index() {
   const showUnderConstruction = false;
@@ -52,6 +53,7 @@ export default function Index() {
       <About modal={true} showGallery={false} colorMode={colorMode} />
       <AboutInstagram colorMode={colorMode} socialPrint={true} />
       <CtaSecondary colorMode={colorMode} />
+      <CalcRescisao />
       <Steps colorMode={colorMode} />
       <BlogPosts />
       <Faq colorMode={colorMode} />

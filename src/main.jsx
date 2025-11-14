@@ -21,6 +21,7 @@ import "./styles/backgrounds.css";
 // import AboutInstagram from "./components/sections/AboutInstagram.jsx";
 import CartaoSocio from "./components/sections/CartaoSocio.jsx";
 import { ColorModeProvider } from "./assets/context/ColorModeContext.jsx";
+import CalculadoraRescisao from "./pages/CalculadoraRescisao.jsx";
 // import IndexLpi from "./pages/IndexLpi.jsx";
 
 // Altere aqui para "LP" ou "site"
@@ -44,6 +45,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       {mode === "LP" ? (
         <Routes>
           <Route path="/" element={<Index mode={mode} />} />
+          <Route path="/calc" element={<CalculadoraRescisao />} />
           {/* <Route path="/lpi" element={<IndexLpi />} /> */}
 
           {/* <Route path="/:nome" element={<CartaoSocio />} /> */}

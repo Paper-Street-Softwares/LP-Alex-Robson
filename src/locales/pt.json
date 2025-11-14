@@ -11,6 +11,7 @@
       "home": "Início",
       "service": "Serviços",
       "about": "Sobre Nós",
+      "blog": "Blog",
       "faq": "Perguntas Frequentes"
     },
     "ctaButtonText": "Contato",
@@ -114,6 +115,12 @@
     "titleDireita": "WhatsApp",
     "ctaButtonText": "Entre em Contato"
   },
+  "calc": {
+    "miniTag": "Cálculo Trabalhista",
+    "title": "Descubra quanto você tem direito a receber",
+    "subtitle": "Use nossa calculadora gratuita e saiba, em poucos minutos, o valor estimado da sua rescisão.",
+    "labelButton": "Calcular minha rescisão"
+  },
   "steps": {
     "miniTag": "PASSO A PASSO",
     "title": "Como funciona nosso atendimento?",
@@ -142,9 +149,9 @@
     }
   },
   "blog": {
-    "miniTag": "A_Definir",
-    "title": "A_Definir",
-    "subtitle": "A_Definir",
+    "miniTag": "BLOG",
+    "title": "Informação jurídica ao seu alcance",
+    "subtitle": "Acompanhe conteúdos exclusivos para manter-se sempre informado.",
     "labelCards": "A_Definir",
     "label": "Clique aqui para ver todas as matérias",
     "blogLink": "A_Definir"
