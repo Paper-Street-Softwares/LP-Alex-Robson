@@ -40,6 +40,7 @@ export default function Index() {
         influencer={false}
         panoramica={false}
       />
+      <CalcRescisao />
       <Features
         colorMode={colorMode}
         defaultFeature={true}
@@ -53,7 +54,6 @@ export default function Index() {
       <About modal={true} showGallery={false} colorMode={colorMode} />
       <AboutInstagram colorMode={colorMode} socialPrint={true} />
       <CtaSecondary colorMode={colorMode} />
-      <CalcRescisao />
       <Steps colorMode={colorMode} />
       <BlogPosts />
       <Faq colorMode={colorMode} />
