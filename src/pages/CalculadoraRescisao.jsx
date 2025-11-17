@@ -469,10 +469,10 @@ export default function CalculadoraRescisao() {
     setResultado(res);
     setComparacao(null);
     // rolar para resultado
-    // setTimeout(
-    //   () => resultRef.current?.scrollIntoView({ behavior: "smooth" }),
-    //   200
-    // );
+    setTimeout(
+      () => resultRef.current?.scrollIntoView({ behavior: "smooth" }),
+      200
+    );
   };
 
   const handleComparar = () => {
@@ -497,14 +497,14 @@ export default function CalculadoraRescisao() {
     });
     setComparacao({ cenarios, results });
     setResultado(null);
-    // setTimeout(
-    //   () =>
-    //     window.scrollTo({
-    //       top: document.body.scrollHeight,
-    //       behavior: "smooth",
-    //     }),
-    //   200
-    // );
+    setTimeout(
+      () =>
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        }),
+      200
+    );
     console.log("comparar ativo");
   };
 
@@ -608,13 +608,13 @@ export default function CalculadoraRescisao() {
             </h2>
             <hr className="mt-[-10px]" />
 
-            <div className="grid grid-cols-1 desktop1:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 tablet2:grid-cols-2 gap-4">
               <div className="flex flex-col">
                 <label className="text-gray-600 font-semibold mb-2">
                   Tipo de Desligamento
                 </label>
                 <select
-                  className="border-b outline-none p-2 border-b-black w-full desktop1:max-w-[244px]"
+                  className="border-b outline-none p-2 border-b-black w-full"
                   value={tipoDesligamento}
                   onChange={(e) => setTipoDesligamento(e.target.value)}
                 >
@@ -636,7 +636,7 @@ export default function CalculadoraRescisao() {
                 </label>
                 <input
                   type="text"
-                  className="border-b outline-none p-2 border-b-black w-full desktop1:max-w-[244px]"
+                  className="border-b outline-none p-2 border-b-black w-full"
                   value={salarioBase}
                   onChange={handleCurrencyInput(setSalarioBase)}
                   onBlur={() => {
@@ -651,7 +651,7 @@ export default function CalculadoraRescisao() {
                 </label>
                 <input
                   type="date"
-                  className="border-b outline-none p-2 border-b-black w-full desktop1:max-w-[244px]"
+                  className="border-b outline-none p-2 border-b-black w-full "
                   value={dataAdmissao}
                   onChange={(e) => setDataAdmissao(e.target.value)}
                 />
@@ -663,7 +663,7 @@ export default function CalculadoraRescisao() {
                 </label>
                 <input
                   type="date"
-                  className="border-b outline-none p-2 border-b-black w-full desktop1:max-w-[244px]"
+                  className="border-b outline-none p-2 border-b-black w-full "
                   value={dataDesligamento}
                   onChange={(e) => setDataDesligamento(e.target.value)}
                 />
@@ -676,7 +676,7 @@ export default function CalculadoraRescisao() {
                     Aviso Prévio
                   </label>
                   <select
-                    className="border-b outline-none p-2 border-b-black w-full desktop1:max-w-[244px]"
+                    className="border-b outline-none p-2 border-b-black w-full"
                     value={avisoModelo}
                     onChange={(e) => setAvisoModelo(e.target.value)}
                   >
@@ -695,7 +695,7 @@ export default function CalculadoraRescisao() {
                 </label>
                 <input
                   type="text"
-                  className="border-b outline-none p-2 border-b-black w-full desktop1:max-w-[244px]"
+                  className="border-b outline-none p-2 border-b-black w-full"
                   value={faltasDescontos}
                   onChange={handleCurrencyInput(setFaltasDescontos)}
                   onBlur={() => {
@@ -705,13 +705,13 @@ export default function CalculadoraRescisao() {
               </div>
             </div>
 
-            <div className="flex flex-col tablet2:flex-row gap-4 max-w-[850px]">
-              <div className="mt-2 flex flex-col w-full tablet2:max-w-[272.66px]">
+            <div className="grid grid-cols-1 tablet2:grid-cols-2 gap-4">
+              <div className="mt-2 flex flex-col w-full">
                 <label className="text-gray-600 font-semibold">
                   Saldo do FGTS
                 </label>
                 <select
-                  className="border-b outline-none p-2 border-b-black w-full tablet2:max-w-[272.66px] mt-1"
+                  className="border-b outline-none p-2 border-b-black w-full mt-1"
                   value={fgtsOption}
                   onChange={(e) => setFgtsOption(e.target.value)}
                 >
@@ -721,13 +721,13 @@ export default function CalculadoraRescisao() {
               </div>
 
               {fgtsOption === "informar" ? (
-                <div className=" flex flex-col mt-2 w-full desktop1:max-w-[272.66px]">
+                <div className=" flex flex-col mt-2 w-full">
                   <label className="text-gray-600 font-semibold">
                     Saldo Total de FGTS (R$)
                   </label>
                   <input
                     type="text"
-                    className="border-b outline-none p-2 border-b-black w-full tablet2:max-w-[272.66px]"
+                    className="border-b outline-none p-2 border-b-black w-full"
                     value={fgtsSaldo}
                     onChange={handleCurrencyInput(setFgtsSaldo)}
                     onBlur={() => {
@@ -786,7 +786,7 @@ export default function CalculadoraRescisao() {
                 onClick={handleLimpar}
                 className="rounded-[4px] px-[18px] py-[10px] text-paragraph3 font-secondFont bg-primary desktop1:hover:scale-110 desktop1:transition-all desktop1:duration-300"
               >
-                Limpar
+                Limpar Campos
               </button>
             </div>
           </form>
@@ -958,7 +958,7 @@ export default function CalculadoraRescisao() {
         ) : null}
 
         {/* Sobre o Advogado */}
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col gap-6 tablet2:gap-0 tablet2:flex-row items-center text-center justify-between">
+        {/* <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col gap-6 tablet2:gap-0 tablet2:flex-row items-center text-center justify-between">
           <img
             src={content.texts.about.imagem.fotoAdv}
             alt={`Foto de ${infos.name}`}
@@ -987,7 +987,7 @@ export default function CalculadoraRescisao() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Rodapé */}
         <footer className="text-center text-sm text-gray-600">
