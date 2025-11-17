@@ -768,7 +768,7 @@ export default function CalculadoraRescisao() {
 
             {/* Botões */}
             <div className="flex justify-center tablet1:justify-start flex-wrap gap-3 mt-4">
-              <Button onClick={handleCalcular} label="Calcular" size="small" />
+              <Button onClick={handleCalcular} label="Calcular" size="small" animation={false} />
               {/* <Button
                 label="Comparar Cenários"
                 size="small"
