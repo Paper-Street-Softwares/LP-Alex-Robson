@@ -25,7 +25,7 @@ function CalcRescisao({ colorMode }) {
 
   return (
     <div className={`${bgClass}`}>
-      <SectionArea>
+      <SectionArea paddingtop={false}>
         <SectionWrapper>
           <SectionHeader
             className="text-center"
