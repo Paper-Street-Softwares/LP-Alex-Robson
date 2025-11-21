@@ -18,7 +18,7 @@
     "ctaButtonTextResponsive": "Contato"
   },
   "hero": {
-    "miniTag": "ADVOCACIA ESPECIALIZADA",
+    "miniTag": "ADVOCACIA TRABALHISTA ESPECIALIZADA",
     "title": "Seu <span class=\"text-primary font-bold\">direito</span>, nossa <span class=\"text-primary font-bold\">missão</span>!",
     "subtitle": "Defendemos causas com propósito e coragem — porque cada cliente merece ser ouvido, não apenas atendido.",
     "ctaButtonText": "Converse com a gente",
@@ -31,47 +31,47 @@
     "title": "Problemas diferentes exigem estratégias certas",
     "subtitle": "Cada caso é único — e por isso tratamos cada cliente com atenção, clareza e soluções que realmente funcionam.",
     "card1": {
-      "title": "Direito Previdenciário",
-      "subtitle": "Amparo jurídico para garantir seus direitos sociais.",
-      "description": "A_Definir",
+      "title": "Direito Trabalhista",
+      "subtitle": "Defesa completa em conflitos entre empregado e empresa.",
+      "description": "- Reclamações trabalhistas em geral <br/> Verbas rescisórias <br/>-  Horas extras / banco de horas <br/>-  Adicional de insalubridade e periculosidade <br/>-  Acidente de trabalho / doença ocupacional <br/>-  Assédio moral / assédio sexual <br/>-  Reconhecimento de vínculo empregatício <br/>-  Estabilidade gestante <br/>-  Estabilidade por doença/acidente <br/>-  Equiparação salarial <br/>- Terceirização ilícita <br/>- Defesa de empresas (compliance e contencioso trabalhista)",
       "buttonLabelModal": "A_Definir",
-      "buttonLabel": "A_Definir"
+      "buttonLabel": "Saiba mais"
     },
     "card2": {
-      "title": "Direito de Família",
-      "subtitle": "Soluções humanas em momentos de transformação.",
-      "description": "A_Definir",
+      "title": "Direito Previdenciário",
+      "subtitle": "Garantindo seus direitos em aposentadorias e benefícios.",
+      "description": "- Aposentadoria por idade <br/>-  Aposentadoria por tempo de contribuição <br/>-  Aposentadoria especial <br/>-  Aposentadoria por invalidez <br/>-  Auxílio-doença <br/>-  Auxílio-acidente <br/>-  Pensão por morte <br/>-  BPC/LOAS <br/>-  Revisões de benefícios (ex.: vida toda, buraco negro, buraco verde) <br/>-  Planejamento previdenciário <br/>-  Averbação de tempo especial <br/>-  Concessão e revisão de benefícios rurais",
       "buttonLabelModal": "A_Definir",
-      "buttonLabel": "A_Definir"
+      "buttonLabel": "Saiba mais"
     },
     "card3": {
-      "title": "Direito Civil",
-      "subtitle": "Defesa eficiente em questões do dia a dia.",
-      "description": "A_Definir",
+      "title": "Direito de Família",
+      "subtitle": "Atuação humana e estratégica em conflitos familiares.",
+      "description": "- Divórcio consensual e litigioso <br/>-  Reconhecimento e dissolução de união estável <br/>-  Guarda compartilhada / unilateral <br/>-  Pensão alimentícia (fixação, revisão e exoneração) <br/>-  Regulamentação de visitas <br/>-  Alienação parental <br/>-  Investigação de paternidade <br/>-  Inventário e partilha de bens <br/>-  Interdição e curatela <br/>-  Acordos pré-nupciais e pós-nupciais",
       "buttonLabelModal": "A_Definir",
-      "buttonLabel": "A_Definir"
+      "buttonLabel": "Saiba mais"
     },
     "card4": {
       "title": "Direito do Consumidor",
-      "subtitle": "Proteção contra abusos e busca por reparação justa.",
-      "description": "A_Definir",
+      "subtitle": "Proteção efetiva contra abusos e prejuízos ao consumidor.",
+      "description": "- Cobranças indevidas <br/>-  Inscrição indevida no SPC/Serasa <br/>-  Atraso ou cancelamento de voo <br/>-  Negativa de plano de saúde <br/>-  Problemas com produtos e serviços (vício e defeito) <br/>-  Superendividamento <br/>-  Fraudes bancárias (golpe do Pix, cartão clonado, empréstimos não reconhecidos) <br/>-  Cancelamento de serviços sem solicitação <br/>-  Telemarketing abusivo <br/>-  Ações contra bancos e financeiras",
       "buttonLabelModal": "A_Definir",
-      "buttonLabel": "A_Definir",
+      "buttonLabel": "Saiba mais",
       "servicesButton": "A_Definir"
     },
     "card5": {
-      "title": "A_Definir",
-      "subtitle": "A_Definir",
-      "description": "A_Definir",
+      "title": "Direito Civil",
+      "subtitle": "Soluções sólidas para obrigações e relações civis.",
+      "description": "- Contratos (elaboração, revisão e execução) <br/>-  Responsabilidade civil (indenizações por dano moral e material) <br/>-  Cobrança judicial <br/>-  Execução de título extrajudicial <br/>-  Usucapião <br/>-  Regularização imobiliária <br/>-  Posse e propriedade <br/>-  Locação (despejo, revisional, renovatória) <br/>-  Obrigações em geral <br/>-  Recuperação de crédito",
       "buttonLabelModal": "A_Definir",
-      "buttonLabel": "A_Definir"
+      "buttonLabel": "Saiba mais"
     },
     "card6": {
-      "title": "A_Definir",
-      "subtitle": "A_Definir",
-      "description": "A_Definir",
+      "title": "Consultoria Jurídica",
+      "subtitle": "Orientação preventiva e estratégica para decisões seguras.",
+      "description": "- Análise preventiva de riscos legais <br/>-  Orientação estratégica para decisões empresariais <br/>-  Pareceres jurídicos personalizados <br/>-  Consultoria em contratos e negociações <br/>-  Adequação de práticas e procedimentos internos <br/>-  Estruturação jurídica para negócios <br/>-  Consultoria contínua para empresas e profissionais <br/>-  Suporte em conformidade legal e regulatória <br/>-  Auditoria jurídica de documentos e processos <br/>-  Acompanhamento consultivo em projetos e operações",
       "buttonLabelModal": "A_Definir",
-      "buttonLabel": "A_Definir"
+      "buttonLabel": "Saiba mais"
     }
   },
   "maps": {
@@ -84,12 +84,12 @@
     "imagem": {
       "alt": "imagem about"
     },
-    "miniTag": "QUEM É O DR. ALEX ROBSON",
+    "miniTag": "QUEM É O DR. ALEX REIS",
     "title": "Minha trajetória",
     "subtitle": "Comprometido em defender direitos com empatia, ética e dedicação real às pessoas.",
     "buttonModalLabelAbout": "Continuar lendo",
     "paragraph": "A advocacia sempre foi, para mim, uma forma de transformar realidades. Desde o início da minha carreira, escolhi atuar próximo das pessoas, entendendo suas histórias e buscando soluções que realmente façam diferença.",
-    "modal": "A advocacia sempre foi, para mim, uma forma de transformar realidades. Desde o início da minha carreira, escolhi atuar próximo das pessoas, entendendo suas histórias e buscando soluções que realmente façam diferença. <br/><br/> Meu foco é o Direito e Processo do Trabalho, com uma atuação voltada à defesa do empregado, mas também com experiência em demandas empresariais e contenciosas. Essa visão equilibrada me permite enxergar cada causa por todos os ângulos. <br/><br/> Acredito que o direito deve ser acessível a todos — especialmente a quem mais precisa. Por isso, mantenho um atendimento humanizado, claro e próximo, voltado a oferecer justiça e tranquilidade para cada cliente que confia em meu trabalho. <br/><br/>",
+    "modal": "A advocacia sempre foi, para mim, uma forma de transformar realidades. Desde o início da minha carreira, escolhi atuar próximo das pessoas, entendendo suas histórias e buscando soluções que realmente façam diferença.<br/> Especializado em Direito e Processo do Trabalho, meu foco é a advocacia trabalhista, com uma atuação voltada à defesa do empregado, mas também com experiência em demandas empresariais e contenciosas. Essa visão equilibrada me permite enxergar cada causa por todos os ângulos.<br/>Acredito que o direito deve ser acessível a todos — especialmente a quem mais precisa. Por isso, mantenho um atendimento humanizado, claro e próximo, voltado a oferecer justiça e tranquilidade para cada cliente que confia em meu trabalho.",
     "ctaButtonAriaLabel": " Quer saber mais sobre nós? Clique abaixo 👇",
     "ctaButtonText": "Entre em contato",
     "aboutSocial": {
@@ -181,7 +181,7 @@
     "paragraph": "Clique aqui caso tenha mais dúvidas"
   },
   "footer": {
-    "copyrightLine": "{{year}} - {{name}} - Todos os direitos reservados",
+    "copyrightLine": " {{name}} - OAB/ES 41.141",
     "footerDivulgacaoText": "Gostaria de ter um site como este? Clique aqui",
     "midSectionName": "Até mais",
     "footerText": "Agradecemos sua visita! Esperamos que em breve você se torne nosso cliente e desfrute de todos os benefícios que oferecemos.",

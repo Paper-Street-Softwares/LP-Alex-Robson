@@ -43,12 +43,12 @@ export default function Index() {
       <CalcRescisao />
       <Features
         colorMode={colorMode}
-        defaultFeature={true}
+        defaultFeature={false}
         button={false}
         modalWithCards={false}
         paragraphs={false}
         sixCards={false}
-        paragraphsModal={false}
+        paragraphsModal={true}
         iconsWithModal={false}
       />
       <About modal={true} showGallery={false} colorMode={colorMode} />
