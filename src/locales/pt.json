@@ -33,28 +33,28 @@
     "card1": {
       "title": "Direito Trabalhista",
       "subtitle": "Defesa completa em conflitos entre empregado e empresa.",
-      "description": " Reclamações trabalhistas em geral <br/> Verbas rescisórias <br/> Horas extras / banco de horas <br/> Adicional de insalubridade e periculosidade <br/> Acidente de trabalho / doença ocupacional <br/> Assédio moral / assédio sexual <br/> Reconhecimento de vínculo empregatício <br/> Estabilidade gestante <br/> Estabilidade por doença/acidente <br/> Equiparação salarial <br/>Terceirização ilícita <br/>Defesa de empresas (compliance e contencioso trabalhista)",
+      "description": "- Reclamações trabalhistas em geral <br/> Verbas rescisórias <br/>-  Horas extras / banco de horas <br/>-  Adicional de insalubridade e periculosidade <br/>-  Acidente de trabalho / doença ocupacional <br/>-  Assédio moral / assédio sexual <br/>-  Reconhecimento de vínculo empregatício <br/>-  Estabilidade gestante <br/>-  Estabilidade por doença/acidente <br/>-  Equiparação salarial <br/>- Terceirização ilícita <br/>- Defesa de empresas (compliance e contencioso trabalhista)",
       "buttonLabelModal": "A_Definir",
       "buttonLabel": "Saiba mais"
     },
     "card2": {
       "title": "Direito Previdenciário",
       "subtitle": "Garantindo seus direitos em aposentadorias e benefícios.",
-      "description": "Aposentadoria por idade <br/> Aposentadoria por tempo de contribuição <br/> Aposentadoria especial <br/> Aposentadoria por invalidez <br/> Auxílio-doença <br/> Auxílio-acidente <br/> Pensão por morte <br/> BPC/LOAS <br/> Revisões de benefícios (ex.: vida toda, buraco negro, buraco verde) <br/> Planejamento previdenciário <br/> Averbação de tempo especial <br/> Concessão e revisão de benefícios rurais",
+      "description": "- Aposentadoria por idade <br/>-  Aposentadoria por tempo de contribuição <br/>-  Aposentadoria especial <br/>-  Aposentadoria por invalidez <br/>-  Auxílio-doença <br/>-  Auxílio-acidente <br/>-  Pensão por morte <br/>-  BPC/LOAS <br/>-  Revisões de benefícios (ex.: vida toda, buraco negro, buraco verde) <br/>-  Planejamento previdenciário <br/>-  Averbação de tempo especial <br/>-  Concessão e revisão de benefícios rurais",
       "buttonLabelModal": "A_Definir",
       "buttonLabel": "Saiba mais"
     },
     "card3": {
       "title": "Direito de Família",
       "subtitle": "Atuação humana e estratégica em conflitos familiares.",
-      "description": "Divórcio consensual e litigioso <br/> Reconhecimento e dissolução de união estável <br/> Guarda compartilhada / unilateral <br/> Pensão alimentícia (fixação, revisão e exoneração) <br/> Regulamentação de visitas <br/> Alienação parental <br/> Investigação de paternidade <br/> Inventário e partilha de bens <br/> Interdição e curatela <br/> Acordos pré-nupciais e pós-nupciais",
+      "description": "- Divórcio consensual e litigioso <br/>-  Reconhecimento e dissolução de união estável <br/>-  Guarda compartilhada / unilateral <br/>-  Pensão alimentícia (fixação, revisão e exoneração) <br/>-  Regulamentação de visitas <br/>-  Alienação parental <br/>-  Investigação de paternidade <br/>-  Inventário e partilha de bens <br/>-  Interdição e curatela <br/>-  Acordos pré-nupciais e pós-nupciais",
       "buttonLabelModal": "A_Definir",
       "buttonLabel": "Saiba mais"
     },
     "card4": {
       "title": "Direito do Consumidor",
       "subtitle": "Proteção efetiva contra abusos e prejuízos ao consumidor.",
-      "description": "Cobranças indevidas <br/> Inscrição indevida no SPC/Serasa <br/> Atraso ou cancelamento de voo <br/> Negativa de plano de saúde <br/> Problemas com produtos e serviços (vício e defeito) <br/> Superendividamento <br/> Fraudes bancárias (golpe do Pix, cartão clonado, empréstimos não reconhecidos) <br/> Cancelamento de serviços sem solicitação <br/> Telemarketing abusivo <br/> Ações contra bancos e financeiras",
+      "description": "- Cobranças indevidas <br/>-  Inscrição indevida no SPC/Serasa <br/>-  Atraso ou cancelamento de voo <br/>-  Negativa de plano de saúde <br/>-  Problemas com produtos e serviços (vício e defeito) <br/>-  Superendividamento <br/>-  Fraudes bancárias (golpe do Pix, cartão clonado, empréstimos não reconhecidos) <br/>-  Cancelamento de serviços sem solicitação <br/>-  Telemarketing abusivo <br/>-  Ações contra bancos e financeiras",
       "buttonLabelModal": "A_Definir",
       "buttonLabel": "Saiba mais",
       "servicesButton": "A_Definir"
@@ -62,14 +62,14 @@
     "card5": {
       "title": "Direito Civil",
       "subtitle": "Soluções sólidas para obrigações e relações civis.",
-      "description": "Contratos (elaboração, revisão e execução) <br/> Responsabilidade civil (indenizações por dano moral e material) <br/> Cobrança judicial <br/> Execução de título extrajudicial <br/> Usucapião <br/> Regularização imobiliária <br/> Posse e propriedade <br/> Locação (despejo, revisional, renovatória) <br/> Obrigações em geral <br/> Recuperação de crédito",
+      "description": "- Contratos (elaboração, revisão e execução) <br/>-  Responsabilidade civil (indenizações por dano moral e material) <br/>-  Cobrança judicial <br/>-  Execução de título extrajudicial <br/>-  Usucapião <br/>-  Regularização imobiliária <br/>-  Posse e propriedade <br/>-  Locação (despejo, revisional, renovatória) <br/>-  Obrigações em geral <br/>-  Recuperação de crédito",
       "buttonLabelModal": "A_Definir",
       "buttonLabel": "Saiba mais"
     },
     "card6": {
       "title": "Consultoria Jurídica",
       "subtitle": "Orientação preventiva e estratégica para decisões seguras.",
-      "description": "Análise preventiva de riscos legais <br/> Orientação estratégica para decisões empresariais <br/> Pareceres jurídicos personalizados <br/> Consultoria em contratos e negociações <br/> Adequação de práticas e procedimentos internos <br/> Estruturação jurídica para negócios <br/> Consultoria contínua para empresas e profissionais <br/> Suporte em conformidade legal e regulatória <br/> Auditoria jurídica de documentos e processos <br/> Acompanhamento consultivo em projetos e operações",
+      "description": "- Análise preventiva de riscos legais <br/>-  Orientação estratégica para decisões empresariais <br/>-  Pareceres jurídicos personalizados <br/>-  Consultoria em contratos e negociações <br/>-  Adequação de práticas e procedimentos internos <br/>-  Estruturação jurídica para negócios <br/>-  Consultoria contínua para empresas e profissionais <br/>-  Suporte em conformidade legal e regulatória <br/>-  Auditoria jurídica de documentos e processos <br/>-  Acompanhamento consultivo em projetos e operações",
       "buttonLabelModal": "A_Definir",
       "buttonLabel": "Saiba mais"
     }

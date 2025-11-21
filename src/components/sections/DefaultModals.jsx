@@ -314,6 +314,10 @@ export default function FeaturesParagraphs({ colorMode }) {
         style={{ width: "50vw" }}
         breakpoints={{ "4000px": "300px", "1024px": "300px", "641px": "300px" }}
       >
+        <div>
+          {" "}
+          <p className="text-paragraph3 mb-2">Tópicos:</p>
+        </div>
         {modalContent}
       </Dialog>
     </SectionArea>
