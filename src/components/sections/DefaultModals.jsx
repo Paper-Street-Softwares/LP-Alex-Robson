@@ -59,9 +59,9 @@ export default function FeaturesParagraphs({ colorMode }) {
       />
 
       <SectionWrapper>
-        <div className="flex flex-col tablet1:flex-row justify-center items-center tablet1:items-center w-full gap-6 tablet1:gap-12 desktop1:gap-16">
+        <div className="flex flex-col justify-center items-center tablet1:items-center w-full gap-6 tablet1:gap-12 desktop1:gap-16">
           {/* Coluna esquerda */}
-          <div className="flex-1 flex flex-col gap-6 items-center tablet1:items-center ">
+          <div className="flex flex-col tablet2:flex-row gap-6 items-center tablet1:items-start">
             <MotionDivDownToUp>
               <IconButtonFeatureCard
                 icon={content.texts.features.card1.icon}
@@ -169,17 +169,17 @@ export default function FeaturesParagraphs({ colorMode }) {
           </div>
 
           {/* Imagem central */}
-          <MotionDivDownToUp className="hidden desktop1:flex justify-center w-[35%] ">
+          {/* <MotionDivDownToUp className="hidden desktop1:flex justify-center w-[35%] ">
             <img
               src={content.texts.features.imgFeatures}
               alt={content.texts.features.alt}
               className="hidden h-[900px] object-cover w-full desktop1:flex col2 rounded-2xl bg-top bg-cover shadow-custom-opacity shadow-shadowFeatures/10"
               loading="lazy"
             />
-          </MotionDivDownToUp>
+          </MotionDivDownToUp> */}
 
           {/* Coluna direita */}
-          <div className="flex-1 flex flex-col gap-6 items-center tablet1:items-end">
+          <div className="flex flex-col tablet2:flex-row gap-6 items-center tablet1:items-start">
             <MotionDivDownToUp>
               <IconButtonFeatureCard
                 icon={content.texts.features.card4.icon}
