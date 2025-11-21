@@ -19,7 +19,7 @@ export default function FeaturesModalWithCards({ colorMode }) {
   const textClasses = {
     dark: "text-white",
     light: "text-black",
-    default: "bg-bgSectionDark",
+    default: "text-bgSectionDark",
   };
   const bgClass = bgClasses[colorMode] || bgClasses.default;
   const textClass = textClasses[colorMode] || textClasses.default;
