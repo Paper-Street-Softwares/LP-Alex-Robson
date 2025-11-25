@@ -183,8 +183,8 @@ export default function Hero({
                         className={`mt-[20px] desktop1:mt-0 rounded-xl w-full  object-cover
                         ${
                           colorMode === "light"
-                            ? "desktop1:shadow-custom-opacity desktop1:shadow-shadowHero/10"
-                            : "shadow-custom-opacity shadow-shadowHero/10"
+                            ? "desktop1:shadow-custom-opacity desktop1:shadow-shadowHero/20"
+                            : "shadow-custom-opacity shadow-shadowHero/20"
                         }`}
                       />
                     </picture>
