@@ -964,13 +964,13 @@ export default function CalculadoraRescisao() {
         ) : null}
 
         {/* Sobre o Advogado */}
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col gap-6 tablet2:gap-0 tablet2:flex-row items-center text-center justify-between">
-          {/* <img
-            src={content.texts.about.imagem.fotoAdv}
+        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col gap-6 tablet2:gap-0 items-center text-center justify-between">
+          <img
+            src={content.texts.calc.img}
             alt={`Foto de ${infos.name}`}
-            className="w-[300px] h-[400px] rounded-md object-cover border-2"
+            className="rounded-full w-32 mb-4 object-cover border-2"
             style={{ borderColor: "#c6af72" }}
-          /> */}
+          />
           <div className="flex flex-col tablet2:items-center m-auto tablet2:w-[55%] ">
             <h2
               className="text-xl font-semibold mb-0"
@@ -984,7 +984,7 @@ export default function CalculadoraRescisao() {
                 real às pessoas.
               </p>
 
-              <div className="flex flex-col justify-center  tablet1:flex-row gap-3 mt-4">
+              <div className="flex flex-col justify-center items-center tablet1:flex-row gap-3 mt-4">
                 <Button
                   icon={
                     <svg

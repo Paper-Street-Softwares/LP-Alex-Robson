@@ -52,7 +52,7 @@ export default function About({ modal = true, showGallery, colorMode }) {
               <img
                 src={content.texts.about.imagem.img}
                 alt={content.texts.about.imagem.alt}
-                className="w-[100%] desktop1:w-[415px] desktop2:w-[485px] rounded-xl shadow-custom-opacity shadow-shadowAbouts/10"
+                className="w-[100%] desktop1:w-[415px] desktop2:w-[485px] rounded-xl shadow-custom-opacity shadow-shadowAbouts/20"
               />
             </picture>
           )}

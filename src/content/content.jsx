@@ -4,6 +4,7 @@ import heroImgDesktop from "../assets/imgs/hero/bgHeroInfluencer.webp";
 import bgHeroImg from "../assets/imgs/hero/bgHeroInfluencer.webp";
 import heroDefaultImg from "../assets/imgs/hero/lawHero.webp";
 import backgroundPersonMobile from "../assets/imgs/hero/bgHeroMobile.webp";
+import imagemCalc from "../assets/imgs/calc/imgCalc.webp";
 
 import imgFeatures from "../assets/imgs/features/imgServices.webp";
 
@@ -464,6 +465,7 @@ const content = {
     },
     calc: {
       linkButton: "/calc",
+      img: imagemCalc,
     },
     steps: {
       miniTag: "PASSO A PASSO",
