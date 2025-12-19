@@ -1,31 +1,31 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-import Button from "../interactives/Button";
-import content from "../../content/content";
-import { useNavigate } from "react-router-dom";
-import SectionArea from "../sectionElements/SectionArea";
-import SectionHeader from "../sectionElements/SectionHeader";
-import SectionWrapper from "../sectionElements/SectionWrapper";
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+import Button from '../interactives/Button'
+import content from '../../content/content'
+import { useNavigate } from 'react-router-dom'
+import SectionArea from '../sectionElements/SectionArea'
+import SectionHeader from '../sectionElements/SectionHeader'
+import SectionWrapper from '../sectionElements/SectionWrapper'
 
 export default function CtaSecondary({ colorMode }) {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
+  const { t } = useTranslation()
+  const navigate = useNavigate()
 
   // Definir classes de tema
   const bgClasses = {
-    dark: "bg-bgSectionOpacityDark",
+    dark: 'bg-bgSectionOpacityDark',
     // light: "bg-bgSectionOpacityLight",
-    light: "squares",
+    light: 'squares',
 
-    default: "squares",
-  };
+    default: 'squares',
+  }
   const textClasses = {
-    dark: "text-white",
-    light: "text-black",
-    default: "text-black",
-  };
-  const bgClass = bgClasses[colorMode] || bgClasses.default;
-  const textClass = textClasses[colorMode] || textClasses.default;
+    dark: 'text-white',
+    light: 'text-black',
+    default: 'text-black',
+  }
+  const bgClass = bgClasses[colorMode] || bgClasses.default
+  const textClass = textClasses[colorMode] || textClasses.default
 
   return (
     <SectionArea className={`${bgClass}`}>
@@ -38,7 +38,7 @@ export default function CtaSecondary({ colorMode }) {
               sectionHeaderTitle={
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: t("ctaSecondary.title"),
+                    __html: t('ctaSecondary.title'),
                   }}
                 />
               }
@@ -53,7 +53,7 @@ export default function CtaSecondary({ colorMode }) {
               sectionHeaderTitle={
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: t("ctaSecondary.title"),
+                    __html: t('ctaSecondary.title'),
                   }}
                 />
               }
@@ -76,18 +76,19 @@ export default function CtaSecondary({ colorMode }) {
             <div
               className={`gap-3 flex font-mainFont opacity-60 mt-1 ${textClass}`}
             >
-              {t("ctaSecondary.subtitleDireitaPartes", {
+              {t('ctaSecondary.subtitleDireitaPartes', {
                 returnObjects: true,
               }).map((parte, i) => (
                 <span key={i}>{parte}</span>
               ))}
             </div>
             <p className={`text-title5 my-3 font-mainFont ${textClass}`}>
-              {t("ctaSecondary.titleDireita")}
+              {t('ctaSecondary.titleDireita')}
             </p>
             <Button
-              aria-label={t("hero.ctaButtonAriaLabel")}
-              label={t("ctaSecondary.ctaButtonText")}
+              conversao
+              aria-label={t('hero.ctaButtonAriaLabel')}
+              label={t('ctaSecondary.ctaButtonText')}
               animation
               icon={
                 <svg
@@ -105,5 +106,5 @@ export default function CtaSecondary({ colorMode }) {
         </div>
       </SectionWrapper>
     </SectionArea>
-  );
+  )
 }

@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { Dialog } from "primereact/dialog";
-import { X, MoveRight } from "lucide-react";
-import Button from "../../interactives/Button";
-import { useTranslation, Trans } from "react-i18next";
+import React, { useState } from 'react'
+import { Dialog } from 'primereact/dialog'
+import { X, MoveRight } from 'lucide-react'
+import Button from '../../interactives/Button'
+import { useTranslation, Trans } from 'react-i18next'
 
 export default function AboutModal() {
-  const { t } = useTranslation();
-  const [visible, setVisible] = useState(false);
-  const [modalContent, setModalContent] = useState("");
-  const [modalTitle, setModalTitle] = useState("");
+  const { t } = useTranslation()
+  const [visible, setVisible] = useState(false)
+  const [modalContent, setModalContent] = useState('')
+  const [modalTitle, setModalTitle] = useState('')
 
   const onClick = () => {
-    setModalTitle(t("about.title"));
+    setModalTitle(t('about.title'))
 
     setModalContent(
       <div className="text-paragraph3 text-black">
@@ -26,8 +26,9 @@ export default function AboutModal() {
             <Trans i18nKey="about.ctaButtonAriaLabel" />
           </p>
           <Button
-            aria-label={t("about.ctaButtonAriaLabel")}
-            label={t("about.ctaButtonText")}
+            conversao
+            aria-label={t('about.ctaButtonAriaLabel')}
+            label={t('about.ctaButtonText')}
             animation={false}
             className="hover:scale-105"
             icon={
@@ -45,21 +46,23 @@ export default function AboutModal() {
           />
         </div>
       </div>
-    );
+    )
 
-    setVisible(true);
-  };
+    setVisible(true)
+  }
 
   return (
     <div>
       <Button
-        className="mt-[48px] text-labelButtons"
-        label={t("about.buttonModalLabelAbout")}
+        className="mt-[32px] px-0"
+        label={t('about.buttonModalLabelAbout')}
         onClick={onClick}
         removeAnchor={true}
         removeTarget={true}
         animation={true}
-        icon={<MoveRight />}
+        textclassName="text-primary"
+        icon={<MoveRight className="text-primary" />}
+        color="bg-transparent"
       />
 
       <Dialog
@@ -68,11 +71,11 @@ export default function AboutModal() {
         header={<span className="text-black">{modalTitle}</span>}
         visible={visible}
         onHide={() => setVisible(false)}
-        style={{ width: "50vw" }}
-        breakpoints={{ "4000px": "641px", "1024px": "641px", "641px": "85vw" }}
+        style={{ width: '50vw' }}
+        breakpoints={{ '4000px': '641px', '1024px': '641px', '641px': '85vw' }}
       >
         {modalContent}
       </Dialog>
     </div>
-  );
+  )
 }

@@ -1,38 +1,38 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-import SectionArea from "../sectionElements/SectionArea";
-import "react-image-gallery/styles/css/image-gallery.css";
-import SectionHeader from "../sectionElements/SectionHeader";
-import AboutModal from "../sectionElements/about/AboutModal";
-import SectionWrapper from "../sectionElements/SectionWrapper";
-import MotionDivDownToUp from "../animation/MotionDivDownToUp";
-import ParagraphSemFading from "../sectionElements/about/ParagraphSemFading";
-import ParagraphWithFading from "../sectionElements/about/ParagraphWithFading";
-import content from "../../content/content";
-import GalleryAbout from "../sectionElements/about/GalleryAbout";
-import Button from "../interactives/Button";
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+import SectionArea from '../sectionElements/SectionArea'
+import 'react-image-gallery/styles/css/image-gallery.css'
+import SectionHeader from '../sectionElements/SectionHeader'
+import AboutModal from '../sectionElements/about/AboutModal'
+import SectionWrapper from '../sectionElements/SectionWrapper'
+import MotionDivDownToUp from '../animation/MotionDivDownToUp'
+import ParagraphSemFading from '../sectionElements/about/ParagraphSemFading'
+import ParagraphWithFading from '../sectionElements/about/ParagraphWithFading'
+import content from '../../content/content'
+import GalleryAbout from '../sectionElements/about/GalleryAbout'
+import Button from '../interactives/Button'
 
 export default function About({ modal = true, showGallery, colorMode }) {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   // Classes de tema
   const bgClasses = {
-    dark: "bg-bgFixedDark",
-    light: "bg-bgFixedLight",
-    default: "bg-bgSectionDark",
-  };
+    dark: 'bg-bgFixedDark',
+    light: 'bg-bgFixedLight',
+    default: 'bg-bgSectionDark',
+  }
   const textClasses = {
-    dark: "text-white",
-    light: "text-secondary",
-    default: "text-white",
-  };
-  const bgClass = bgClasses[colorMode] || bgClasses.default;
-  const titleColor = textClasses[colorMode] || textClasses.default;
+    dark: 'text-white',
+    light: 'text-secondary',
+    default: 'text-white',
+  }
+  const bgClass = bgClasses[colorMode] || bgClasses.default
+  const titleColor = textClasses[colorMode] || textClasses.default
   const subtitleColor =
-    colorMode === "light" ? "text-secondary/80" : "text-white/80";
+    colorMode === 'light' ? 'text-secondary/80' : 'text-white/80'
 
   // Puxando apenas textos via i18n
-  const aboutText = t("about", { returnObjects: true });
+  const aboutText = t('about', { returnObjects: true })
 
   return (
     <SectionArea
@@ -68,6 +68,7 @@ export default function About({ modal = true, showGallery, colorMode }) {
             type="article"
             titleColorSet={titleColor}
             subtitleColorSet={subtitleColor}
+            miniTitleTextColor="text-primary"
           />
           <MotionDivDownToUp>
             {modal ? (
@@ -102,5 +103,5 @@ export default function About({ modal = true, showGallery, colorMode }) {
         </div>
       </SectionWrapper>
     </SectionArea>
-  );
+  )
 }

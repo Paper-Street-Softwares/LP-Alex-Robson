@@ -179,9 +179,27 @@
     </script>
     <!-- Event snippet for Contato / WhatsApp conversion page -->
     <script>
-      gtag('event', 'conversion', {
-        send_to: 'AW-16714814953/pxnVCIqdms0bEOmrn6I-',
-      })
+      function dispararConversao() {
+        gtag('event', 'conversion', {
+          send_to: 'AW-16714814953/pxnVCIqdms0bEOmrn6I-',
+        })
+      }
+    </script>
+
+    <!-- Event snippet for WhatsAppFlotaing / conversion page -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != 'undefined') {
+            window.location = url
+          }
+        }
+        gtag('event', 'conversion', {
+          send_to: 'AW-16714814953/q-bgCPXV29MbEOmrn6I-',
+          event_callback: callback,
+        })
+        return false
+      }
     </script>
   </head>
   <body>

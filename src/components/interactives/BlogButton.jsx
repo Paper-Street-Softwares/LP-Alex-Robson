@@ -1,6 +1,6 @@
-import React from "react";
-import CustomTag from "../util/CustomTag";
-import MotionDivDownToUp from "../animation/MotionDivDownToUp";
+import React from 'react'
+import CustomTag from '../util/CustomTag'
+import MotionDivDownToUp from '../animation/MotionDivDownToUp'
 
 export default function BlogButton({
   icon,
@@ -14,21 +14,21 @@ export default function BlogButton({
   removeTarget,
   removeAnchor,
   tagName,
-  color = "bg-primary",
+  color = 'bg-primary',
   animation = true,
 }) {
-  if (size === "small") {
-    sizeFeatures = "rounded-[4px] px-[18px] py-[10px]";
-    textclassName = "text-paragraph3 font-secondFont";
-    gap = "gap-[10px]";
+  if (size === 'small') {
+    sizeFeatures = 'rounded-[4px] px-[18px] py-[10px]'
+    textclassName = 'text-paragraph3 font-secondFont'
+    gap = 'gap-[10px]'
   } else {
-    sizeFeatures = "rounded-[8px] px-[30px] py-[16px]";
-    textclassName = "text-paragraph4 font-secondFont";
-    gap = "gap-[20px]";
+    sizeFeatures = 'rounded-[8px] px-[30px] py-[16px]'
+    textclassName = 'text-paragraph4 font-secondFont'
+    gap = 'gap-[20px]'
   }
 
-  const Animation = animation ? MotionDivDownToUp : "div";
-  const CustomTagName = removeAnchor ? "div" : "a"; // Forçando um <a>
+  const Animation = animation ? MotionDivDownToUp : 'div'
+  const CustomTagName = removeAnchor ? 'div' : 'a' // Forçando um <a>
 
   return (
     <a
@@ -41,5 +41,5 @@ export default function BlogButton({
         <p className={`flex items-center ${textclassName}`}>{label}</p>
       </div>
     </a>
-  );
+  )
 }
