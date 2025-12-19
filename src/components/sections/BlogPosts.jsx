@@ -25,7 +25,7 @@ function BlogPosts() {
   useEffect(() => {
     const updateVisibleCount = () => {
       if (window.innerWidth >= 1441) {
-        setVisibleCount(6)
+        setVisibleCount(3)
       } else {
         setVisibleCount(3)
       }
