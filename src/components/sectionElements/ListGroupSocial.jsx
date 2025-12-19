@@ -1,70 +1,70 @@
-import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
-import Button from "../interactives/Button";
-import { useTranslation } from "react-i18next";
+import { Link as ScrollLink } from 'react-scroll'
+import { Link as RouterLink, useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import Button from '../interactives/Button'
+import { useTranslation } from 'react-i18next'
 
 export default function ListGroupSocial({
-  colorMode = "default",
-  mode = "blog",
+  colorMode = 'default',
+  mode = 'blog',
 }) {
-  const { t } = useTranslation();
-  const [visibleSections, setVisibleSections] = useState([]);
-  const location = useLocation();
+  const { t } = useTranslation()
+  const [visibleSections, setVisibleSections] = useState([])
+  const location = useLocation()
 
   useEffect(() => {
     // IDs do menu (mesma ordem do pt.json)
-    const allIds = ["home", "service", "about", "blog", "faq", "maps"];
+    const allIds = ['home', 'service', 'about', 'blog', 'faq', 'maps']
 
     // Pega labels direto do pt.json via i18next
-    const allLabels = t("navbar.menuItems", { returnObjects: true });
+    const allLabels = t('navbar.menuItems', { returnObjects: true })
 
     // Cria array com id + label
     const paired = allIds.map((id) => ({
       id,
       label: allLabels[id] || id, // fallback para id se não achar
-    }));
+    }))
 
-    if (mode === "site") {
-      setVisibleSections(paired);
+    if (mode === 'site') {
+      setVisibleSections(paired)
     } else {
-      const filtered = paired.filter(({ id }) => !!document.getElementById(id));
-      setVisibleSections(filtered);
+      const filtered = paired.filter(({ id }) => !!document.getElementById(id))
+      setVisibleSections(filtered)
     }
-  }, [mode, t]);
+  }, [mode, t])
 
-  const [scrolling, setScrolling] = useState(false);
+  const [scrolling, setScrolling] = useState(false)
 
   const handleScroll = () => {
-    setScrolling(window.scrollY > 0);
-  };
+    setScrolling(window.scrollY > 0)
+  }
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const getTextColor = () => {
-    if (colorMode === "light") return "text-colorTexto";
-    if (colorMode === "dark") return "text-white";
-    return scrolling ? "text-white" : "text-white";
-  };
+    if (colorMode === 'light') return 'text-colorTexto'
+    if (colorMode === 'dark') return 'text-white'
+    return scrolling ? 'text-white' : 'text-white'
+  }
 
   const getHoverTextColor = () => {
-    if (colorMode === "light") return "hover:text-colorTexto";
-    if (colorMode === "dark") return "hover:text-white";
-    return scrolling ? "text-white" : "text-white";
-  };
+    if (colorMode === 'light') return 'hover:text-colorTexto'
+    if (colorMode === 'dark') return 'hover:text-white'
+    return scrolling ? 'text-white' : 'text-white'
+  }
 
   const getBorderColor = () => {
-    if (colorMode === "light") return "bg-colorTexto";
-    if (colorMode === "dark") return "bg-white";
-    return scrolling ? "bg-white" : "bg-white";
-  };
+    if (colorMode === 'light') return 'bg-colorTexto'
+    if (colorMode === 'dark') return 'bg-white'
+    return scrolling ? 'bg-white' : 'bg-white'
+  }
 
   const textShadow =
-    colorMode === "dark" || colorMode === "default"
-      ? "[text-shadow:_2px_2px_3px_rgb(0_0_0_/_0%)]"
-      : "";
+    colorMode === 'dark' || colorMode === 'default'
+      ? '[text-shadow:_2px_2px_3px_rgb(0_0_0_/_0%)]'
+      : ''
 
   return (
     <ul
@@ -75,7 +75,7 @@ export default function ListGroupSocial({
           key={id}
           className="transition group h-auto desktop1:w-[50%] desktop2:w-[75px] text-center"
         >
-          {mode === "blog" ? (
+          {mode === 'blog' ? (
             <a
               href={`#${id}`}
               aria-label={label}
@@ -83,14 +83,14 @@ export default function ListGroupSocial({
               data-track={id}
               className="relative font-semibold cursor-pointer"
               onClick={(e) => {
-                e.preventDefault();
-                const el = document.getElementById(id);
+                e.preventDefault()
+                const el = document.getElementById(id)
                 if (el) {
-                  const yOffset = -85;
+                  const yOffset = -85
                   const y =
-                    el.getBoundingClientRect().top + window.scrollY + yOffset;
+                    el.getBoundingClientRect().top + window.scrollY + yOffset
 
-                  window.scrollTo({ top: y, behavior: "smooth" });
+                  window.scrollTo({ top: y, behavior: 'smooth' })
                 }
               }}
             >
@@ -105,7 +105,7 @@ export default function ListGroupSocial({
             </a>
           ) : (
             <a
-              href={id === "inicio" ? "/" : `/${id.toLowerCase()}`}
+              href={id === 'inicio' ? '/' : `/${id.toLowerCase()}`}
               aria-label={label}
               title={label}
               data-track={id}
@@ -128,8 +128,9 @@ export default function ListGroupSocial({
       <li>
         <div className="flex gap-[10px] items-center">
           <Button
-            aria-label={t("hero.ctaButtonAriaLabel")}
-            label={t("navbar.ctaButtonTextResponsive")}
+            conversao
+            aria-label={t('hero.ctaButtonAriaLabel')}
+            label={t('navbar.ctaButtonTextResponsive')}
             className=""
             textclassName="text-paragraph3"
             size="small"
@@ -149,5 +150,5 @@ export default function ListGroupSocial({
         </div>
       </li>
     </ul>
-  );
+  )
 }

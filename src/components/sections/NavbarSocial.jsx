@@ -1,100 +1,100 @@
-import content from "../../content/content";
-import Button from "../interactives/Button";
-import Navbar from "../sectionElements/Navbar";
-import { useNavigate } from "react-router-dom";
-import { Link as ScrollLink } from "react-scroll";
-import { useState, useEffect, useRef } from "react";
-import SidebarSocial from "../sectionElements/SidebarSocial";
-import ListGroupSocial from "../sectionElements/ListGroupSocial";
-import { useTranslation } from "react-i18next";
+import content from '../../content/content'
+import Button from '../interactives/Button'
+import Navbar from '../sectionElements/Navbar'
+import { useNavigate } from 'react-router-dom'
+import { Link as ScrollLink } from 'react-scroll'
+import { useState, useEffect, useRef } from 'react'
+import SidebarSocial from '../sectionElements/SidebarSocial'
+import ListGroupSocial from '../sectionElements/ListGroupSocial'
+import { useTranslation } from 'react-i18next'
 
 export default function NavbarSocial({ colorMode, mode }) {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
+  const { t } = useTranslation()
+  const navigate = useNavigate()
 
-  const [scrolling, setScrolling] = useState(false);
-  const [showListGroup, setShowListGroup] = useState(true);
-  const [showSidebar, setShowSidebar] = useState(false);
-  const [showMenuIcon, setShowMenuIcon] = useState(true);
-  const [showSidebarContent, setShowSidebarContent] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [scrolling, setScrolling] = useState(false)
+  const [showListGroup, setShowListGroup] = useState(true)
+  const [showSidebar, setShowSidebar] = useState(false)
+  const [showMenuIcon, setShowMenuIcon] = useState(true)
+  const [showSidebarContent, setShowSidebarContent] = useState(false)
+  const [isAnimating, setIsAnimating] = useState(false)
 
-  const sidebarRef = useRef(null);
+  const sidebarRef = useRef(null)
 
   const handleScroll = () => {
-    setScrolling(window.scrollY > 0);
-  };
+    setScrolling(window.scrollY > 0)
+  }
 
   const toggleSidebar = () => {
     if (!isAnimating) {
-      setIsAnimating(true);
-      setShowMenuIcon((prev) => !prev);
-      setShowSidebarContent((prev) => !prev);
+      setIsAnimating(true)
+      setShowMenuIcon((prev) => !prev)
+      setShowSidebarContent((prev) => !prev)
 
       if (showSidebar) {
         setTimeout(() => {
-          setShowSidebar(false);
-          setIsAnimating(false);
-        }, 940);
+          setShowSidebar(false)
+          setIsAnimating(false)
+        }, 940)
       } else {
-        setShowSidebar(true);
+        setShowSidebar(true)
         setTimeout(() => {
-          setIsAnimating(false);
-        }, 0);
+          setIsAnimating(false)
+        }, 0)
       }
     }
-  };
+  }
 
   const handleResize = () => {
-    setShowListGroup(window.innerWidth >= 768);
-  };
+    setShowListGroup(window.innerWidth >= 768)
+  }
 
   const handleClickOutside = (event) => {
     if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-      handleCloseSidebar();
+      handleCloseSidebar()
     }
-  };
+  }
 
   const handleCloseSidebar = () => {
-    setShowSidebar(false);
-    setShowSidebarContent(false);
-    setIsAnimating(false);
-    setShowMenuIcon(true);
-  };
+    setShowSidebar(false)
+    setShowSidebarContent(false)
+    setIsAnimating(false)
+    setShowMenuIcon(true)
+  }
 
   const handleSidebarItemClick = () => {
-    handleCloseSidebar();
-  };
+    handleCloseSidebar()
+  }
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize)
+    handleResize()
+    document.addEventListener('mousedown', handleClickOutside)
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
 
   const getNavbarClasses = () => {
-    if (colorMode === "light") {
+    if (colorMode === 'light') {
       return scrolling
-        ? "bg-bgSectionLight bg-opacity-100 shadow-lg transition-all duration-1000"
-        : "bg-gradient-to-b from-bgSectionLight to-transparent border-none transition-colors duration-1000";
+        ? 'bg-bgSectionLight bg-opacity-100 shadow-lg transition-all duration-1000'
+        : 'bg-gradient-to-b from-bgSectionLight to-transparent border-none transition-colors duration-1000'
     }
-    if (colorMode === "dark") {
+    if (colorMode === 'dark') {
       return scrolling
-        ? "bg-gradient-to-b from-black to-bgFixedDark shadow-lg border-b-[1px] border-primary transition-all duration-1000"
-        : "bg-gradient-to-b from-black to-bgFixedDark border-b-[1px] border-none transition-colors duration-1000";
+        ? 'bg-gradient-to-b from-black to-bgFixedDark shadow-lg border-b-[1px] border-primary transition-all duration-1000'
+        : 'bg-gradient-to-b from-black to-bgFixedDark border-b-[1px] border-none transition-colors duration-1000'
     }
     // default
     return scrolling
-      ? "bg-opacity-100 shadow-lg transition-all duration-1000 bg-bgSectionDark border-b-[1px] border-primary"
-      : "transition-colors duration-1000";
-  };
+      ? 'bg-opacity-100 shadow-lg transition-all duration-1000 bg-bgSectionDark border-b-[1px] border-primary'
+      : 'transition-colors duration-1000'
+  }
 
   return (
     <div className="w-full">
@@ -116,8 +116,8 @@ export default function NavbarSocial({ colorMode, mode }) {
               alt={content.texts.navbar.logo.alt}
               className={`${
                 scrolling
-                  ? "w-[40%] tablet1:w-[40%] tablet2:w-[40%] desktop1:w-[30%] desktop2:w-[40%] transition-all duration-1000"
-                  : "my-[20px] w-[60%] phone3:w-[50%] tablet1:w-[55%] tablet2:w-[55%] desktop1:w-[50%] desktop2:w-[60%] transition-all duration-1000"
+                  ? 'w-[40%] tablet1:w-[40%] tablet2:w-[40%] desktop1:w-[30%] desktop2:w-[40%] transition-all duration-1000'
+                  : 'my-[20px] w-[60%] phone3:w-[50%] tablet1:w-[55%] tablet2:w-[55%] desktop1:w-[50%] desktop2:w-[60%] transition-all duration-1000'
               } tablet3:mb-0`}
             />
           </ScrollLink>
@@ -125,8 +125,9 @@ export default function NavbarSocial({ colorMode, mode }) {
           <div className="flex items-center justify-between gap-[16px] ">
             <div className="hidden tablet1:flex desktop1:hidden">
               <Button
-                aria-label={t("hero.ctaButtonAriaLabel")}
-                label={t("navbar.ctaButtonTextResponsive")}
+                conversao
+                aria-label={t('hero.ctaButtonAriaLabel')}
+                label={t('navbar.ctaButtonTextResponsive')}
                 size="small"
                 colorMode={colorMode}
                 icon={
@@ -144,7 +145,7 @@ export default function NavbarSocial({ colorMode, mode }) {
             </div>
             <div
               className={`flex items-center desktop1:hidden ${
-                scrolling ? "" : ""
+                scrolling ? '' : ''
               }`}
             >
               <SidebarSocial colorMode={colorMode} mode={mode} />
@@ -157,5 +158,5 @@ export default function NavbarSocial({ colorMode, mode }) {
         </Navbar>
       </div>
     </div>
-  );
+  )
 }
