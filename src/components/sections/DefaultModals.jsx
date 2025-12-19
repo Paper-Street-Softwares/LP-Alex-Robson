@@ -59,10 +59,10 @@ export default function FeaturesParagraphs({ colorMode }) {
       />
 
       <SectionWrapper>
-        <div className="flex flex-col justify-center items-center tablet1:items-center w-full gap-6 tablet1:gap-12 desktop1:gap-16">
+        <div className="flex flex-col justify-center items-center tablet1:items-center w-full gap-6 tablet1:gap-4 desktop1:gap-16">
           {/* Coluna esquerda */}
-          <div className="flex flex-col tablet2:flex-row gap-6 items-center tablet1:items-start">
-            <MotionDivDownToUp>
+          <div className="flex flex-wrap gap-6 w-full justify-center">
+            <MotionDivDownToUp className="w-fit flex">
               <IconButtonFeatureCard
                 icon={content.texts.features.card1.icon}
                 title={t('features.card1.title')}
@@ -81,7 +81,7 @@ export default function FeaturesParagraphs({ colorMode }) {
               </IconButtonFeatureCard>
             </MotionDivDownToUp>
 
-            <MotionDivDownToUp>
+            <MotionDivDownToUp className="w-fit flex">
               <IconButtonFeatureCard
                 icon={content.texts.features.card2.icon}
                 title={t('features.card2.title')}
@@ -100,7 +100,7 @@ export default function FeaturesParagraphs({ colorMode }) {
               </IconButtonFeatureCard>
             </MotionDivDownToUp>
 
-            <MotionDivDownToUp>
+            <MotionDivDownToUp className="w-fit flex">
               <IconButtonFeatureCard
                 icon={content.texts.features.card3.icon}
                 title={t('features.card3.title')}
@@ -118,21 +118,8 @@ export default function FeaturesParagraphs({ colorMode }) {
                 />
               </IconButtonFeatureCard>
             </MotionDivDownToUp>
-          </div>
 
-          {/* Imagem central */}
-          {/* <MotionDivDownToUp className="hidden desktop1:flex justify-center w-[35%] ">
-            <img
-              src={content.texts.features.imgFeatures}
-              alt={content.texts.features.alt}
-              className="hidden h-[900px] object-cover w-full desktop1:flex col2 rounded-2xl bg-top bg-cover shadow-custom-opacity shadow-shadowFeatures/10"
-              loading="lazy"
-            />
-          </MotionDivDownToUp> */}
-
-          {/* Coluna direita */}
-          <div className="flex flex-col tablet2:flex-row gap-6 items-center tablet1:items-start">
-            <MotionDivDownToUp>
+            <MotionDivDownToUp className="w-fit flex">
               <IconButtonFeatureCard
                 icon={content.texts.features.card4.icon}
                 title={t('features.card4.title')}
@@ -151,7 +138,7 @@ export default function FeaturesParagraphs({ colorMode }) {
               </IconButtonFeatureCard>
             </MotionDivDownToUp>
 
-            <MotionDivDownToUp>
+            <MotionDivDownToUp className="w-fit flex">
               <IconButtonFeatureCard
                 icon={content.texts.features.card5.icon}
                 title={
@@ -176,7 +163,7 @@ export default function FeaturesParagraphs({ colorMode }) {
               </IconButtonFeatureCard>
             </MotionDivDownToUp>
 
-            <MotionDivDownToUp>
+            <MotionDivDownToUp className="w-fit flex">
               <IconButtonFeatureCard
                 icon={content.texts.features.card6.icon}
                 title={
@@ -201,6 +188,21 @@ export default function FeaturesParagraphs({ colorMode }) {
               </IconButtonFeatureCard>
             </MotionDivDownToUp>
           </div>
+
+          {/* Imagem central */}
+          {/* <MotionDivDownToUp className="hidden desktop1:flex justify-center w-[35%] ">
+            <img
+              src={content.texts.features.imgFeatures}
+              alt={content.texts.features.alt}
+              className="hidden h-[900px] object-cover w-full desktop1:flex col2 rounded-2xl bg-top bg-cover shadow-custom-opacity shadow-shadowFeatures/10"
+              loading="lazy"
+            />
+          </MotionDivDownToUp> */}
+
+          {/* Coluna direita */}
+          {/* <div className="flex flex-col tablet2:flex-wrap gap-6 items-center tablet1:items-start">
+          
+          </div> */}
         </div>
       </SectionWrapper>
 
