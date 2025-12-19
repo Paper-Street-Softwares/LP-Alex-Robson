@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import WordPressBlogCard from "../cards/WordPressBlogCard";
-import SectionArea from "../sectionElements/SectionArea";
-import SectionWrapper from "../sectionElements/SectionWrapper";
-import SectionHeader from "../sectionElements/SectionHeader";
-import Paragraphs from "../sectionElements/Paragraphs";
-import MotionDivDownToUp from "../animation/MotionDivDownToUp";
-import content from "../../content/content";
+import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import WordPressBlogCard from '../cards/WordPressBlogCard'
+import SectionArea from '../sectionElements/SectionArea'
+import SectionWrapper from '../sectionElements/SectionWrapper'
+import SectionHeader from '../sectionElements/SectionHeader'
+import Paragraphs from '../sectionElements/Paragraphs'
+import MotionDivDownToUp from '../animation/MotionDivDownToUp'
+import content from '../../content/content'
 
 function BlogPosts() {
-  const { t } = useTranslation();
-  const [posts, setPosts] = useState([]);
-  const [visibleCount, setVisibleCount] = useState(3);
+  const { t } = useTranslation()
+  const [posts, setPosts] = useState([])
+  const [visibleCount, setVisibleCount] = useState(3)
 
   useEffect(() => {
     fetch(
@@ -19,22 +19,22 @@ function BlogPosts() {
     )
       .then((response) => response.json())
       .then((data) => setPosts(data.posts || []))
-      .catch((error) => console.error("Erro ao buscar posts:", error));
-  }, []);
+      .catch((error) => console.error('Erro ao buscar posts:', error))
+  }, [])
 
   useEffect(() => {
     const updateVisibleCount = () => {
       if (window.innerWidth >= 1441) {
-        setVisibleCount(6);
+        setVisibleCount(6)
       } else {
-        setVisibleCount(3);
+        setVisibleCount(3)
       }
-    };
+    }
 
-    updateVisibleCount(); // roda ao carregar
-    window.addEventListener("resize", updateVisibleCount);
-    return () => window.removeEventListener("resize", updateVisibleCount);
-  }, []);
+    updateVisibleCount() // roda ao carregar
+    window.addEventListener('resize', updateVisibleCount)
+    return () => window.removeEventListener('resize', updateVisibleCount)
+  }, [])
 
   return (
     <div>
@@ -42,13 +42,14 @@ function BlogPosts() {
         <SectionWrapper>
           <SectionHeader
             className="text-center mb-[26px] tablet1:mb-[40px] desktop1:mb-[72px]"
-            miniTitle={t("blog.miniTag")}
-            sectionHeaderTitle={t("blog.title")}
-            sectionHeaderSubtitle={t("blog.subtitle")}
+            miniTitle={t('blog.miniTag')}
+            sectionHeaderTitle={t('blog.title')}
+            sectionHeaderSubtitle={t('blog.subtitle')}
             color=""
             type=""
             titleColorSet="text-white"
             subtitleColorSet="text-white"
+            miniTitleTextColor="text-primary"
           />
 
           <ul className="flex flex-wrap gap-[30px] justify-center mb-[80px]">
@@ -75,7 +76,7 @@ function BlogPosts() {
                       dangerouslySetInnerHTML={{
                         __html:
                           post.excerpt.length > 100
-                            ? post.excerpt.substring(0, 60) + "..."
+                            ? post.excerpt.substring(0, 60) + '...'
                             : post.excerpt,
                       }}
                     />
@@ -93,14 +94,14 @@ function BlogPosts() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t("blog.label")}
+                {t('blog.label')}
               </a>
             </Paragraphs>
           </MotionDivDownToUp>
         </SectionWrapper>
       </SectionArea>
     </div>
-  );
+  )
 }
 
-export default BlogPosts;
+export default BlogPosts

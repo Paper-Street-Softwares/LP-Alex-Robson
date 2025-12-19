@@ -68,6 +68,7 @@ export default function About({ modal = true, showGallery, colorMode }) {
             type="article"
             titleColorSet={titleColor}
             subtitleColorSet={subtitleColor}
+            miniTitleTextColor="text-primary"
           />
           <MotionDivDownToUp>
             {modal ? (

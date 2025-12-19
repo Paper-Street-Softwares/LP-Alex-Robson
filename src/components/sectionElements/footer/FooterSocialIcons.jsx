@@ -1,19 +1,19 @@
-import React from "react";
-import MotionDivDownToUp from "../../animation/MotionDivDownToUp";
-import IconButton from "../../interactives/IconButton";
-import { infos } from "../../../content/content";
+import React from 'react'
+import MotionDivDownToUp from '../../animation/MotionDivDownToUp'
+import IconButton from '../../interactives/IconButton'
+import { infos } from '../../../content/content'
 
 const icons = {
   facebook: {
-    aria: "Facebook",
+    aria: 'Facebook',
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
         height="20"
         viewBox="0 0 24 24"
-        fill="transparent"
-        stroke="currentColor"
+        fill="white"
+        // stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -23,7 +23,7 @@ const icons = {
     ),
   },
   instagram: {
-    aria: "Instagram",
+    aria: 'Instagram',
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -43,15 +43,15 @@ const icons = {
     ),
   },
   linkedin: {
-    aria: "LinkedIn",
+    aria: 'LinkedIn',
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
         height="20"
         viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
+        fill="white"
+        // stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -63,7 +63,7 @@ const icons = {
     ),
   },
   tiktok: {
-    aria: "TikTok",
+    aria: 'TikTok',
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ const icons = {
     ),
   },
   x: {
-    aria: "X",
+    aria: 'X',
     svg: (
       <svg viewBox="0 0 21.573 19.5" width="20" height="20" fill="currentColor">
         <path d="m 16.998462,0 h 3.308 l -7.227,8.26 8.502,11.24 h -6.657 l -5.2139994,-6.817 -5.966,6.817 H 0.43446256 L 8.1644626,10.665 0.00846256,0 H 6.8344626 l 4.7129994,6.231 z m -1.161,17.52 h 1.833 L 5.8384626,1.876 h -1.967 z" />
@@ -85,7 +85,7 @@ const icons = {
     ),
   },
   youtube: {
-    aria: "YouTube",
+    aria: 'YouTube',
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ const icons = {
       </svg>
     ),
   },
-};
+}
 
 function FooterSocialIcons({ withAnimation = true }) {
   const platforms = {
@@ -114,27 +114,27 @@ function FooterSocialIcons({ withAnimation = true }) {
     linkedin: infos.linkeDinProfile,
     x: infos.x,
     youtube: infos.youtubeProfile,
-  };
+  }
 
   return (
     <>
       {Object.entries(platforms).map(([key, profile]) => {
-        if (!profile || profile === "A_Definir") return null;
+        if (!profile || profile === 'A_Definir') return null
 
-        const cleanedProfile = profile.replace(/^@/, "");
+        const cleanedProfile = profile.replace(/^@/, '')
 
         const link =
-          key === "x"
+          key === 'x'
             ? `https://twitter.com/${profile}`
-            : key === "linkedin"
+            : key === 'linkedin'
             ? `https://www.linkedin.com/in/${profile}`
-            : key === "tiktok"
+            : key === 'tiktok'
             ? `https://www.tiktok.com/@${cleanedProfile}`
-            : key === "youtube"
+            : key === 'youtube'
             ? `https://youtube.com/${infos.youtubeProfile}`
-            : `https://www.${key}.com/${cleanedProfile}`;
+            : `https://www.${key}.com/${cleanedProfile}`
 
-        const { aria, svg } = icons[key];
+        const { aria, svg } = icons[key]
 
         const button = (
           <a
@@ -145,16 +145,16 @@ function FooterSocialIcons({ withAnimation = true }) {
           >
             <IconButton ariaLabel={`Botão para o ${aria}`} icon={svg} />
           </a>
-        );
+        )
 
         return withAnimation ? (
           <MotionDivDownToUp key={key}>{button}</MotionDivDownToUp>
         ) : (
           <React.Fragment key={key}>{button}</React.Fragment>
-        );
+        )
       })}
     </>
-  );
+  )
 }
 
-export default FooterSocialIcons;
+export default FooterSocialIcons

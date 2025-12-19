@@ -1,18 +1,21 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-import MotionDivDownToUp from "../../animation/MotionDivDownToUp";
-import Button from "../../interactives/Button";
-import { infos } from "../../../content/content";
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+import MotionDivDownToUp from '../../animation/MotionDivDownToUp'
+import Button from '../../interactives/Button'
+import { infos } from '../../../content/content'
 
 const RedesSociais = ({ withAnimation = true }) => {
-  const { t } = useTranslation();
-  const icons = [];
+  const { t } = useTranslation()
+  const icons = []
 
-  if (infos.facebookProfile && infos.facebookProfile !== "A_Definir") {
+  if (infos.facebookProfile && infos.facebookProfile !== 'A_Definir') {
     icons.push(
       <Button
+        color="bg-bgSectionDark"
+        textclassName="text-white"
+        className="border border-white"
         key="facebook"
-        label={t("about.aboutSocial.labelFacebook")}
+        label={t('about.aboutSocial.labelFacebook')}
         buttonLink={`https://www.facebook.com/${infos.facebookProfile}`}
         icon={
           <svg
@@ -20,8 +23,8 @@ const RedesSociais = ({ withAnimation = true }) => {
             width="20"
             height="20"
             viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
+            fill="white"
+            // stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -31,13 +34,16 @@ const RedesSociais = ({ withAnimation = true }) => {
           </svg>
         }
       />
-    );
+    )
   }
-  if (infos.tiktokProfile && infos.tiktokProfile !== "A_Definir") {
+  if (infos.tiktokProfile && infos.tiktokProfile !== 'A_Definir') {
     icons.push(
       <Button
+        color="bg-bgSectionDark"
+        textclassName="text-white"
+        className="border border-white"
         key="tiktok"
-        label={t("about.aboutSocial.labelTikTok")}
+        label={t('about.aboutSocial.labelTikTok')}
         buttonLink={`https://www.tiktok.com/@${infos.tiktokProfile}`}
         icon={
           <svg
@@ -45,20 +51,23 @@ const RedesSociais = ({ withAnimation = true }) => {
             width="20"
             height="20"
             viewBox="0 0 30 30"
-            fill="currentColor"
+            fill="white"
           >
             <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.104,4,24,4z M22.689,13.474 c-0.13,0.012-0.261,0.02-0.393,0.02c-1.495,0-2.809-0.768-3.574-1.931c0,3.049,0,6.519,0,6.577c0,2.685-2.177,4.861-4.861,4.861 C11.177,23,9,20.823,9,18.139c0-2.685,2.177-4.861,4.861-4.861c0.102,0,0.201,0.009,0.3,0.015v2.396c-0.1-0.012-0.197-0.03-0.3-0.03 c-1.37,0-2.481,1.111-2.481,2.481s1.11,2.481,2.481,2.481c1.371,0,2.581-1.08,2.581-2.45c0-0.055,0.024-11.17,0.024-11.17h2.289 c0.215,2.047,1.868,3.663,3.934,3.811V13.474z" />
           </svg>
         }
       />
-    );
+    )
   }
 
-  if (infos.instagramProfile && infos.instagramProfile !== "A_Definir") {
+  if (infos.instagramProfile && infos.instagramProfile !== 'A_Definir') {
     icons.push(
       <Button
+        color="bg-bgSectionDark"
+        textclassName="text-white"
+        className="border border-white"
         key="instagram"
-        label={t("about.aboutSocial.labelInstagram")}
+        label={t('about.aboutSocial.labelInstagram')}
         buttonLink={`https://www.instagram.com/${infos.instagramProfile}`}
         icon={
           <svg
@@ -66,8 +75,8 @@ const RedesSociais = ({ withAnimation = true }) => {
             width="20"
             height="20"
             viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
+            // fill="none"
+            stroke="white"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -79,14 +88,17 @@ const RedesSociais = ({ withAnimation = true }) => {
           </svg>
         }
       />
-    );
+    )
   }
 
-  if (infos.linkeDinProfile && infos.linkeDinProfile !== "A_Definir") {
+  if (infos.linkeDinProfile && infos.linkeDinProfile !== 'A_Definir') {
     icons.push(
       <Button
+        color="bg-bgSectionDark"
+        textclassName="text-white"
+        className="border border-white"
         key="linkedin"
-        label={t("about.aboutSocial.labelLinkedin")}
+        label={t('about.aboutSocial.labelLinkedin')}
         buttonLink={`https://www.linkedin.com/in/${infos.linkeDinProfile}`}
         icon={
           <svg
@@ -94,8 +106,8 @@ const RedesSociais = ({ withAnimation = true }) => {
             width="20"
             height="20"
             viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
+            fill="white"
+            // stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -107,14 +119,17 @@ const RedesSociais = ({ withAnimation = true }) => {
           </svg>
         }
       />
-    );
+    )
   }
 
-  if (infos.x && infos.x !== "A_Definir") {
+  if (infos.x && infos.x !== 'A_Definir') {
     icons.push(
       <Button
+        color="bg-bgSectionDark"
+        textclassName="text-white"
+        className="border border-white"
         key="x"
-        label={t("about.aboutSocial.labelX")}
+        label={t('about.aboutSocial.labelX')}
         buttonLink={`https://x.com/${infos.x}`}
         icon={
           <svg
@@ -127,13 +142,16 @@ const RedesSociais = ({ withAnimation = true }) => {
           </svg>
         }
       />
-    );
+    )
   }
-  if (infos.youtubeProfile && infos.youtubeProfile !== "A_Definir") {
+  if (infos.youtubeProfile && infos.youtubeProfile !== 'A_Definir') {
     icons.push(
       <Button
+        color="bg-bgSectionDark"
+        textclassName="text-white"
+        className="border border-white"
         key="youtube"
-        label={t("about.aboutSocial.labelYoutube")}
+        label={t('about.aboutSocial.labelYoutube')}
         buttonLink={`https://youtube.com/${infos.youtubeProfile}`}
         icon={
           <svg
@@ -153,16 +171,16 @@ const RedesSociais = ({ withAnimation = true }) => {
           </svg>
         }
       />
-    );
+    )
   }
 
-  const output = <div className="flex flex-col gap-4">{icons}</div>;
+  const output = <div className="flex flex-col gap-4">{icons}</div>
 
   return withAnimation ? (
     <MotionDivDownToUp>{output}</MotionDivDownToUp>
   ) : (
     output
-  );
-};
+  )
+}
 
-export default RedesSociais;
+export default RedesSociais

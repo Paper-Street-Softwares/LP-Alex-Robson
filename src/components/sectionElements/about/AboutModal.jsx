@@ -54,13 +54,15 @@ export default function AboutModal() {
   return (
     <div>
       <Button
-        className="mt-[48px] text-labelButtons"
+        className="mt-[32px] px-0"
         label={t('about.buttonModalLabelAbout')}
         onClick={onClick}
         removeAnchor={true}
         removeTarget={true}
         animation={true}
-        icon={<MoveRight />}
+        textclassName="text-primary"
+        icon={<MoveRight className="text-primary" />}
+        color="bg-transparent"
       />
 
       <Dialog

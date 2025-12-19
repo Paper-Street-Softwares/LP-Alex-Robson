@@ -47,7 +47,7 @@ export default function Hero({
         <MotionDivDownToUp>
           <div className="flex justify-center w-auto text-center desktop1:justify-start desktop1:text-left font-mainFont text-paragraph4">
             <p
-              className={`mb-[16px] rounded-md px-[16px] py-[6px] inline-block text-paragraph2 ${minititleColor}`}
+              className={`mb-[16px] rounded-md px-[16px] py-[6px] desktop1:p-0 inline-block text-paragraph2 ${minititleColor}`}
             >
               {t('hero.miniTag')}
             </p>
@@ -128,8 +128,8 @@ export default function Hero({
   if (panoramica) {
     HeroContent = renderHeroContent({
       minititleColor: isMobile
-        ? 'bg-minititle text-black'
-        : 'bg-primary text-minititleDarkLabel',
+        ? 'bg-transparent text-black'
+        : 'bg-transparent text-minititleDarkLabel',
       titleTextColor: isMobile ? 'text-primary' : 'text-primary',
       subtitleTextColor: isMobile ? 'text-white' : 'text-primary',
       obsTextColorOverride: isMobile ? 'text-white' : 'text-primary',
@@ -146,8 +146,8 @@ export default function Hero({
   } else {
     HeroContent = renderHeroContent({
       minititleColor: isMobile
-        ? 'bg-minititle text-minititleLightLabel'
-        : 'bg-minititle text-minititleDarkLabel',
+        ? 'bg-transparent text-primary'
+        : 'bg-transparent text-primary',
       titleTextColor: 'text-white',
       subtitleTextColor: 'text-white',
       obsTextColorOverride: 'text-white',

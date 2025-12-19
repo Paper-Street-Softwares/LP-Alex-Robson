@@ -1,5 +1,5 @@
-import MotionDivDownToUp from "../animation/MotionDivDownToUp";
-import Button from "../interactives/Button";
+import MotionDivDownToUp from '../animation/MotionDivDownToUp'
+import Button from '../interactives/Button'
 
 export default function WordPressBlogCard({ img, title, subtitle, link }) {
   return (
@@ -28,7 +28,8 @@ export default function WordPressBlogCard({ img, title, subtitle, link }) {
             <Button
               label="Ver matéria completa"
               buttonLink={link}
-              className="text-labelButtons"
+              className="px-2 border border-bgSectionDark/20"
+              color="bg-transparent"
               size="small"
               icon={
                 <svg
@@ -52,5 +53,5 @@ export default function WordPressBlogCard({ img, title, subtitle, link }) {
         </div>
       </MotionDivDownToUp>
     </div>
-  );
+  )
 }
