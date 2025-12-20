@@ -21,7 +21,7 @@ export default function FeaturesParagraphs({ colorMode }) {
     setModalTitle(t(`features.card${cardNum}.title`))
 
     setModalContent(
-      <div className="text-paragraph3">
+      <div className="text-paragraph3 opacity-80">
         <div
           dangerouslySetInnerHTML={{
             __html: t(`features.card${cardNum}.description`),

@@ -33,7 +33,7 @@ export default function SectionHeader({
       break
     case 'light':
     default:
-      miniTitleTextColor = miniTitleTextColor ?? 'text-minititleDarkLabel'
+      miniTitleTextColor = miniTitleTextColor ?? 'text-primary'
       titleColor = titleColorSet ?? 'text-white'
       subtitleColor = subtitleColorSet ?? 'text-white'
       if (miniTitleBgColor === true) miniTitleBgColor = 'bg-transparent'
@@ -66,9 +66,11 @@ export default function SectionHeader({
       <div>
         <div className={`${miniTitleSpace}`}>
           <div
-            className={`py-[4px] font-semibold  font-mainFont text-paragraph2 rounded-md inline-block mb-[16px] ${miniTitleOrientation} ${miniTitleBgColor}`}
+            className={`py-[4px] font-mainFont text-paragraph2 rounded-md inline-block mb-[16px] font-bold ${miniTitleOrientation} ${miniTitleBgColor}`}
           >
-            <p className={`${miniTitleTextColor} uppercase`}>{miniTitle}</p>
+            <strong>
+              <p className={`${miniTitleTextColor} uppercase`}>{miniTitle}</p>
+            </strong>
           </div>
         </div>
         <h1
