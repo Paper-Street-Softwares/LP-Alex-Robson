@@ -56,6 +56,7 @@ export default function FeaturesParagraphs({ colorMode }) {
         titleColorSet={textClass}
         subtitleColorSet={textClass}
         colorMode={colorMode}
+        opacityDark={false}
       />
 
       <SectionWrapper>

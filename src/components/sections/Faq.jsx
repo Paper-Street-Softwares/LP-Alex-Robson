@@ -38,6 +38,7 @@ export default function Faq({ colorMode }) {
         sectionHeaderSubtitle={t('faq.subtitle')}
         titleColorSet={titleColor}
         subtitleColorSet={titleColor}
+        mode="light"
       />
       <SectionWrapper className="flex justify-center">
         <MotionDivDownToUp className="flex justify-center w-full">

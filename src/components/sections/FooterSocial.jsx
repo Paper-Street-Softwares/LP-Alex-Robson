@@ -1,19 +1,19 @@
-import content, { infos } from "../../content/content";
-import SectionArea from "../sectionElements/SectionArea.jsx";
-import ObsFooter from "../sectionElements/footer/ObsFooter.jsx";
-import LogoFooter from "../sectionElements/footer/LogoFooter.jsx";
-import SectionWrapper from "../sectionElements/SectionWrapper.jsx";
-import MotionDivDownToUp from "../animation/MotionDivDownToUp.jsx";
-import PhoneFooter from "../sectionElements/footer/PhoneFooter.jsx";
-import EmailFooter from "../sectionElements/footer/EmailFooter.jsx";
-import AdressFooter from "../sectionElements/footer/AdressFooter.jsx";
-import MidTextFooter from "../sectionElements/footer/MidTextFooter.jsx";
-import CopyrightFooter from "../sectionElements/footer/CopyrightFooter.jsx";
-import ParagrapfFooter from "../sectionElements/footer/ParagrapfFooter.jsx";
-import ExpedienteFooter from "../sectionElements/footer/ExpedienteFooter.jsx";
-import NavegationTextFooter from "../sectionElements/footer/NavegationTextFooter.jsx";
-import LinksNavegationFooter from "../sectionElements/footer/LinksNavegationFooter.jsx";
-import FooterSocialIcons from "../sectionElements/footer/FooterSocialIcons.jsx";
+import content, { infos } from '../../content/content'
+import SectionArea from '../sectionElements/SectionArea.jsx'
+import ObsFooter from '../sectionElements/footer/ObsFooter.jsx'
+import LogoFooter from '../sectionElements/footer/LogoFooter.jsx'
+import SectionWrapper from '../sectionElements/SectionWrapper.jsx'
+import MotionDivDownToUp from '../animation/MotionDivDownToUp.jsx'
+import PhoneFooter from '../sectionElements/footer/PhoneFooter.jsx'
+import EmailFooter from '../sectionElements/footer/EmailFooter.jsx'
+import AdressFooter from '../sectionElements/footer/AdressFooter.jsx'
+import MidTextFooter from '../sectionElements/footer/MidTextFooter.jsx'
+import CopyrightFooter from '../sectionElements/footer/CopyrightFooter.jsx'
+import ParagrapfFooter from '../sectionElements/footer/ParagrapfFooter.jsx'
+import ExpedienteFooter from '../sectionElements/footer/ExpedienteFooter.jsx'
+import NavegationTextFooter from '../sectionElements/footer/NavegationTextFooter.jsx'
+import LinksNavegationFooter from '../sectionElements/footer/LinksNavegationFooter.jsx'
+import FooterSocialIcons from '../sectionElements/footer/FooterSocialIcons.jsx'
 
 export default function FooterSocial({
   colorMode,
@@ -23,22 +23,22 @@ export default function FooterSocial({
   expediente,
 }) {
   // Define estilos com base no colorMode
-  let footerBackground = "";
-  let textColor = "";
+  let footerBackground = ''
+  let textColor = ''
 
   switch (colorMode) {
-    case "dark":
-      footerBackground = "bg-bgSectionOpacityDark";
-      textColor = "text-white";
-      break;
-    case "light":
-      footerBackground = "bg-bgFixedLight";
-      textColor = "text-black";
-      break;
+    case 'dark':
+      footerBackground = 'bg-bgSectionOpacityDark'
+      textColor = 'text-white'
+      break
+    case 'light':
+      footerBackground = 'bg-bgFixedLight'
+      textColor = 'text-black'
+      break
     default:
-      footerBackground = "bg-bgSectionDark";
-      textColor = "text-white";
-      break;
+      footerBackground = 'bg-bgSectionDark'
+      textColor = 'text-white'
+      break
   }
 
   return (
@@ -64,7 +64,7 @@ export default function FooterSocial({
               <ParagrapfFooter />
               <MotionDivDownToUp>
                 {/* Aqui os textos foram atualizados */}
-                <p className="opacity-90">
+                <p className="opacity-55">
                   {content.texts.footerSocialTextNew}
                 </p>
                 <div className="mt-2 opacity-90">
@@ -92,5 +92,5 @@ export default function FooterSocial({
         </SectionWrapper>
       </SectionArea>
     </footer>
-  );
+  )
 }

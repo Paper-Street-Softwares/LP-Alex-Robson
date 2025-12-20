@@ -20,6 +20,8 @@ export default function SectionHeader({
   animation = true,
   titleColorSet,
   subtitleColorSet,
+  mode = 'light',
+  opacity,
 }) {
   // Configurações baseadas no colorMode
   switch (colorMode) {
@@ -53,6 +55,12 @@ export default function SectionHeader({
     marginBottomOption = ''
   }
 
+  if (mode === 'light') {
+    opacity = `text-title1 font-secondFont leading-[26px] bg-transparent opacity-60`
+  } else if (mode === 'dark') {
+    opacity = `text-title1 font-secondFont leading-[26px] bg-transparent opacity-55`
+  }
+
   const Content = (
     <div className={`${usage} ${className}`}>
       <div>
@@ -69,8 +77,9 @@ export default function SectionHeader({
           {sectionHeaderTitle}
         </h1>
         <p
-          className={`text-title1 font-secondFont leading-[26px] bg-transparent opacity-60 ${marginBottomOption} ${subtitleOrientation} ${subtitleColor}`}
+          className={`${mode} ${opacity} ${marginBottomOption} ${subtitleOrientation} ${subtitleColor}`}
         >
+          {' '}
           {sectionHeaderSubtitle}
         </p>
       </div>

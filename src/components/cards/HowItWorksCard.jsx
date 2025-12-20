@@ -21,7 +21,7 @@ export default function HowItWorksCard({
     case 'default':
     default:
       textColor = 'text-white'
-      textOpacity = 'opacity-80'
+      textOpacity = 'opacity-55'
       break
   }
 

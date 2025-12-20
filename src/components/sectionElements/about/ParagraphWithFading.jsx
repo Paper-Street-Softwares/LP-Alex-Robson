@@ -1,10 +1,10 @@
-import Paragraphs from "../Paragraphs";
-import AboutFading from "../AboutFading";
+import Paragraphs from '../Paragraphs'
+import AboutFading from '../AboutFading'
 
 export default function ParagraphWithFading({ colorMode }) {
   return (
-    <Paragraphs className="text-opacity-80">
+    <Paragraphs className="text-opacity-55">
       <AboutFading colorMode={colorMode} />
     </Paragraphs>
-  );
+  )
 }

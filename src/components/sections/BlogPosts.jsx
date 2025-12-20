@@ -50,6 +50,7 @@ function BlogPosts() {
             titleColorSet="text-white"
             subtitleColorSet="text-white"
             miniTitleTextColor="text-primary"
+            mode="dark"
           />
 
           <ul className="flex flex-wrap gap-[30px] justify-center mb-[80px]">

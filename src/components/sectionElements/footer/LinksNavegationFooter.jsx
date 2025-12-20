@@ -1,70 +1,70 @@
-import React, { useEffect, useState } from "react";
-import MotionDivDownToUp from "../../animation/MotionDivDownToUp";
-import { useTranslation } from "react-i18next";
+import React, { useEffect, useState } from 'react'
+import MotionDivDownToUp from '../../animation/MotionDivDownToUp'
+import { useTranslation } from 'react-i18next'
 
-function LinksNavegationFooter({ mode = "blog" }) {
-  const { t } = useTranslation();
-  const [visibleLinks, setVisibleLinks] = useState([]);
+function LinksNavegationFooter({ mode = 'blog' }) {
+  const { t } = useTranslation()
+  const [visibleLinks, setVisibleLinks] = useState([])
 
   useEffect(() => {
-    const menuItems = t("navbar.menuItems", { returnObjects: true }) || {};
-    const allIds = Object.keys(menuItems);
-    const allLabels = Object.values(menuItems);
+    const menuItems = t('navbar.menuItems', { returnObjects: true }) || {}
+    const allIds = Object.keys(menuItems)
+    const allLabels = Object.values(menuItems)
 
     const paired = allIds.map((id, index) => ({
       id,
       label: allLabels[index] || id,
-    }));
+    }))
 
-    setVisibleLinks(paired);
-  }, [t]);
+    setVisibleLinks(paired)
+  }, [t])
 
-  const half = Math.ceil(visibleLinks.length / 2);
-  const firstHalf = visibleLinks.slice(0, half);
-  const secondHalf = visibleLinks.slice(half);
+  const half = Math.ceil(visibleLinks.length / 2)
+  const firstHalf = visibleLinks.slice(0, half)
+  const secondHalf = visibleLinks.slice(half)
 
   const handleScroll = (id) => {
-    const el = document.getElementById(id);
+    const el = document.getElementById(id)
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
-  };
+  }
 
   const renderLink = (id, label) => {
     const commonProps = {
-      "aria-label": label,
+      'aria-label': label,
       title: label,
-      "data-track": id,
-      className: "cursor-pointer",
-    };
+      'data-track': id,
+      className: 'cursor-pointer',
+    }
 
-    if (mode === "blog") {
+    if (mode === 'blog') {
       // Scroll suave, mas com <a href> rastreável
       return (
         <a
           href={`#${id}`}
           {...commonProps}
           onClick={(e) => {
-            e.preventDefault();
-            handleScroll(id);
+            e.preventDefault()
+            handleScroll(id)
           }}
         >
-          <span className="inline-block h-[48px] hover:underline hover:scale-110 transition">
+          <span className="inline-block h-[48px] hover:underline hover:scale-110 transition  opacity-55">
             {label}
           </span>
         </a>
-      );
+      )
     } else {
-      const to = id === "inicio" ? "/" : `/${id.toLowerCase()}`;
+      const to = id === 'inicio' ? '/' : `/${id.toLowerCase()}`
       return (
         <a href={to} {...commonProps}>
           <span className="inline-block h-[48px] hover:underline hover:scale-110 transition">
             {label}
           </span>
         </a>
-      );
+      )
     }
-  };
+  }
 
   return (
     <MotionDivDownToUp>
@@ -86,7 +86,7 @@ function LinksNavegationFooter({ mode = "blog" }) {
         </div>
       </div>
     </MotionDivDownToUp>
-  );
+  )
 }
 
-export default LinksNavegationFooter;
+export default LinksNavegationFooter

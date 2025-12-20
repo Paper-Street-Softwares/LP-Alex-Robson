@@ -1,19 +1,19 @@
-import { Trans } from "react-i18next";
+import { Trans } from 'react-i18next'
 
-export default function AboutFading({ colorMode = "default" }) {
+export default function AboutFading({ colorMode = 'default' }) {
   const textClasses = {
-    dark: "text-white",
-    light: "text-secondary",
-    default: "text-white",
-  };
+    dark: 'text-white',
+    light: 'text-secondary',
+    default: 'text-white/55',
+  }
   const fadeClasses = {
-    dark: "to-bgFixedDark",
-    light: "to-bgFixedLight",
-    default: "to-bgSectionDark",
-  };
+    dark: 'to-bgFixedDark',
+    light: 'to-bgFixedLight',
+    default: 'to-bgSectionDark',
+  }
 
-  const textClass = textClasses[colorMode] || textClasses.default;
-  const fadeClass = fadeClasses[colorMode] || fadeClasses.default;
+  const textClass = textClasses[colorMode] || textClasses.default
+  const fadeClass = fadeClasses[colorMode] || fadeClasses.default
 
   return (
     <div
@@ -28,5 +28,5 @@ export default function AboutFading({ colorMode = "default" }) {
         className={`pointer-events-none absolute bottom-0 w-full h-[80px] bg-gradient-to-b from-transparent ${fadeClass}`}
       />
     </div>
-  );
+  )
 }

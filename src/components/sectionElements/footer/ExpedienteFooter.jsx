@@ -1,16 +1,16 @@
-import React from "react";
-import MotionDivDownToUp from "../../animation/MotionDivDownToUp";
-import { CalendarCheck2 } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import React from 'react'
+import MotionDivDownToUp from '../../animation/MotionDivDownToUp'
+import { CalendarCheck2 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 function ExpedienteFooter({ showSecond = false }) {
-  const { t } = useTranslation(); // função para buscar do pt.json
+  const { t } = useTranslation() // função para buscar do pt.json
 
   return (
     <>
       {/* Expediente principal */}
       <MotionDivDownToUp>
-        <div className="flex full gap-x-[12px] items-center opacity-90">
+        <div className="flex full gap-x-[12px] items-center opacity-55">
           <div>
             <CalendarCheck2 />
           </div>
@@ -18,7 +18,7 @@ function ExpedienteFooter({ showSecond = false }) {
           {/* Interpreta tags HTML do JSON */}
           <p
             dangerouslySetInnerHTML={{
-              __html: t("infos.expediente"),
+              __html: t('infos.expediente'),
             }}
           />
         </div>
@@ -26,7 +26,7 @@ function ExpedienteFooter({ showSecond = false }) {
 
       {showSecond && (
         <MotionDivDownToUp>
-          <div className="flex full gap-x-[12px] items-center opacity-90">
+          <div className="flex full gap-x-[12px] items-center opacity-55">
             <div>
               <CalendarCheck2 />
             </div>
@@ -34,14 +34,14 @@ function ExpedienteFooter({ showSecond = false }) {
             {/* Interpreta tags HTML do JSON */}
             <p
               dangerouslySetInnerHTML={{
-                __html: t("infos.expedienteSecundario"),
+                __html: t('infos.expedienteSecundario'),
               }}
             />
           </div>
         </MotionDivDownToUp>
       )}
     </>
-  );
+  )
 }
 
-export default ExpedienteFooter;
+export default ExpedienteFooter
