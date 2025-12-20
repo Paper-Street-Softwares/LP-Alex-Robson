@@ -69,7 +69,7 @@ export default function SectionHeader({
           {sectionHeaderTitle}
         </h1>
         <p
-          className={`text-title1 font-secondFont leading-[26px] bg-transparent ${marginBottomOption} ${subtitleOrientation} ${subtitleColor}`}
+          className={`text-title1 font-secondFont leading-[26px] bg-transparent opacity-60 ${marginBottomOption} ${subtitleOrientation} ${subtitleColor}`}
         >
           {sectionHeaderSubtitle}
         </p>
