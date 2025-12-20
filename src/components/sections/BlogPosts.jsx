@@ -7,6 +7,7 @@ import SectionHeader from '../sectionElements/SectionHeader'
 import Paragraphs from '../sectionElements/Paragraphs'
 import MotionDivDownToUp from '../animation/MotionDivDownToUp'
 import content from '../../content/content'
+import { Link } from 'lucide-react'
 
 function BlogPosts() {
   const { t } = useTranslation()
@@ -50,6 +51,7 @@ function BlogPosts() {
             titleColorSet="text-white"
             subtitleColorSet="text-white"
             miniTitleTextColor="text-primary"
+            mode="dark"
           />
 
           <ul className="flex flex-wrap gap-[30px] justify-center mb-[80px]">
@@ -93,7 +95,11 @@ function BlogPosts() {
                 href={`https://${content.texts.blog.blogLink}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex gap-1"
               >
+                <span>
+                  <Link width={18} />
+                </span>
                 {t('blog.label')}
               </a>
             </Paragraphs>

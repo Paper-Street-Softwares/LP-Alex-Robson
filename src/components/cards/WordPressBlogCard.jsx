@@ -19,7 +19,7 @@ export default function WordPressBlogCard({ img, title, subtitle, link }) {
             {title}
           </h1>
           <h2
-            className="text-paragraph2 desktop2:text-paragraph3 mb-[32px] text-colorBlack/60 leading-[18px] desktop1:leading-[21px]  "
+            className="text-paragraph2 desktop2:text-paragraph3 mb-[32px] text-black/60 leading-[18px] desktop1:leading-[21px]  "
             title="blogSubtitle"
           >
             {subtitle}

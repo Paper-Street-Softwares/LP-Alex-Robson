@@ -23,7 +23,7 @@ function PhoneFooter({ colorMode, phoneTwo = false, phoneThree = false }) {
   return (
     <>
       <MotionDivDownToUp>
-        <div className="flex full gap-x-[12px] items-center opacity-90">
+        <div className="flex full gap-x-[12px] items-center opacity-55">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={24}

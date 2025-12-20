@@ -18,7 +18,7 @@ export default function Faq({ colorMode }) {
     dark: 'bg-bgFixedDark',
     // light: "bg-bgSectionOpacityLight",
     light: 'squares',
-    default: 'squares',
+    default: 'bg-neutral-50',
   }
   const textClasses = {
     dark: 'text-white',
@@ -31,13 +31,14 @@ export default function Faq({ colorMode }) {
   return (
     <SectionArea id="faq" className={`${bgClass}`}>
       <SectionHeader
-        colorMode="dark"
+        colorMode="light"
         className="text-center mb-[26px] tablet1:mb-[40px] desktop1:mb-[72px]"
         miniTitle={t('faq.miniTag')}
         sectionHeaderTitle={t('faq.title')}
         sectionHeaderSubtitle={t('faq.subtitle')}
         titleColorSet={titleColor}
         subtitleColorSet={titleColor}
+        mode="light"
       />
       <SectionWrapper className="flex justify-center">
         <MotionDivDownToUp className="flex justify-center w-full">

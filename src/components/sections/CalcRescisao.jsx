@@ -37,6 +37,7 @@ function CalcRescisao({ colorMode }) {
             titleColorSet={textColor}
             subtitleColorSet={textColor}
             miniTitleTextColor="text-primary"
+            mode="dark"
           />
 
           <Button

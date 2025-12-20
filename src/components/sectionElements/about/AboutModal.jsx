@@ -18,8 +18,10 @@ export default function AboutModal() {
         {/* <p className="mb-[20px]">
           <Trans i18nKey="about.subtitle" />
         </p> */}
-
-        <Trans i18nKey="about.modal" components={{ br: <br /> }} />
+        <p className=" opacity-80">
+          {' '}
+          <Trans i18nKey="about.modal" components={{ br: <br /> }} />
+        </p>
 
         <div className="">
           <p className="mt-[15px] mb-[20px] text-black">

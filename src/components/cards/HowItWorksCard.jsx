@@ -1,33 +1,33 @@
-import MotionDivDownToUp from "../animation/MotionDivDownToUp";
+import MotionDivDownToUp from '../animation/MotionDivDownToUp'
 
 export default function HowItWorksCard({
   number,
   title,
   description,
   animation = true,
-  colorMode = "default", // 'light', 'dark' ou 'default'
+  colorMode = 'default', // 'light', 'dark' ou 'default'
 }) {
-  let textColor, textOpacity;
+  let textColor, textOpacity
 
   switch (colorMode) {
-    case "light":
-      textColor = "text-secondary";
-      textOpacity = "opacity-90";
-      break;
-    case "dark":
-      textColor = "text-white";
-      textOpacity = "opacity-80";
-      break;
-    case "default":
+    case 'light':
+      textColor = 'text-secondary'
+      textOpacity = 'opacity-90'
+      break
+    case 'dark':
+      textColor = 'text-white'
+      textOpacity = 'opacity-80'
+      break
+    case 'default':
     default:
-      textColor = "text-white";
-      textOpacity = "opacity-80";
-      break;
+      textColor = 'text-white'
+      textOpacity = 'opacity-55'
+      break
   }
 
   const BaseContent = (
     <div className="flex flex-col items-center justify-center transition desktop1:items-start font-mainFont desktop1:hover:scale-110 h-auto">
-      <div className="bg-buttonColor mb-[32px] p-[25px] flex justify-center items-center rounded-full h-[48px] w-[48px] text-labelButtons text-title1 font-semibold">
+      <div className="border border-primary mb-[32px] p-[25px] flex justify-center items-center rounded-full h-[48px] w-[48px] text-primary text-title1 font-semibold">
         {number}
       </div>
 
@@ -42,7 +42,7 @@ export default function HowItWorksCard({
         {description}
       </p>
     </div>
-  );
+  )
 
   const StaticContent = (
     <div className="flex flex-col items-center justify-center tablet1:w-[45%] transition desktop1:items-start font-mainFont desktop1:hover:scale-110 h-auto">
@@ -56,7 +56,7 @@ export default function HowItWorksCard({
         {description}
       </p>
     </div>
-  );
+  )
 
   return animation ? (
     <MotionDivDownToUp className="tablet1:w-[45%]">
@@ -64,5 +64,5 @@ export default function HowItWorksCard({
     </MotionDivDownToUp>
   ) : (
     StaticContent
-  );
+  )
 }

@@ -149,8 +149,8 @@ export default function Hero({
         ? 'bg-transparent text-primary'
         : 'bg-transparent text-primary',
       titleTextColor: 'text-white',
-      subtitleTextColor: 'text-white',
-      obsTextColorOverride: 'text-white',
+      subtitleTextColor: 'text-white/55',
+      obsTextColorOverride: 'text-white/55',
     })
   }
 

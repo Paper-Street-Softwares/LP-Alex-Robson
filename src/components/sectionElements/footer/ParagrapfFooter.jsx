@@ -1,15 +1,15 @@
-import React from "react";
-import MotionDivDownToUp from "../../animation/MotionDivDownToUp";
-import { useTranslation } from "react-i18next";
+import React from 'react'
+import MotionDivDownToUp from '../../animation/MotionDivDownToUp'
+import { useTranslation } from 'react-i18next'
 
 function ParagrapfFooter() {
-  const { t } = useTranslation(); // pega a função t
+  const { t } = useTranslation() // pega a função t
 
   return (
     <MotionDivDownToUp>
-      <p className="opacity-90">{t("footer.footerText")}</p>
+      <p className="opacity-55">{t('footer.footerText')}</p>
     </MotionDivDownToUp>
-  );
+  )
 }
 
-export default ParagrapfFooter;
+export default ParagrapfFooter

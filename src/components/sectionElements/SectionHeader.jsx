@@ -20,6 +20,8 @@ export default function SectionHeader({
   animation = true,
   titleColorSet,
   subtitleColorSet,
+  mode = 'light',
+  opacity,
 }) {
   // Configurações baseadas no colorMode
   switch (colorMode) {
@@ -31,7 +33,7 @@ export default function SectionHeader({
       break
     case 'light':
     default:
-      miniTitleTextColor = miniTitleTextColor ?? 'text-minititleDarkLabel'
+      miniTitleTextColor = miniTitleTextColor ?? 'text-primary'
       titleColor = titleColorSet ?? 'text-white'
       subtitleColor = subtitleColorSet ?? 'text-white'
       if (miniTitleBgColor === true) miniTitleBgColor = 'bg-transparent'
@@ -53,14 +55,22 @@ export default function SectionHeader({
     marginBottomOption = ''
   }
 
+  if (mode === 'light') {
+    opacity = `text-title1 font-secondFont leading-[26px] bg-transparent opacity-60`
+  } else if (mode === 'dark') {
+    opacity = `text-title1 font-secondFont leading-[26px] bg-transparent opacity-55`
+  }
+
   const Content = (
     <div className={`${usage} ${className}`}>
       <div>
         <div className={`${miniTitleSpace}`}>
           <div
-            className={`py-[4px] font-semibold  font-mainFont text-paragraph2 rounded-md inline-block mb-[16px] ${miniTitleOrientation} ${miniTitleBgColor}`}
+            className={`py-[4px] font-mainFont text-paragraph2 rounded-md inline-block mb-[16px] font-bold ${miniTitleOrientation} ${miniTitleBgColor}`}
           >
-            <p className={`${miniTitleTextColor} uppercase`}>{miniTitle}</p>
+            <strong>
+              <p className={`${miniTitleTextColor} uppercase`}>{miniTitle}</p>
+            </strong>
           </div>
         </div>
         <h1
@@ -69,8 +79,9 @@ export default function SectionHeader({
           {sectionHeaderTitle}
         </h1>
         <p
-          className={`text-title1 font-secondFont leading-[26px] bg-transparent ${marginBottomOption} ${subtitleOrientation} ${subtitleColor}`}
+          className={`${mode} ${opacity} ${marginBottomOption} ${subtitleOrientation} ${subtitleColor}`}
         >
+          {' '}
           {sectionHeaderSubtitle}
         </p>
       </div>
