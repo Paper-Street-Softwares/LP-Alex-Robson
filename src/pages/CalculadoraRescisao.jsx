@@ -968,7 +968,7 @@ export default function CalculadoraRescisao() {
           <img
             src={content.texts.calc.img}
             alt={`Foto de ${infos.name}`}
-            className="rounded-full w-32 mb-4 object-cover border-2"
+            className="rounded-full w-32  mb-4 object-cover border-2"
             style={{ borderColor: '#c6af72' }}
           />
           <div className="flex flex-col tablet2:items-center m-auto tablet2:w-[55%] ">
