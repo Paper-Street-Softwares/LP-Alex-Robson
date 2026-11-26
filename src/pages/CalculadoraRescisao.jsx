@@ -1,37 +1,37 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { jsPDF } from 'jspdf'
-import html2canvas from 'html2canvas'
-import content, { infos } from '../content/content'
-import Button from '../components/interactives/Button'
-import { Mail } from 'lucide-react'
+import React, { useState, useEffect, useRef } from "react";
+import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
+import content, { infos } from "../content/content";
+import Button from "../components/interactives/Button";
+import { Mail } from "lucide-react";
 
 export default function CalculadoraRescisao() {
   // ---------- Estados do formulário ----------
-  const [tipoDesligamento, setTipoDesligamento] = useState('sem-justa-causa')
-  const [salarioBase, setSalarioBase] = useState('1518,00')
-  const [dataAdmissao, setDataAdmissao] = useState('2024-01-15')
-  const [dataDesligamento, setDataDesligamento] = useState('2024-08-28')
-  const [avisoModelo, setAvisoModelo] = useState('indenizado')
-  const [faltasDescontos, setFaltasDescontos] = useState('0,00')
-  const [feriasVencidas, setFeriasVencidas] = useState(false)
-  const [fgtsOption, setFgtsOption] = useState('informar')
-  const [fgtsSaldo, setFgtsSaldo] = useState('0000,00')
+  const [tipoDesligamento, setTipoDesligamento] = useState("sem-justa-causa");
+  const [salarioBase, setSalarioBase] = useState("1518,00");
+  const [dataAdmissao, setDataAdmissao] = useState("2024-01-15");
+  const [dataDesligamento, setDataDesligamento] = useState("2024-08-28");
+  const [avisoModelo, setAvisoModelo] = useState("indenizado");
+  const [faltasDescontos, setFaltasDescontos] = useState("0,00");
+  const [feriasVencidas, setFeriasVencidas] = useState(false);
+  const [fgtsOption, setFgtsOption] = useState("informar");
+  const [fgtsSaldo, setFgtsSaldo] = useState("0000,00");
 
   // ---------- UI states ----------
-  const [resultado, setResultado] = useState(null)
-  const [comparacao, setComparacao] = useState(null)
-  const [showMessageBox, setShowMessageBox] = useState(false)
-  const [messageTitle, setMessageTitle] = useState('')
-  const [messageText, setMessageText] = useState('')
+  const [resultado, setResultado] = useState(null);
+  const [comparacao, setComparacao] = useState(null);
+  const [showMessageBox, setShowMessageBox] = useState(false);
+  const [messageTitle, setMessageTitle] = useState("");
+  const [messageText, setMessageText] = useState("");
 
   // Refs
-  const resultRef = useRef(null)
+  const resultRef = useRef(null);
 
   // ---------- Constantes / Tabelas ----------
-  const inssTeto = 7786.02
+  const inssTeto = 7786.02;
 
   const regrasRescisao = {
-    'sem-justa-causa': {
+    "sem-justa-causa": {
       multaFgts: 0.4,
       avisoPrevio: true,
       fgtsSaque: true,
@@ -41,7 +41,7 @@ export default function CalculadoraRescisao() {
       feriasProporcionais: true,
       feriasVencidas: true,
     },
-    'pedido-demissao': {
+    "pedido-demissao": {
       multaFgts: 0.0,
       avisoPrevio: true,
       fgtsSaque: false,
@@ -51,7 +51,7 @@ export default function CalculadoraRescisao() {
       feriasProporcionais: true,
       feriasVencidas: true,
     },
-    'justa-causa': {
+    "justa-causa": {
       multaFgts: 0.0,
       avisoPrevio: false,
       fgtsSaque: false,
@@ -72,7 +72,7 @@ export default function CalculadoraRescisao() {
       feriasProporcionais: true,
       feriasVencidas: true,
     },
-    'rescisao-indireta': {
+    "rescisao-indireta": {
       multaFgts: 0.4,
       avisoPrevio: true,
       fgtsSaque: true,
@@ -82,7 +82,7 @@ export default function CalculadoraRescisao() {
       feriasProporcionais: true,
       feriasVencidas: true,
     },
-    'termino-experiencia': {
+    "termino-experiencia": {
       multaFgts: 0.0,
       avisoPrevio: false,
       fgtsSaque: true,
@@ -92,168 +92,241 @@ export default function CalculadoraRescisao() {
       feriasProporcionais: true,
       feriasVencidas: true,
     },
-  }
+  };
 
   // ---------- Utilitários ----------
   const parseCurrency = (value) => {
-    if (!value) return 0
-    return parseFloat(value.toString().replace(/\./g, '').replace(',', '.'))
-  }
+    if (!value) return 0;
+    return parseFloat(value.toString().replace(/\./g, "").replace(",", "."));
+  };
 
   const formatCurrency = (value) =>
-    new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    }).format(Number(value || 0))
+    new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(Number(value || 0));
 
   // ---------- Funções de cálculo (mantidas conforme HTML original) ----------
   function getMonthsWorked(admissao, desligamento) {
-    const d1 = new Date(admissao)
-    const d2 = new Date(desligamento)
-    let months = (d2.getFullYear() - d1.getFullYear()) * 12
-    months -= d1.getMonth()
-    months += d2.getMonth()
-    if (d2.getDate() < d1.getDate()) months--
-    return months <= 0 ? 0 : months
+    const d1 = new Date(admissao);
+    const d2 = new Date(desligamento);
+    let months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    months -= d1.getMonth();
+    months += d2.getMonth();
+    if (d2.getDate() < d1.getDate()) months--;
+    return months <= 0 ? 0 : months;
   }
 
   function getAnosCompletos(admissao, desligamento) {
-    const start = new Date(admissao)
-    const end = new Date(desligamento)
-    let years = end.getFullYear() - start.getFullYear()
+    const start = new Date(admissao);
+    const end = new Date(desligamento);
+    let years = end.getFullYear() - start.getFullYear();
     if (
       end.getMonth() < start.getMonth() ||
       (end.getMonth() === start.getMonth() && end.getDate() < start.getDate())
     ) {
-      years--
+      years--;
     }
-    return Math.max(0, years)
+    return Math.max(0, years);
   }
 
   function getDiasAviso(dataAdmissao, dataDesligamento) {
-    const anosCompletos = getAnosCompletos(dataAdmissao, dataDesligamento)
-    return 30 + Math.min(60, anosCompletos * 3) // 30 + 3 dias por ano, até 90
+    const anosCompletos = getAnosCompletos(dataAdmissao, dataDesligamento);
+    return 30 + Math.min(60, anosCompletos * 3);
   }
 
   function calcSalarioSaldo(salario, dataDesligamento) {
-    const diasNoMes = 30
-    const diasTrabalhados = new Date(dataDesligamento).getDate()
-    return (salario / diasNoMes) * diasTrabalhados
+    const diasNoMes = 30;
+    const diasTrabalhados = new Date(dataDesligamento).getDate();
+    return (salario / diasNoMes) * diasTrabalhados;
   }
 
   function calcAvisoPrevio(salarioBaseNum, diasAviso) {
-    return (salarioBaseNum / 30) * diasAviso
+    return (salarioBaseNum / 30) * diasAviso;
   }
 
   function calcDecimoTerceiro(salarioBaseNum, dataAdmissaoStr, dataFinalStr) {
-    const anoDesligamento = new Date(dataFinalStr).getFullYear()
-    const diaDesligamento = new Date(dataFinalStr).getDate()
-    const mesDesligamento = new Date(dataFinalStr).getMonth() // 0..11
+    const anoDesligamento = new Date(dataFinalStr).getFullYear();
+    const diaDesligamento = new Date(dataFinalStr).getDate();
+    const mesDesligamento = new Date(dataFinalStr).getMonth();
 
     let dataInicioContagem =
       new Date(dataAdmissaoStr).getFullYear() < anoDesligamento
         ? new Date(anoDesligamento, 0, 1)
-        : new Date(dataAdmissaoStr)
+        : new Date(dataAdmissaoStr);
 
-    const diaInicio = dataInicioContagem.getDate()
-    const mesInicio = dataInicioContagem.getMonth()
-    let avos = 0
+    const diaInicio = dataInicioContagem.getDate();
+    const mesInicio = dataInicioContagem.getMonth();
+    let avos = 0;
+
     for (let m = mesInicio; m <= mesDesligamento; m++) {
-      if (m === mesInicio && diaInicio > 15) continue
-      if (m === mesDesligamento && diaDesligamento < 15) continue
-      avos++
+      if (m === mesInicio && diaInicio > 15) continue;
+      if (m === mesDesligamento && diaDesligamento < 15) continue;
+      avos++;
     }
-    avos = Math.max(0, avos)
-    avos = Math.min(avos, 12)
-    return (salarioBaseNum / 12) * avos
+
+    avos = Math.max(0, avos);
+    avos = Math.min(avos, 12);
+
+    return (salarioBaseNum / 12) * avos;
   }
 
   function calcFeriasProporcionais(
     salarioBaseNum,
     dataAdmissaoStr,
-    dataFinalStr
+    dataFinalStr,
   ) {
-    let ultimoAniversario = new Date(dataAdmissaoStr)
-    const dataFinal = new Date(dataFinalStr)
+    let ultimoAniversario = new Date(dataAdmissaoStr);
+    const dataFinal = new Date(dataFinalStr);
+
     while (ultimoAniversario <= dataFinal) {
-      const proximo = new Date(ultimoAniversario)
-      proximo.setFullYear(proximo.getFullYear() + 1)
-      if (proximo > dataFinal) break
-      ultimoAniversario = proximo
+      const proximo = new Date(ultimoAniversario);
+      proximo.setFullYear(proximo.getFullYear() + 1);
+
+      if (proximo > dataFinal) break;
+
+      ultimoAniversario = proximo;
     }
-    const dataInicioContagem = ultimoAniversario
+
+    const dataInicioContagem = ultimoAniversario;
+
     let mesesTotais =
       (dataFinal.getFullYear() - dataInicioContagem.getFullYear()) * 12 +
-      (dataFinal.getMonth() - dataInicioContagem.getMonth())
-    if (dataInicioContagem.getDate() > 15) mesesTotais--
-    if (dataFinal.getDate() >= 15) mesesTotais++
-    const avos = mesesTotais % 12
-    return (salarioBaseNum / 12) * avos * (4 / 3)
+      (dataFinal.getMonth() - dataInicioContagem.getMonth());
+
+    if (dataInicioContagem.getDate() > 15) mesesTotais--;
+    if (dataFinal.getDate() >= 15) mesesTotais++;
+
+    const avos = mesesTotais % 12;
+
+    return (salarioBaseNum / 12) * avos * (4 / 3);
   }
 
   function calcFeriasVencidas(salarioBaseNum) {
-    return salarioBaseNum * (4 / 3)
+    return salarioBaseNum * (4 / 3);
   }
 
   function calcFgtsSaldo(option, saldoInformadoNum, fgtsMeses, salarioBaseNum) {
-    if (option === 'informar') return saldoInformadoNum
-    return salarioBaseNum * 0.08 * fgtsMeses
+    if (option === "informar") return saldoInformadoNum;
+
+    return salarioBaseNum * 0.08 * fgtsMeses;
   }
 
   function calcMultaFgts(fgtsSaldoNum, aliquota) {
-    return fgtsSaldoNum * aliquota
+    return fgtsSaldoNum * aliquota;
   }
 
   function calcINSS(base) {
-    const baseINSS = Math.min(base, inssTeto)
-    let inssValor = 0
+    const baseINSS = Math.min(base, inssTeto);
+    let inssValor = 0;
+
     if (baseINSS <= 1412.0) {
-      inssValor = baseINSS * 0.075
+      inssValor = baseINSS * 0.075;
     } else if (baseINSS <= 2666.68) {
-      inssValor = baseINSS * 0.09 - 21.18
+      inssValor = baseINSS * 0.09 - 21.18;
     } else if (baseINSS <= 4000.03) {
-      inssValor = baseINSS * 0.12 - 101.18
+      inssValor = baseINSS * 0.12 - 101.18;
     } else if (baseINSS <= 7786.02) {
-      inssValor = baseINSS * 0.14 - 181.18
+      inssValor = baseINSS * 0.14 - 181.18;
     } else {
-      inssValor = 7786.02 * 0.14 - 181.18
+      inssValor = 7786.02 * 0.14 - 181.18;
     }
-    return Math.max(0, inssValor)
+
+    return Math.max(0, inssValor);
   }
 
-  function calcIRRF(base) {
-    let irrfValor = 0
-    if (base <= 2259.2) {
-      irrfValor = 0
-    } else if (base <= 2826.65) {
-      irrfValor = base * 0.075 - 169.44
-    } else if (base <= 3751.05) {
-      irrfValor = base * 0.15 - 381.44
-    } else if (base <= 4664.68) {
-      irrfValor = base * 0.225 - 662.77
-    } else {
-      irrfValor = base * 0.275 - 896.0
+  // ---------- ATUALIZAÇÃO IRRF 2026 ----------
+  // Lei nº 15.270/2025, vigente a partir de 01/01/2026.
+  // Isenção integral para rendimentos tributáveis de até R$ 5.000,00.
+  // Redução progressiva para rendimentos de até R$ 7.350,00.
+  function calcIRRF(
+    rendimentoTributavel,
+    inssValor = 0,
+    aplicarRegra2026 = false,
+  ) {
+    if (rendimentoTributavel <= 0) return 0;
+
+    let irrfValor = 0;
+
+    // Mantém a lógica original para simulações anteriores a 2026.
+    if (!aplicarRegra2026) {
+      const base = rendimentoTributavel;
+
+      if (base <= 2259.2) {
+        irrfValor = 0;
+      } else if (base <= 2826.65) {
+        irrfValor = base * 0.075 - 169.44;
+      } else if (base <= 3751.05) {
+        irrfValor = base * 0.15 - 381.44;
+      } else if (base <= 4664.68) {
+        irrfValor = base * 0.225 - 662.77;
+      } else {
+        irrfValor = base * 0.275 - 896.0;
+      }
+
+      return Math.max(0, irrfValor);
     }
-    return Math.max(0, irrfValor)
+
+    // Desconto simplificado mensal de 2026.
+    const descontoSimplificado = 607.2;
+
+    // Utiliza a dedução mais vantajosa para o trabalhador.
+    const deducao = Math.max(inssValor, descontoSimplificado);
+
+    const base = Math.max(0, rendimentoTributavel - deducao);
+
+    // Tabela progressiva do IRRF de 2026.
+    if (base <= 2428.8) {
+      irrfValor = 0;
+    } else if (base <= 2826.65) {
+      irrfValor = base * 0.075 - 182.16;
+    } else if (base <= 3751.05) {
+      irrfValor = base * 0.15 - 394.16;
+    } else if (base <= 4664.68) {
+      irrfValor = base * 0.225 - 675.49;
+    } else {
+      irrfValor = base * 0.275 - 908.73;
+    }
+
+    irrfValor = Math.max(0, irrfValor);
+
+    // Redução do imposto conforme a Lei nº 15.270/2025.
+    let reducao = 0;
+
+    if (rendimentoTributavel <= 5000) {
+      // Isenção integral até R$ 5.000,00.
+      reducao = Math.min(irrfValor, 312.89);
+    } else if (rendimentoTributavel <= 7350) {
+      // Redução progressiva entre R$ 5.000,01 e R$ 7.350,00.
+      reducao = Math.min(
+        irrfValor,
+        Math.max(0, 978.62 - 0.133145 * rendimentoTributavel),
+      );
+    }
+
+    return Math.max(0, Math.round((irrfValor - reducao) * 100) / 100);
   }
 
   // ---------- Máscara de moeda para inputs (mantendo comportamento original) ----------
   // Note: usamos eventos onChange em inputs e formatamos ao desfocar (onBlur)
   const maskToCurrencyString = (digitsOnlyString) => {
-    if (!digitsOnlyString) return '0,00'
-    const num = Number(digitsOnlyString)
-    const cents = (num / 100).toFixed(2).replace('.', ',')
+    if (!digitsOnlyString) return "0,00";
+
+    const num = Number(digitsOnlyString);
+    const cents = (num / 100).toFixed(2).replace(".", ",");
+
     // adiciona separador de milhar
-    const parts = cents.split(',')
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.')
-    return parts.join(',')
-  }
+    const parts = cents.split(",");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+    return parts.join(",");
+  };
 
   // Helper para tratar mudança em campos de moeda a partir do valor "visual"
   const handleCurrencyInput = (setter) => (e) => {
-    const onlyDigits = e.target.value.replace(/\D/g, '')
-    setter(maskToCurrencyString(onlyDigits))
-  }
+    const onlyDigits = e.target.value.replace(/\D/g, "");
+    setter(maskToCurrencyString(onlyDigits));
+  };
 
   // ---------- Função principal de cálculo (preserva lógica do HTML) ----------
   function calcRescisaoFromForm({
@@ -267,60 +340,65 @@ export default function CalculadoraRescisao() {
     fgtsOpt,
     fgtsSaldoStr,
   }) {
-    const salarioNum = parseCurrency(salarioStr)
-    const faltasNum = parseCurrency(faltasStr)
-    const fgtsSaldoNum = parseCurrency(fgtsSaldoStr)
+    const salarioNum = parseCurrency(salarioStr);
+    const faltasNum = parseCurrency(faltasStr);
+    const fgtsSaldoNum = parseCurrency(fgtsSaldoStr);
 
-    const admissao = new Date(`${admissaoStr}T00:00:00`)
-    const desligamento = new Date(`${desligamentoStr}T00:00:00`)
+    const admissao = new Date(`${admissaoStr}T00:00:00`);
+    const desligamento = new Date(`${desligamentoStr}T00:00:00`);
 
-    const regras = regrasRescisao[tipo]
+    const regras = regrasRescisao[tipo];
 
-    let bruto = 0
-    let descontos = 0
-    const verbas = {}
-    const notas = []
+    let bruto = 0;
+    let descontos = 0;
+    const verbas = {};
+    const notas = [];
 
     // Saldo de salário
-    const saldoSalario = calcSalarioSaldo(salarioNum, desligamento)
-    const diasTrabalhados = desligamento.getDate()
-    verbas['Saldo de Salário'] = {
+    const saldoSalario = calcSalarioSaldo(salarioNum, desligamento);
+    const diasTrabalhados = desligamento.getDate();
+
+    verbas["Saldo de Salário"] = {
       valor: saldoSalario,
       formula: `${diasTrabalhados} dias trabalhados no mês`,
-    }
-    bruto += saldoSalario
+    };
+
+    bruto += saldoSalario;
 
     // Aviso Prévio
-    const diasAviso = getDiasAviso(admissao, desligamento)
-    const avisoValorProporcional = calcAvisoPrevio(salarioNum, diasAviso)
-    const avisoValor30Dias = calcAvisoPrevio(salarioNum, 30)
+    const diasAviso = getDiasAviso(admissao, desligamento);
+    const avisoValorProporcional = calcAvisoPrevio(salarioNum, diasAviso);
+    const avisoValor30Dias = calcAvisoPrevio(salarioNum, 30);
 
     if (regras.avisoPrevio) {
-      if (aviso === 'indenizado') {
+      if (aviso === "indenizado") {
         if (regras.aviso50p) {
-          verbas['Aviso Prévio Indenizado (50%)'] = {
+          verbas["Aviso Prévio Indenizado (50%)"] = {
             valor: avisoValorProporcional / 2,
-            formula: '50% do valor do aviso (Acordo)',
-          }
-          bruto += avisoValorProporcional / 2
+            formula: "50% do valor do aviso (Acordo)",
+          };
+
+          bruto += avisoValorProporcional / 2;
         } else {
-          verbas['Aviso Prévio Indenizado'] = {
+          verbas["Aviso Prévio Indenizado"] = {
             valor: avisoValorProporcional,
             formula: `${diasAviso} dias de aviso prévio`,
-          }
-          bruto += avisoValorProporcional
+          };
+
+          bruto += avisoValorProporcional;
         }
-      } else if (aviso === 'trabalhado') {
-        verbas['Aviso Prévio Trabalhado'] = {
+      } else if (aviso === "trabalhado") {
+        verbas["Aviso Prévio Trabalhado"] = {
           valor: 0,
-          formula: 'Aviso cumprido e pago no saldo final',
-        }
-      } else if (aviso === 'nao-cumprido' && regras.avisoDesconta) {
-        verbas['Aviso Prévio (Desconto)'] = {
+          formula: "Aviso cumprido e pago no saldo final",
+        };
+      } else if (aviso === "nao-cumprido" && regras.avisoDesconta) {
+        verbas["Aviso Prévio (Desconto)"] = {
           valor: -avisoValor30Dias,
-          formula: 'Desconto de 30 dias (Aviso não cumprido)',
-        }
-        descontos += avisoValor30Dias
+          formula: "Desconto de 30 dias (Aviso não cumprido)",
+        };
+
+        descontos += avisoValor30Dias;
       }
     }
 
@@ -329,23 +407,27 @@ export default function CalculadoraRescisao() {
       const decimoProporcional = calcDecimoTerceiro(
         salarioNum,
         admissaoStr,
-        desligamentoStr
-      )
-      verbas['13º Salário Proporcional'] = {
+        desligamentoStr,
+      );
+
+      verbas["13º Salário Proporcional"] = {
         valor: decimoProporcional,
-        formula: 'Proporcional aos meses trabalhados no ano',
-      }
-      bruto += decimoProporcional
+        formula: "Proporcional aos meses trabalhados no ano",
+      };
+
+      bruto += decimoProporcional;
     }
 
     // Férias vencidas
     if (feriasVenc && regras.feriasVencidas) {
-      const feriasV = calcFeriasVencidas(salarioNum)
-      verbas['Férias Vencidas + 1/3'] = {
+      const feriasV = calcFeriasVencidas(salarioNum);
+
+      verbas["Férias Vencidas + 1/3"] = {
         valor: feriasV,
-        formula: 'Período completo de 12 meses não gozado',
-      }
-      bruto += feriasV
+        formula: "Período completo de 12 meses não gozado",
+      };
+
+      bruto += feriasV;
     }
 
     // Férias proporcionais
@@ -353,90 +435,137 @@ export default function CalculadoraRescisao() {
       const feriasP = calcFeriasProporcionais(
         salarioNum,
         admissaoStr,
-        desligamentoStr
-      )
-      verbas['Férias Proporcionais + 1/3'] = {
+        desligamentoStr,
+      );
+
+      verbas["Férias Proporcionais + 1/3"] = {
         valor: feriasP,
-        formula: 'Proporcional ao período aquisitivo',
-      }
-      bruto += feriasP
+        formula: "Proporcional ao período aquisitivo",
+      };
+
+      bruto += feriasP;
     }
 
     // FGTS / Multa
-    const dataFinalProjetada = new Date(desligamento)
+    const dataFinalProjetada = new Date(desligamento);
+
     if (
       regras.avisoPrevio &&
-      (aviso === 'indenizado' || aviso === 'trabalhado')
+      (aviso === "indenizado" || aviso === "trabalhado")
     )
       dataFinalProjetada.setDate(
-        dataFinalProjetada.getDate() + getDiasAviso(admissao, desligamento)
-      )
+        dataFinalProjetada.getDate() + getDiasAviso(admissao, desligamento),
+      );
 
     const mesesTrabalhadosTotal =
-      getMonthsWorked(admissao, dataFinalProjetada) + 1
+      getMonthsWorked(admissao, dataFinalProjetada) + 1;
+
     const fgtsCalculado = calcFgtsSaldo(
       fgtsOpt,
       fgtsSaldoNum,
       mesesTrabalhadosTotal,
-      salarioNum
-    )
-    verbas['FGTS (Saldo Estimado/Informado)'] = {
+      salarioNum,
+    );
+
+    verbas["FGTS (Saldo Estimado/Informado)"] = {
       valor: fgtsCalculado,
-      formula: 'Valor base para cálculo da multa',
-    }
+      formula: "Valor base para cálculo da multa",
+    };
 
     if (regras.multaFgts > 0) {
-      const multa = calcMultaFgts(fgtsCalculado, regras.multaFgts)
-      verbas['Multa FGTS'] = {
+      const multa = calcMultaFgts(fgtsCalculado, regras.multaFgts);
+
+      verbas["Multa FGTS"] = {
         valor: multa,
         formula: `${regras.multaFgts * 100}% do saldo total do FGTS.`,
-      }
-      bruto += multa
+      };
+
+      bruto += multa;
     }
 
     // Descontos INSS sobre saldo e 13º
-    const baseINSS = saldoSalario
-    const inssValor = calcINSS(baseINSS)
+    const baseINSS = saldoSalario;
+    const inssValor = calcINSS(baseINSS);
 
-    // INSS sobre 13º proporcional é calculado no HTML como separação; para manter compatibilidade:
-    let baseINSS13 = 0
+    // INSS sobre 13º proporcional é calculado no HTML como separação;
+    // para manter compatibilidade:
+    let baseINSS13 = 0;
+
     if (regras.decimoTerceiro) {
       baseINSS13 = calcDecimoTerceiro(
         salarioNum,
         admissao.toISOString().slice(0, 10),
-        desligamento.toISOString().slice(0, 10)
-      )
-    }
-    const inssValor13 = calcINSS(baseINSS13)
-    const inssTotal = inssValor + inssValor13
-    if (inssTotal > 0) {
-      verbas['INSS (sobre Saldo e 13º)'] = {
-        valor: -inssTotal,
-        formula: 'Desconto sobre verbas salariais',
-      }
-      descontos += inssTotal
+        desligamento.toISOString().slice(0, 10),
+      );
     }
 
-    // IRRF (simplificado)
-    const baseIRRF = bruto - inssTotal - (verbas['Multa FGTS']?.valor || 0)
-    const irrfValor = calcIRRF(baseIRRF)
-    if (irrfValor > 0) {
-      verbas['IRRF (Estimativa)'] = {
-        valor: -irrfValor,
-        formula: 'Desconto sobre a base de cálculo (Bruto - INSS)',
+    const inssValor13 = calcINSS(baseINSS13);
+    const inssTotal = inssValor + inssValor13;
+
+    if (inssTotal > 0) {
+      verbas["INSS (sobre Saldo e 13º)"] = {
+        valor: -inssTotal,
+        formula: "Desconto sobre verbas salariais",
+      };
+
+      descontos += inssTotal;
+    }
+
+    // ---------- ATUALIZAÇÃO IRRF 2026 ----------
+    // Considera a data de desligamento como referência estimada
+    // para a data de pagamento da rescisão.
+    const aplicarRegra2026 = desligamento.getFullYear() >= 2026;
+
+    if (aplicarRegra2026) {
+      // O IRRF incide somente sobre as verbas tributáveis.
+      // Aviso indenizado, férias indenizadas e FGTS não entram na base.
+
+      const irrfSaldo = calcIRRF(saldoSalario, inssValor, true);
+
+      // O 13º salário possui tributação exclusiva e separada.
+      const decimoTributavel = verbas["13º Salário Proporcional"]?.valor || 0;
+
+      const irrf13 = regras.decimoTerceiro
+        ? calcIRRF(decimoTributavel, inssValor13, true)
+        : 0;
+
+      const irrfValor = irrfSaldo + irrf13;
+
+      if (irrfValor > 0) {
+        verbas["IRRF (Estimativa)"] = {
+          valor: -irrfValor,
+          formula:
+            "IRRF sobre saldo salarial e 13º, calculados separadamente, com isenção até R$ 5.000,00 e redução até R$ 7.350,00.",
+        };
+
+        descontos += irrfValor;
       }
-      descontos += irrfValor
+    } else {
+      // Mantém o cálculo original para datas anteriores a 2026.
+      const baseIRRF = bruto - inssTotal - (verbas["Multa FGTS"]?.valor || 0);
+
+      const irrfValor = calcIRRF(baseIRRF);
+
+      if (irrfValor > 0) {
+        verbas["IRRF (Estimativa)"] = {
+          valor: -irrfValor,
+          formula: "Desconto sobre a base de cálculo (Bruto - INSS)",
+        };
+
+        descontos += irrfValor;
+      }
     }
 
     if (faltasNum > 0) {
-      verbas['Outros Descontos'] = {
+      verbas["Outros Descontos"] = {
         valor: -faltasNum,
-        formula: 'Faltas e outros adiantamentos informados.',
-      }
-      descontos += faltasNum
+        formula: "Faltas e outros adiantamentos informados.",
+      };
+
+      descontos += faltasNum;
     }
 
-    const liquido = bruto - descontos
+    const liquido = bruto - descontos;
 
     return {
       bruto,
@@ -446,15 +575,16 @@ export default function CalculadoraRescisao() {
       elegibilidade: {
         fgtsSaque: regras.fgtsSaque,
         seguroDesemprego: regras.seguroDesemprego,
-        avisoPrazo: 'Em até 10 dias corridos contados do término do contrato.',
+        avisoPrazo: "Em até 10 dias corridos contados do término do contrato.",
       },
       notas,
-    }
+    };
   }
 
   // ---------- Ações (Calcular, Comparar, Limpar, Exportar) ----------
   const handleCalcular = (e) => {
-    if (e) e.preventDefault()
+    if (e) e.preventDefault();
+
     const form = {
       tipo: tipoDesligamento,
       salarioStr: salarioBase,
@@ -465,16 +595,19 @@ export default function CalculadoraRescisao() {
       feriasVenc: feriasVencidas,
       fgtsOpt: fgtsOption,
       fgtsSaldoStr: fgtsSaldo,
-    }
-    const res = calcRescisaoFromForm(form)
-    setResultado(res)
-    setComparacao(null)
+    };
+
+    const res = calcRescisaoFromForm(form);
+
+    setResultado(res);
+    setComparacao(null);
+
     // rolar para resultado
     setTimeout(
-      () => resultRef.current?.scrollIntoView({ behavior: 'smooth' }),
-      200
-    )
-  }
+      () => resultRef.current?.scrollIntoView({ behavior: "smooth" }),
+      200,
+    );
+  };
 
   const handleComparar = () => {
     const baseForm = {
@@ -485,97 +618,108 @@ export default function CalculadoraRescisao() {
       feriasVenc: feriasVencidas,
       fgtsOpt: fgtsOption,
       fgtsSaldoStr: fgtsSaldo,
-    }
+    };
+
     const cenarios = [
-      'sem-justa-causa',
-      'pedido-demissao',
-      'justa-causa',
-      'acordo',
-    ]
+      "sem-justa-causa",
+      "pedido-demissao",
+      "justa-causa",
+      "acordo",
+    ];
+
     const results = cenarios.map((tipo) => {
-      const aviso = tipo === 'pedido-demissao' ? 'nao-cumprido' : 'indenizado'
-      return calcRescisaoFromForm({ tipo, aviso, ...baseForm })
-    })
-    setComparacao({ cenarios, results })
-    setResultado(null)
+      const aviso = tipo === "pedido-demissao" ? "nao-cumprido" : "indenizado";
+
+      return calcRescisaoFromForm({ tipo, aviso, ...baseForm });
+    });
+
+    setComparacao({ cenarios, results });
+    setResultado(null);
+
     setTimeout(
       () =>
         window.scrollTo({
           top: document.body.scrollHeight,
-          behavior: 'smooth',
+          behavior: "smooth",
         }),
-      200
-    )
-    console.log('comparar ativo')
-  }
+      200,
+    );
+
+    console.log("comparar ativo");
+  };
 
   const handleLimpar = () => {
-    setTipoDesligamento('sem-justa-causa')
-    setSalarioBase('1518,00')
-    setDataAdmissao('2024-01-15')
-    setDataDesligamento('2024-08-28')
-    setAvisoModelo('indenizado')
-    setFaltasDescontos('0,00')
-    setFeriasVencidas(false)
-    setFgtsOption('informar')
-    setFgtsSaldo('0000,00')
-    setResultado(null)
-    setComparacao(null)
-    console.log('Limpar Ativo')
-  }
+    setTipoDesligamento("sem-justa-causa");
+    setSalarioBase("1518,00");
+    setDataAdmissao("2024-01-15");
+    setDataDesligamento("2024-08-28");
+    setAvisoModelo("indenizado");
+    setFaltasDescontos("0,00");
+    setFeriasVencidas(false);
+    setFgtsOption("informar");
+    setFgtsSaldo("0000,00");
+    setResultado(null);
+    setComparacao(null);
+
+    console.log("Limpar Ativo");
+  };
 
   const exportToPDF = () => {
     if (!resultado) {
-      setMessageTitle('Nenhum resultado')
-      setMessageText('Calcule a rescisão antes de exportar o PDF.')
-      setShowMessageBox(true)
-      return
+      setMessageTitle("Nenhum resultado");
+      setMessageText("Calcule a rescisão antes de exportar o PDF.");
+      setShowMessageBox(true);
+      return;
     }
-    const element = resultRef.current
-    html2canvas(element).then((canvas) => {
-      const imgData = canvas.toDataURL('image/png')
-      const pdf = new jsPDF()
-      const imgProps = pdf.getImageProperties(imgData)
-      const pdfWidth = pdf.internal.pageSize.getWidth()
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight)
-      pdf.save(`estimativa_rescisao_${infos.name}.pdf`)
-    })
-  }
 
-  // Atualiza avisoModelo e visibilidade FGTS conforme tipo / opção (mantém comportamento do HTML)
+    const element = resultRef.current;
+
+    html2canvas(element).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF();
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+      pdf.save(`estimativa_rescisao_${infos.name}.pdf`);
+    });
+  };
+
+  // Atualiza avisoModelo e visibilidade FGTS conforme tipo / opção
+  // (mantém comportamento do HTML)
   useEffect(() => {
-    if (tipoDesligamento === 'pedido-demissao') {
-      setAvisoModelo('nao-cumprido')
+    if (tipoDesligamento === "pedido-demissao") {
+      setAvisoModelo("nao-cumprido");
     } else if (
-      tipoDesligamento === 'sem-justa-causa' ||
-      tipoDesligamento === 'rescisao-indireta' ||
-      tipoDesligamento === 'acordo'
+      tipoDesligamento === "sem-justa-causa" ||
+      tipoDesligamento === "rescisao-indireta" ||
+      tipoDesligamento === "acordo"
     ) {
-      setAvisoModelo('indenizado')
+      setAvisoModelo("indenizado");
     } else if (
-      tipoDesligamento === 'justa-causa' ||
-      tipoDesligamento === 'termino-experiencia'
+      tipoDesligamento === "justa-causa" ||
+      tipoDesligamento === "termino-experiencia"
     ) {
       // nesses casos aviso não se aplica — manter valor mas UI esconderá
-      setAvisoModelo('trabalhado')
+      setAvisoModelo("trabalhado");
     }
-  }, [tipoDesligamento])
+  }, [tipoDesligamento]);
 
   // ---------- Renderização ----------
   return (
     <div
-      className="flex justify-center items-start min-h-screen p-4"
+      className="flex items-start justify-center min-h-screen p-4"
       style={{
-        backgroundColor: '#f9f9f9',
+        backgroundColor: "#f9f9f9",
         backgroundImage:
-          'linear-gradient(#eaeaea 1px, transparent 1px), linear-gradient(to right, #eaeaea 1px, transparent 1px)',
-        backgroundSize: '20px 20px',
+          "linear-gradient(#eaeaea 1px, transparent 1px), linear-gradient(to right, #eaeaea 1px, transparent 1px)",
+        backgroundSize: "20px 20px",
       }}
     >
       <div className="w-full max-w-[900px] flex flex-col gap-6">
         {/* Formulário principal */}
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+        <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-md">
           <form className="flex flex-col gap-4">
             {/* Header */}
             <header className="text-center">
@@ -587,35 +731,37 @@ export default function CalculadoraRescisao() {
               <h1
                 className="text-3xl font-extrabold font-mainFont"
                 style={{
-                  color: '#c6af72',
-                  fontFamily: 'Merriweather, serif',
-                  textShadow: '1px 1px 3px rgba(0,0,0,0.15)',
+                  color: "#c6af72",
+                  fontFamily: "Merriweather, serif",
+                  textShadow: "1px 1px 3px rgba(0,0,0,0.15)",
                 }}
               >
                 Calculadora de Rescisão
               </h1>
-              <p className="text-gray-600 text-sm font-secondFont">
+              <p className="text-sm text-gray-600 font-secondFont">
                 Uma ferramenta de estimativa por Dr. Alex Reis
               </p>
             </header>
+
             <h2
-              className="text-xl font-semibold mt-4"
+              className="mt-4 text-xl font-semibold"
               style={{
-                fontFamily: 'Merriweather, serif',
-                textShadow: '1px 1px 3px rgba(0,0,0,0.15)',
+                fontFamily: "Merriweather, serif",
+                textShadow: "1px 1px 3px rgba(0,0,0,0.15)",
               }}
             >
               Insira seus Dados Essenciais:
             </h2>
+
             <hr className="mt-[-10px]" />
 
-            <div className="grid grid-cols-1 tablet2:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 tablet2:grid-cols-2">
               <div className="flex flex-col">
-                <label className="text-gray-600 font-semibold mb-2">
+                <label className="mb-2 font-semibold text-gray-600">
                   Tipo de Desligamento
                 </label>
                 <select
-                  className="border-b outline-none p-2 border-b-black w-full"
+                  className="w-full p-2 border-b outline-none border-b-black"
                   value={tipoDesligamento}
                   onChange={(e) => setTipoDesligamento(e.target.value)}
                 >
@@ -632,39 +778,39 @@ export default function CalculadoraRescisao() {
               </div>
 
               <div className="flex flex-col">
-                <label className="text-gray-600 font-semibold mb-2">
+                <label className="mb-2 font-semibold text-gray-600">
                   Salário Base Mensal (R$)
                 </label>
                 <input
                   type="text"
-                  className="border-b outline-none p-2 border-b-black w-full"
+                  className="w-full p-2 border-b outline-none border-b-black"
                   value={salarioBase}
                   onChange={handleCurrencyInput(setSalarioBase)}
                   onBlur={() => {
-                    if (!salarioBase) setSalarioBase('0,00')
+                    if (!salarioBase) setSalarioBase("0,00");
                   }}
                 />
               </div>
 
               <div className="flex flex-col">
-                <label className="text-gray-600 font-semibold mb-2">
+                <label className="mb-2 font-semibold text-gray-600">
                   Data de Admissão
                 </label>
                 <input
                   type="date"
-                  className="border-b outline-none p-2 border-b-black w-full "
+                  className="w-full p-2 border-b outline-none border-b-black "
                   value={dataAdmissao}
                   onChange={(e) => setDataAdmissao(e.target.value)}
                 />
               </div>
 
               <div className="flex flex-col">
-                <label className="text-gray-600 font-semibold mb-2">
+                <label className="mb-2 font-semibold text-gray-600">
                   Data de Desligamento
                 </label>
                 <input
                   type="date"
-                  className="border-b outline-none p-2 border-b-black w-full "
+                  className="w-full p-2 border-b outline-none border-b-black "
                   value={dataDesligamento}
                   onChange={(e) => setDataDesligamento(e.target.value)}
                 />
@@ -673,11 +819,11 @@ export default function CalculadoraRescisao() {
               {/* Aviso Prévio (visível conforme regras) */}
               {regrasRescisao[tipoDesligamento]?.avisoPrevio !== false ? (
                 <div className="flex flex-col">
-                  <label className="text-gray-600 font-semibold mb-2">
+                  <label className="mb-2 font-semibold text-gray-600">
                     Aviso Prévio
                   </label>
                   <select
-                    className="border-b outline-none p-2 border-b-black w-full"
+                    className="w-full p-2 border-b outline-none border-b-black"
                     value={avisoModelo}
                     onChange={(e) => setAvisoModelo(e.target.value)}
                   >
@@ -691,28 +837,28 @@ export default function CalculadoraRescisao() {
               ) : null}
 
               <div className="flex flex-col">
-                <label className="text-gray-600 font-semibold mb-2">
+                <label className="mb-2 font-semibold text-gray-600">
                   Faltas/Descontos no Mês (R$)
                 </label>
                 <input
                   type="text"
-                  className="border-b outline-none p-2 border-b-black w-full"
+                  className="w-full p-2 border-b outline-none border-b-black"
                   value={faltasDescontos}
                   onChange={handleCurrencyInput(setFaltasDescontos)}
                   onBlur={() => {
-                    if (!faltasDescontos) setFaltasDescontos('0,00')
+                    if (!faltasDescontos) setFaltasDescontos("0,00");
                   }}
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 tablet2:grid-cols-2 gap-4">
-              <div className="mt-2 flex flex-col w-full">
-                <label className="text-gray-600 font-semibold">
+            <div className="grid grid-cols-1 gap-4 tablet2:grid-cols-2">
+              <div className="flex flex-col w-full mt-2">
+                <label className="font-semibold text-gray-600">
                   Saldo do FGTS
                 </label>
                 <select
-                  className="border-b outline-none p-2 border-b-black w-full mt-1"
+                  className="w-full p-2 mt-1 border-b outline-none border-b-black"
                   value={fgtsOption}
                   onChange={(e) => setFgtsOption(e.target.value)}
                 >
@@ -721,18 +867,18 @@ export default function CalculadoraRescisao() {
                 </select>
               </div>
 
-              {fgtsOption === 'informar' ? (
-                <div className=" flex flex-col mt-2 w-full">
-                  <label className="text-gray-600 font-semibold">
+              {fgtsOption === "informar" ? (
+                <div className="flex flex-col w-full mt-2 ">
+                  <label className="font-semibold text-gray-600">
                     Saldo Total de FGTS (R$)
                   </label>
                   <input
                     type="text"
-                    className="border-b outline-none p-2 border-b-black w-full"
+                    className="w-full p-2 border-b outline-none border-b-black"
                     value={fgtsSaldo}
                     onChange={handleCurrencyInput(setFgtsSaldo)}
                     onBlur={() => {
-                      if (!fgtsSaldo) setFgtsSaldo('0,00')
+                      if (!fgtsSaldo) setFgtsSaldo("0,00");
                     }}
                   />
                 </div>
@@ -759,27 +905,29 @@ export default function CalculadoraRescisao() {
             </div>
 
             <div className="flex flex-col gap-2 w-full max-w-[500px] mt-1">
-              <label className="text-gray-600 font-semibold">Observações</label>
+              <label className="font-semibold text-gray-600">Observações</label>
               <textarea
-                className="border outline-none border-l-2 p-2 w-full"
+                className="w-full p-2 border border-l-2 outline-none"
                 rows={3}
                 placeholder="Insira aqui informações adicionais para o relatório..."
               ></textarea>
             </div>
 
             {/* Botões */}
-            <div className="flex justify-center tablet1:justify-start flex-wrap gap-3 mt-4">
+            <div className="flex flex-wrap justify-center gap-3 mt-4 tablet1:justify-start">
               <Button
                 onClick={handleCalcular}
                 label="Calcular"
                 size="small"
                 animation={false}
               />
+
               {/* <Button
                 label="Comparar Cenários"
                 size="small"
                 onClick={handleComparar}
               /> */}
+
               <button
                 type="button"
                 onClick={handleComparar}
@@ -787,6 +935,7 @@ export default function CalculadoraRescisao() {
               >
                 Comparar Cenários
               </button>
+
               <button
                 type="button"
                 onClick={handleLimpar}
@@ -800,20 +949,21 @@ export default function CalculadoraRescisao() {
 
         {/* Comparador de Cenários */}
         {comparacao ? (
-          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+          <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-md">
             <h2
-              className="text-xl font-semibold mb-3"
-              style={{ color: '#c6af72', fontFamily: 'Merriweather, serif' }}
+              className="mb-3 text-xl font-semibold"
+              style={{ color: "#c6af72", fontFamily: "Merriweather, serif" }}
             >
               Comparador de Cenários
             </h2>
+
             <div className="overflow-x-auto">
               <table className="min-w-full border-collapse">
                 <thead>
-                  <tr style={{ backgroundColor: '#f5f5f5', color: '#121212' }}>
-                    <th className="py-2 px-3 text-left">Verba</th>
+                  <tr style={{ backgroundColor: "#f5f5f5", color: "#121212" }}>
+                    <th className="px-3 py-2 text-left">Verba</th>
                     {comparacao.cenarios.map((c) => (
-                      <th key={c} className="py-2 px-3 text-center">
+                      <th key={c} className="px-3 py-2 text-center">
                         {c}
                       </th>
                     ))}
@@ -821,31 +971,33 @@ export default function CalculadoraRescisao() {
                 </thead>
 
                 <tbody>
-                  <tr style={{ backgroundColor: '#f5f5f5', color: '#121212' }}>
-                    <td className="py-2 px-3">Total Bruto</td>
+                  <tr style={{ backgroundColor: "#f5f5f5", color: "#121212" }}>
+                    <td className="px-3 py-2">Total Bruto</td>
                     {comparacao.results.map((r, i) => (
-                      <td key={i} className="py-2 px-3 text-center">
+                      <td key={i} className="px-3 py-2 text-center">
                         {formatCurrency(r.bruto)}
                       </td>
                     ))}
                   </tr>
-                  <tr style={{ backgroundColor: '#f5f5f5', color: '#121212' }}>
-                    <td className="py-2 px-3">Total Descontos</td>
+
+                  <tr style={{ backgroundColor: "#f5f5f5", color: "#121212" }}>
+                    <td className="px-3 py-2">Total Descontos</td>
                     {comparacao.results.map((r, i) => (
-                      <td key={i} className="py-2 px-3 text-center">
+                      <td key={i} className="px-3 py-2 text-center">
                         {formatCurrency(r.descontos)}
                       </td>
                     ))}
                   </tr>
-                  <tr style={{ backgroundColor: '#f5f5f5', color: '#121212' }}>
-                    <td className="py-2 px-3 font-semibold">
+
+                  <tr style={{ backgroundColor: "#f5f5f5", color: "#121212" }}>
+                    <td className="px-3 py-2 font-semibold">
                       Líquido a Receber
                     </td>
 
                     {comparacao.results.map((r, i) => (
                       <td
                         key={i}
-                        className="py-2 px-3 text-center font-semibold"
+                        className="px-3 py-2 font-semibold text-center"
                       >
                         {formatCurrency(r.liquido)}
                       </td>
@@ -861,31 +1013,31 @@ export default function CalculadoraRescisao() {
         {resultado ? (
           <div
             ref={resultRef}
-            className="bg-white p-6 rounded-lg shadow-md border border-gray-200"
+            className="p-6 bg-white border border-gray-200 rounded-lg shadow-md"
           >
             <h2
-              className="text-xl font-semibold mb-3"
-              style={{ color: '#c6af72', fontFamily: 'Merriweather, serif' }}
+              className="mb-3 text-xl font-semibold"
+              style={{ color: "#c6af72", fontFamily: "Merriweather, serif" }}
             >
               Resultado da Simulação
             </h2>
 
             <div
-              className="p-4 rounded mb-4 border"
+              className="p-4 mb-4 border rounded"
               style={{
-                borderColor: resultado.liquido < 0 ? '#e57373' : '#6aa84f',
+                borderColor: resultado.liquido < 0 ? "#e57373" : "#6aa84f",
               }}
             >
               <p className="text-gray-600">Estimativa Líquida a Receber</p>
               <h3
                 className="text-3xl font-bold"
                 style={{
-                  color: resultado.liquido < 0 ? '#e57373' : '#6aa84f',
+                  color: resultado.liquido < 0 ? "#e57373" : "#6aa84f",
                 }}
               >
                 {resultado.liquido < 0
                   ? `${formatCurrency(
-                      Math.abs(resultado.liquido)
+                      Math.abs(resultado.liquido),
                     )} (Valor a Pagar)`
                   : formatCurrency(resultado.liquido)}
               </h3>
@@ -894,36 +1046,41 @@ export default function CalculadoraRescisao() {
             <p>
               Total Bruto: <strong>{formatCurrency(resultado.bruto)}</strong>
             </p>
+
             <p>
-              Total de Descontos:{' '}
+              Total de Descontos:{" "}
               <strong>{formatCurrency(resultado.descontos)}</strong>
             </p>
 
             <h3 className="mt-4 font-semibold">Memória de Cálculo:</h3>
+
             <p className="font-secondFont text-paragraph2 phone3:hidden">
               Deslize a tabela para o lado para visualizar todas as informações.
             </p>
-            <div className="overflow-x-auto mt-2">
+
+            <div className="mt-2 overflow-x-auto">
               <table className="min-w-full">
                 <thead>
                   <tr>
-                    <th className="py-2 px-3 text-left">Verba</th>
-                    <th className="py-2 px-3 text-left">Descrição</th>
-                    <th className="py-2 px-3 text-left">Valor</th>
+                    <th className="px-3 py-2 text-left">Verba</th>
+                    <th className="px-3 py-2 text-left">Descrição</th>
+                    <th className="px-3 py-2 text-left">Valor</th>
                   </tr>
                 </thead>
+
                 <tbody>
                   {Object.entries(resultado.verbas).map(([k, v], idx) => {
-                    if (k.includes('FGTS (Saldo')) return null // manter compatibilidade com HTML original
+                    if (k.includes("FGTS (Saldo")) return null;
+
                     return (
                       <tr key={idx}>
-                        <td className="py-2 px-3">{k}</td>
-                        <td className="py-2 px-3">
+                        <td className="px-3 py-2">{k}</td>
+                        <td className="px-3 py-2">
                           <small>{v.formula}</small>
                         </td>
-                        <td className="py-2 px-3">{formatCurrency(v.valor)}</td>
+                        <td className="px-3 py-2">{formatCurrency(v.valor)}</td>
                       </tr>
-                    )
+                    );
                   })}
                 </tbody>
               </table>
@@ -931,21 +1088,24 @@ export default function CalculadoraRescisao() {
 
             <div className="mt-4">
               <h3>Avisos Importantes</h3>
-              <ul className="list-disc pl-5 text-gray-600">
+
+              <ul className="pl-5 text-gray-600 list-disc">
                 <li>
-                  <strong>Saque FGTS:</strong>{' '}
+                  <strong>Saque FGTS:</strong>{" "}
                   {resultado.elegibilidade.fgtsSaque
-                    ? 'Elegível.'
-                    : 'Não elegível (exceto casos específicos).'}
+                    ? "Elegível."
+                    : "Não elegível (exceto casos específicos)."}
                 </li>
+
                 <li>
-                  <strong>Seguro-Desemprego:</strong>{' '}
+                  <strong>Seguro-Desemprego:</strong>{" "}
                   {resultado.elegibilidade.seguroDesemprego
-                    ? 'Elegível (se preencher requisitos).'
-                    : 'Não elegível para esta modalidade.'}
+                    ? "Elegível (se preencher requisitos)."
+                    : "Não elegível para esta modalidade."}
                 </li>
+
                 <li>
-                  <strong>Prazo para Pagamento:</strong>{' '}
+                  <strong>Prazo para Pagamento:</strong>{" "}
                   {resultado.elegibilidade.avisoPrazo}
                 </li>
               </ul>
@@ -954,8 +1114,8 @@ export default function CalculadoraRescisao() {
             <div className="flex gap-3 mt-4">
               <button
                 onClick={exportToPDF}
-                className="px-4 py-2 rounded border"
-                style={{ borderColor: '#c6af72', color: '#c6af72' }}
+                className="px-4 py-2 border rounded"
+                style={{ borderColor: "#c6af72", color: "#c6af72" }}
               >
                 Exportar PDF
               </button>
@@ -964,27 +1124,29 @@ export default function CalculadoraRescisao() {
         ) : null}
 
         {/* Sobre o Advogado */}
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col gap-6 tablet2:gap-0 items-center text-center justify-between">
+        <div className="flex flex-col items-center justify-between gap-6 p-6 text-center bg-white border border-gray-200 rounded-lg shadow-md tablet2:gap-0">
           <img
             src={content.texts.calc.img}
             alt={`Foto de ${infos.name}`}
-            className="rounded-full w-32  mb-4 object-cover border-2"
-            style={{ borderColor: '#c6af72' }}
+            className="object-cover w-32 mb-4 border-2 rounded-full"
+            style={{ borderColor: "#c6af72" }}
           />
+
           <div className="flex flex-col tablet2:items-center m-auto tablet2:w-[55%] ">
             <h2
-              className="text-xl font-semibold mb-0"
-              style={{ color: '#c6af72', fontFamily: 'Merriweather, serif' }}
+              className="mb-0 text-xl font-semibold"
+              style={{ color: "#c6af72", fontFamily: "Merriweather, serif" }}
             >
               Sobre o Dr. Alex Reis
             </h2>
-            <div className="mt-4 tablet2:text-center w-full text-paragraph3 text-center">
+
+            <div className="w-full mt-4 text-center tablet2:text-center text-paragraph3">
               <p>
                 Comprometido em defender direitos com empatia, ética e dedicação
                 real às pessoas.
               </p>
 
-              <div className="flex flex-col justify-center items-center tablet1:flex-row gap-3 mt-4">
+              <div className="flex flex-col items-center justify-center gap-3 mt-4 tablet1:flex-row">
                 <Button
                   conversao
                   icon={
@@ -1001,10 +1163,11 @@ export default function CalculadoraRescisao() {
                   label="Fale no WhatsApp"
                   size="small"
                 />
+
                 <Button
                   icon={<Mail width={20} />}
                   label="Envie um E-mail"
-                  buttonLink="mailto:contato@arsadvocaciatrabalhista.com.br"
+                  buttonLink="mailto:contato@arsadvocaciaespecializada.com.br"
                   size="small"
                 />
               </div>
@@ -1013,7 +1176,7 @@ export default function CalculadoraRescisao() {
         </div>
 
         {/* Rodapé */}
-        <footer className="text-center text-sm text-gray-600">
+        <footer className="text-sm text-center text-gray-600">
           Esta é uma ferramenta de estimativa. Os valores podem variar conforme
           convenções coletivas e outros fatores. Para um cálculo oficial,
           consulte um profissional.
@@ -1023,18 +1186,20 @@ export default function CalculadoraRescisao() {
       {/* Caixa de Mensagem (Popup) */}
       {showMessageBox ? (
         <div
-          className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-lg z-50 border"
-          style={{ borderColor: '#dddddd' }}
+          className="fixed z-50 p-6 transform -translate-x-1/2 -translate-y-1/2 bg-white border rounded-lg shadow-lg top-1/2 left-1/2"
+          style={{ borderColor: "#dddddd" }}
         >
-          <h3 className="text-lg font-semibold" style={{ color: '#c6af72' }}>
+          <h3 className="text-lg font-semibold" style={{ color: "#c6af72" }}>
             {messageTitle}
           </h3>
+
           <p className="mt-2 text-gray-600">{messageText}</p>
+
           <div className="mt-4 text-center">
             <button
               onClick={() => setShowMessageBox(false)}
               className="px-4 py-2 rounded"
-              style={{ backgroundColor: '#c6af72', color: '#121212' }}
+              style={{ backgroundColor: "#c6af72", color: "#121212" }}
             >
               OK
             </button>
@@ -1042,5 +1207,5 @@ export default function CalculadoraRescisao() {
         </div>
       ) : null}
     </div>
-  )
+  );
 }

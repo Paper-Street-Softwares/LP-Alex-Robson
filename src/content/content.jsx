@@ -76,7 +76,7 @@ export const infos = {
   name: "Dr. Alex Robson Reis Santos",
   email: "contato", // Email desejado pelo cliente
   emailSecundario: "A_Definir", // Email desejado pelo cliente
-  domain: "arsadvocaciatrabalhista.com.br", // Sem "www"
+  domain: "arsadvocaciaespecializada.com.br", // Sem "www"
   phone: {
     ddd: "27",
     firstPart: "99689", // Apenas os 5 primeiros números (incluindo o 9)
